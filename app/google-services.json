@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "644005591108",
+    "firebase_url": "https://proe-9e3b8.firebaseio.com",
+    "project_id": "proe-9e3b8",
+    "storage_bucket": "proe-9e3b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644005591108:android:e0b18bbd6946cc65976411",
+        "android_client_info": {
+          "package_name": "com.example.proe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644005591108-hnbo4871kjcnul1jf35ssq6mgm10cmq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq3J1ISqpY9qNjeLcbGVjid09uyskc4Jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644005591108-hnbo4871kjcnul1jf35ssq6mgm10cmq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

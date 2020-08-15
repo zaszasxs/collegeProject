@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addSellActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/sharp_rect1">
+        <ImageButton
+            android:id="@+id/btnback"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_navigate_before_black_24dp"
+            android:background="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_centerHorizontal="true"
+            android:text="Add Sell Product"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imagesell"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_widgets_black_24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txcategory"
+            android:padding="10dp"
+            android:layout_below="@+id/imagesell"
+            android:hint="Category"
+            android:drawableStart="@drawable/ic_widgets_black_24dp"
+            android:drawablePadding="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/sharp_rect2"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="10dp"
+            android:layout_below="@+id/txcategory"
+            android:background="@drawable/sharp_rect2"
+            android:drawableStart="@drawable/ic_text_fields_black_24dp"
+            android:drawablePadding="5dp"
+            android:hint="Title"
+            android:id="@+id/ettitle"
+            android:inputType="textCapSentences|textMultiLine"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="10dp"
+            android:layout_below="@+id/ettitle"
+            android:background="@drawable/sharp_rect2"
+            android:drawableStart="@drawable/ic_text_fields_black_24dp"
+            android:drawablePadding="5dp"
+            android:hint="Description"
+            android:id="@+id/etdescription"
+            android:inputType="textCapSentences|textMultiLine"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="10dp"
+            android:layout_below="@+id/etdescription"
+            android:background="@drawable/sharp_rect2"
+            android:drawableStart="@drawable/ic_select_all_black_24dp"
+            android:drawablePadding="5dp"
+            android:hint="Quanlity e.g kg,g,Ltr"
+            android:id="@+id/etquanlity"
+            android:inputType="textCapWords"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="10dp"
+            android:layout_below="@+id/etquanlity"
+            android:background="@drawable/sharp_rect2"
+            android:drawableStart="@drawable/ic_attach_money_black_24dp"
+            android:drawablePadding="5dp"
+            android:hint="price"
+            android:id="@+id/etprice"
+            android:inputType="textCapWords"/>
+
+        <Button
+            android:id="@+id/btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etprice"
+            android:background="@drawable/sharp_cir1"
+            android:padding="5dp"
+            android:layout_marginTop="7dp"
+            android:text="Add"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
