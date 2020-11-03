@@ -288,7 +288,7 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "" + token, Toast.LENGTH_SHORT).show();
       }
     });
-    Toast.makeText(this, ""+CallSendNotification.getTokenFirebase(uid).getValue(), Toast.LENGTH_SHORT).show();
+  
   }
 
 }
