@@ -1,85 +1,85 @@
 
-C
-java:S16596"(Declare "etpassword" on a separate line.(…ÃÕ£ÿÿÿÿÿ
-=
-java:S16597"'Declare "etcountry" on a separate line.(ÕŠãÃ
-i	java:S116A"TRename this field "image_uri" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ä¨å
-Q
-java:S1874K"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
-p	java:S116›"URename this field "CFpassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-u	java:S116›"ZRename this field "CompleteAddress" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-e
-java:S3252ñ"NUse static access with "android.provider.MediaStore$MediaColumns" for "TITLE".(ˆå¡¡
-k	java:S116›"PRename this field "State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-˜
-java:S1186İ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅğÙ
-B
-java:S1659G"'Declare "longitude" on a separate line.(åÀ¤ıÿÿÿÿ
-?
-java:S1659›"#Declare "Email" on a separate line.(·““Öşÿÿÿÿ
 t
 java:S1450H"^Remove the "locationManager" field and declare it as a local variable in the relevant methods.(ô­âº
-k	java:S116›"PRename this field "Phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-I
-java:S1659›"-Declare "CompleteAddress" on a separate line.(·““Öşÿÿÿÿ
-?
-java:S16594"$Declare "btngps" on a separate line.(èÇ–ıÿÿÿÿ
-I
-java:S1199…"-Extract this nested code block into a method.(Ï¥‰§üÿÿÿÿ
-n
-java:S3776ç"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ó»×¶şÿÿÿÿ
-o
-java:S14508"YRemove the "btnregiser" field and declare it as a local variable in the relevant methods.(©—õÅ
-@
-java:S16596"%Declare "etemail" on a separate line.(…ÃÕ£ÿÿÿÿÿ
-A
-java:S16597"+Declare "etcompleteass" on a separate line.(ÕŠãÃ
-m	java:S116›"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-N
-java:S1874Å"2Remove this use of "setMessage"; it is deprecated.(¼¨¼…üÿÿÿÿ
-:
-java:S16597"$Declare "etcity" on a separate line.(ÕŠãÃ
-?
-java:S1659›"#Declare "State" on a separate line.(·““Öşÿÿÿÿ
-D
-java:S1199é"-Extract this nested code block into a method.(“í‘ê
-=	java:S131è""Add a default case to this switch.(×ö³–úÿÿÿÿ
-w
-java:S3252ò"[Use static access with "android.provider.MediaStore$Images$ImageColumns" for "DESCRIPTION".(¯ÇÁöşÿÿÿÿ
-;
-java:S16597"%Declare "etstate" on a separate line.(ÕŠãÃ
-n	java:S116›"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-j	java:S116›"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
-j	java:S116›"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
 N
 java:S1874Ø"2Remove this use of "setMessage"; it is deprecated.(•ú˜şüÿÿÿÿ
-p
-java:S14504"URemove the "btngps" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
+w
+java:S3252ò"[Use static access with "android.provider.MediaStore$Images$ImageColumns" for "DESCRIPTION".(¯ÇÁöşÿÿÿÿ
+?
+java:S1659›"#Declare "State" on a separate line.(·““Öşÿÿÿÿ
+n	java:S116›"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
 ˜
 java:S1186Ø"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÀÄŞ’
-I
-java:S1199ö"-Extract this nested code block into a method.(®¹ƒúÿÿÿÿ
-D
-java:S1659›"(Declare "CFpassword" on a separate line.(·““Öşÿÿÿÿ
+;
+java:S16597"%Declare "etstate" on a separate line.(ÕŠãÃ
 Y
 java:S2259–"BA "NullPointerException" could be thrown; "data" is nullable here.(µÛŸ©
-q
-java:S14504"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
-E
-java:S16596"*Declare "etcfpassword" on a separate line.(…ÃÕ£ÿÿÿÿÿ
-A
-java:S1659›"%Declare "Country" on a separate line.(·““Öşÿÿÿÿ
-q
-java:S14509"[Remove the "txregisbuyer" field and declare it as a local variable in the relevant methods.(Å÷¡Ğ
-V	java:S1102"<This class has 9 parents which is greater than 5 authorized.(İ±ŸÁÿÿÿÿÿ
-Q
-java:S1874h"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
-k	java:S116›"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
 ?
 java:S1659›"#Declare "Phone" on a separate line.(·““Öşÿÿÿÿ
->
-java:S1659›""Declare "City" on a separate line.(·““Öşÿÿÿÿ
+k	java:S116›"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
 ;
 java:S16597"%Declare "etphone" on a separate line.(ÕŠãÃ
+p
+java:S14504"URemove the "btngps" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
+N
+java:S1874Å"2Remove this use of "setMessage"; it is deprecated.(¼¨¼…üÿÿÿÿ
+u	java:S116›"ZRename this field "CompleteAddress" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+Q
+java:S1874K"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+j	java:S116›"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+>
+java:S1659›""Declare "City" on a separate line.(·““Öşÿÿÿÿ
+I
+java:S1659›"-Declare "CompleteAddress" on a separate line.(·““Öşÿÿÿÿ
+=
+java:S16597"'Declare "etcountry" on a separate line.(ÕŠãÃ
+m	java:S116›"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+Q
+java:S1874h"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+E
+java:S16596"*Declare "etcfpassword" on a separate line.(…ÃÕ£ÿÿÿÿÿ
+B
+java:S1659G"'Declare "longitude" on a separate line.(åÀ¤ıÿÿÿÿ
+k	java:S116›"PRename this field "State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+I
+java:S1199ö"-Extract this nested code block into a method.(®¹ƒúÿÿÿÿ
+=	java:S131è""Add a default case to this switch.(×ö³–úÿÿÿÿ
+o
+java:S14508"YRemove the "btnregiser" field and declare it as a local variable in the relevant methods.(©—õÅ
 B
 java:S1659›"&Declare "Password" on a separate line.(·““Öşÿÿÿÿ
+I
+java:S1199…"-Extract this nested code block into a method.(Ï¥‰§üÿÿÿÿ
+:
+java:S16597"$Declare "etcity" on a separate line.(ÕŠãÃ
+e
+java:S3252ñ"NUse static access with "android.provider.MediaStore$MediaColumns" for "TITLE".(ˆå¡¡
+i	java:S116A"TRename this field "image_uri" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ä¨å
+˜
+java:S1186İ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅğÙ
+A
+java:S16597"+Declare "etcompleteass" on a separate line.(ÕŠãÃ
+A
+java:S1659›"%Declare "Country" on a separate line.(·““Öşÿÿÿÿ
+C
+java:S16596"(Declare "etpassword" on a separate line.(…ÃÕ£ÿÿÿÿÿ
+p	java:S116›"URename this field "CFpassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+n
+java:S3776ç"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ó»×¶şÿÿÿÿ
+q
+java:S14504"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
+D
+java:S1199é"-Extract this nested code block into a method.(“í‘ê
+?
+java:S16594"$Declare "btngps" on a separate line.(èÇ–ıÿÿÿÿ
+q
+java:S14509"[Remove the "txregisbuyer" field and declare it as a local variable in the relevant methods.(Å÷¡Ğ
+D
+java:S1659›"(Declare "CFpassword" on a separate line.(·““Öşÿÿÿÿ
+V	java:S1102"<This class has 9 parents which is greater than 5 authorized.(İ±ŸÁÿÿÿÿÿ
+k	java:S116›"PRename this field "Phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+?
+java:S1659›"#Declare "Email" on a separate line.(·““Öşÿÿÿÿ
+j	java:S116›"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·““Öşÿÿÿÿ
+@
+java:S16596"%Declare "etemail" on a separate line.(…ÃÕ£ÿÿÿÿÿ

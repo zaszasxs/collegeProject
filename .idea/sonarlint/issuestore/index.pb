@@ -47,3 +47,9 @@ h
 8app/src/main/java/com/example/proe/MainUserActivity.java,a/a/aa2e7143b795007f918f27a20982a7c35c20ea8b
 v
 Fapp/src/main/java/com/example/proe/notification/SharedPreferences.java,8/2/828c420e7b8e340e11d36d6508b80d2646785ab9
+Z
+*app/src/main/res/layout/activity_login.xml,1/f/1f7e901185d74bf05f9fcb38f9ed35ea78cd4c6e
+S
+#app/src/main/res/values/strings.xml,d/2/d2281fbb3027de2722081a53408dd77628bf080e
+L
+.idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
