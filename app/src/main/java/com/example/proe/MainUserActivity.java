@@ -21,6 +21,7 @@ import com.example.proe.Adapter.AdapterBuyer;
 import com.example.proe.Adapter.AdapterOrderUser;
 import com.example.proe.Model.ModelBuyerUI;
 import com.example.proe.Model.ModelOrderUser;
+import com.example.proe.notification.SharedPreferences;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -161,6 +162,7 @@ public class MainUserActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        SharedPreferences.clearData(getApplicationContext());
                         progressDialog.setMessage("Logging in");
                         progressDialog.show();
                         firebaseAuth.signOut();

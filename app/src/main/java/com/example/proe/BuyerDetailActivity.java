@@ -4,6 +4,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -450,8 +451,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
     }
 
     private void LoadBuyerSellitem() {
-
-        sellItemslist =new ArrayList<>();
+        initListOrder();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(BuyerUid).child("SellItem")
@@ -463,10 +463,8 @@ public class BuyerDetailActivity extends AppCompatActivity {
                             ModelSellItem modelSellItem = ds.getValue(ModelSellItem.class);
                             sellItemslist.add(modelSellItem);
                         }
+                        adapterSellItem.notifyDataSetChanged();
 
-                        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
-
-                        sellitemuserRv.setAdapter(adapterSellItem);
                     }
 
                     @Override
@@ -474,6 +472,14 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void initListOrder() {
+        sellItemslist = new ArrayList<>();
+        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        sellitemuserRv.setLayoutManager(layoutManager);
+        sellitemuserRv.setAdapter(adapterSellItem);
     }
 
 

@@ -1,93 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  tools:context=".LoginActivity">
+
+  <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@color/white">
+    android:layout_height="80dp"
+    android:background="@drawable/sharp_rect1"
+    android:padding="10dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:padding="10dp"
-        android:background="@drawable/sharp_rect1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:layout_centerHorizontal="true"
-            android:text="Login"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/icon_login"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/sharp_cir1"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/ic_account_pirple_24dp"
-        android:layout_centerHorizontal="true"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etemail"
-        android:padding="10dp"
-        android:layout_below="@+id/icon_login"
-        android:hint="E-mail"
-        android:drawableStart="@drawable/ic_mail_gray_24dp"
-        android:drawablePadding="5dp"
-        android:layout_margin="5dp"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/sharp_rect2" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etpassword"
-        android:padding="10dp"
-        android:layout_below="@+id/etemail"
-        android:hint="Password"
-        android:drawableStart="@drawable/ic_lock__gray_24dp"
-        android:drawablePadding="5dp"
-        android:layout_margin="5dp"
-        android:inputType="textPassword"
-        android:background="@drawable/sharp_rect2" />
-    
     <TextView
-        android:id="@+id/txforgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot password?"
-        android:layout_margin="5dp"
-        android:layout_below="@id/etpassword"
-        android:layout_alignParentRight="true"/>
+      android:layout_width="wrap_content"
+      android:layout_height="44dp"
+      android:layout_centerHorizontal="true"
+      android:text="Login"
+      android:textColor="@color/white"
+      android:textSize="25sp"
+      android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txforgot"
-        android:layout_centerHorizontal="true"
-        android:text="login"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@drawable/sharp_cir1"
-        android:textColor="@color/colorPrimary"
-        android:minWidth="128dp"/>
-    <TextView
-        android:id="@+id/txnoaccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Not have account?Register"
-        android:layout_margin="5dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+  </RelativeLayout>
 
+  <ImageView
+    android:id="@+id/icon_login"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="60dp"
+    android:layout_marginBottom="50dp"
+    android:background="@drawable/sharp_cir1"
+    android:src="@drawable/ic_account_pirple_24dp" />
+
+  <EditText
+    android:id="@+id/etemail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/icon_login"
+    android:layout_margin="5dp"
+    android:background="@drawable/sharp_rect2"
+    android:drawableStart="@drawable/ic_mail_gray_24dp"
+    android:drawablePadding="5dp"
+    android:hint="E-mail"
+    android:inputType="textEmailAddress"
+    android:padding="10dp"
+    android:text="jessiejame7987@gmail.com" />
+
+  <EditText
+    android:id="@+id/etpassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/etemail"
+    android:layout_margin="5dp"
+    android:background="@drawable/sharp_rect2"
+    android:drawableStart="@drawable/ic_lock__gray_24dp"
+    android:drawablePadding="5dp"
+    android:hint="Password"
+    android:inputType="textPassword"
+    android:padding="10dp"
+    android:text="qazwsx111" />
+
+  <TextView
+    android:id="@+id/txforgot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/etpassword"
+    android:layout_alignParentRight="true"
+    android:layout_margin="5dp"
+    android:text="Forgot password?" />
+
+  <Button
+    android:id="@+id/btnlogin"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/txforgot"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/sharp_cir1"
+    android:minWidth="128dp"
+    android:text="login"
+    android:textColor="@color/colorPrimary" />
+
+  <TextView
+    android:id="@+id/txnoaccount"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="5dp"
+    android:text="Not have account?Register" />
 
 
 </RelativeLayout>

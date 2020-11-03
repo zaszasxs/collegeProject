@@ -232,7 +232,7 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
             hashMap.put("online","true");
             hashMap.put("ShopOpen","true");
             hashMap.put("profileImage","");
-
+            hashMap.put("pushToken","");
 
 
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
@@ -286,7 +286,6 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
                                 hashMap.put("online","true");
                                 hashMap.put("ShopOpen","true");
                                 hashMap.put("profileImage",""+downloadImageUri);
-
                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
                                 reference.child(firebaseAuth.getUid()).setValue(hashMap)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
