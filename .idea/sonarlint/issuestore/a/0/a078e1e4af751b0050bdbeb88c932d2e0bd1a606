@@ -1,0 +1,7 @@
+
+n
+java:S1450"YRemove the "httpClient" field and declare it as a local variable in the relevant methods.(œ®
+m
+java:S1450"WRemove the "mLogging" field and declare it as a local variable in the relevant methods.(ÃŒıÔ
+\
+java:S1118":Add a private constructor to hide the implicit public one.(âÿ¹¦ûÿÿÿÿ8¾ÕòîØ.
