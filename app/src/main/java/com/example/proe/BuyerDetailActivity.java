@@ -1,16 +1,23 @@
 package com.example.proe;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -495,8 +502,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
     }
 
     private void LoadBuyerSellitem() {
-
-        sellItemslist =new ArrayList<>();
+        initListOrder();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(BuyerUid).child("SellItem")
@@ -508,10 +514,8 @@ public class BuyerDetailActivity extends AppCompatActivity {
                             ModelSellItem modelSellItem = ds.getValue(ModelSellItem.class);
                             sellItemslist.add(modelSellItem);
                         }
+                        adapterSellItem.notifyDataSetChanged();
 
-                        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
-
-                        sellitemuserRv.setAdapter(adapterSellItem);
                     }
 
                     @Override
@@ -519,6 +523,14 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void initListOrder() {
+        sellItemslist = new ArrayList<>();
+        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        sellitemuserRv.setLayoutManager(layoutManager);
+        sellitemuserRv.setAdapter(adapterSellItem);
     }
 
     private void prepareNotificationMessage(String OrderID){

@@ -236,6 +236,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
             hashMap.put("AccountType","User");
             hashMap.put("online","true");
             hashMap.put("profileImage","");
+            hashMap.put("pushToken","");
 
 
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");

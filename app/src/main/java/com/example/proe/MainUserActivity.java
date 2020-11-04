@@ -22,6 +22,7 @@ import com.example.proe.Model.ModelOrderUser;
 import com.example.proe.Model.ModelPMG;
 
 import com.example.proe.Model.Mechanical;
+import com.example.proe.notification.SharedPreferences;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -162,6 +163,7 @@ public class MainUserActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        SharedPreferences.clearData(getApplicationContext());
                         progressDialog.setMessage("Logging in");
                         progressDialog.show();
                         firebaseAuth.signOut();
@@ -386,7 +388,7 @@ public class MainUserActivity extends AppCompatActivity {
 
     private void showPMGUI() {
         relativebuyer.setVisibility(View.GONE);
-        relativeorder.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.GONE);
         relativepmg.setVisibility(View.VISIBLE);
         relativeinfo.setVisibility(View.GONE);
 

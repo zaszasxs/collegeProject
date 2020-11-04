@@ -1,0 +1,12 @@
+
+W
+java:S1118
+":Add a private constructor to hide the implicit public one.(¼Øûì8æ‹¬îØ.
+\
+java:S2133,"@Remove this object instantiation and use "Object.class" instead.(ïøâ8øÛ¨îØ.
+L
+java:S3740."/Provide the parametrized type for this generic.(ó…²§8øÛ¨îØ.
+’
+java:S1319"pThe type of the "token" object should be an interface such as "List" rather than the implementation "ArrayList".(ïÄÚÕûÿÿÿÿ8İ´ßóØ.
+
+java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(“ÈÌ‚8øÛ¨îØ.

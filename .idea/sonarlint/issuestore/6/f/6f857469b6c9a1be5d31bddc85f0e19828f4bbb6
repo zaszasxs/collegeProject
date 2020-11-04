@@ -1,0 +1,57 @@
+
+?
+java:S1659$"$Declare "txdata" on a separate line.(¶Ô¾şÿÿÿÿ
+k	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åœ€ûşÿÿÿÿ
+m	java:S117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‡ªW8…½åßØ.
+k	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑòŸüÿÿÿÿ
+p	java:S100®"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ†¯ıùÿÿÿÿ8…½åßØ.
+m	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»šÙ™8…½åßØ.
+¤
+java:S1186¹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8…½åßØ.
+M
+java:S1874‰"0Remove this use of "getColor"; it is deprecated.(å—¥#8…½åßØ.
+I
+java:S1481w",Remove this unused "OrderBy" local variable.(»šÙ™8…½åßØ.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(ã „Îüÿÿÿÿ
+D
+java:S1659$")Declare "txtotalitem" on a separate line.(¶Ô¾şÿÿÿÿ
+k	java:S117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²§¢Öùÿÿÿÿ
+@
+java:S1659!"%Declare "OrderID" on a separate line.(öıö‘ıÿÿÿÿ
+X
+java:S1854w";Remove this useless assignment to local variable "OrderBy".(»šÙ™8…½åßØ.
+k	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¡êÖşÿÿÿÿ
+£
+java:S1186b"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8ÚùÅØ.
+F	java:S108©")Either remove or fill this block of code.(”ı¾8…½åßØ.
+C
+java:S1659$"(Declare "shopnameIv" on a separate line.(¶Ô¾şÿÿÿÿ
+]
+java:S1854|";Remove this useless assignment to local variable "OrderTo".(æ¼€Ûşÿÿÿÿ8…½åßØ.
+S
+java:S1874…"0Remove this use of "getColor"; it is deprecated.(»Õ¨¶ùÿÿÿÿ8…½åßØ.
+r	java:S117~"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¦Çşÿÿÿÿ8ÚùÅØ.
+]
+java:S1117y";Rename "OrderID" which hides the field declared at line 33.(«¡êÖşÿÿÿÿ8…½åßØ.
+l	java:S116!"RRename this field "OrderTo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öıö‘ıÿÿÿÿ
+]
+java:S1117|";Rename "OrderTo" which hides the field declared at line 33.(æ¼€Ûşÿÿÿÿ8…½åßØ.
+N
+java:S1481|",Remove this unused "OrderTo" local variable.(æ¼€Ûşÿÿÿÿ8…½åßØ.
+¤
+java:S1186•"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8…½åßØ.
+k	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼€Ûşÿÿÿÿ
+q
+java:S1450#"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ü¡½¦øÿÿÿÿ
+A
+java:S1659$"&Declare "txstatus" on a separate line.(¶Ô¾şÿÿÿÿ
+B
+java:S1659$"'Declare "addressIv" on a separate line.(¶Ô¾şÿÿÿÿ
+l	java:S116!"RRename this field "OrderID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öıö‘ıÿÿÿÿ
+o	java:S100q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“‹êÕøÿÿÿÿ8…½åßØ.
+k	java:S117x"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØÚÃşÿÿÿÿ
+c	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×®ıÖ
+N
+java:S1874‡"0Remove this use of "getColor"; it is deprecated.(Àä†¯8…½åßØ.
+E
+java:S1659$"*Declare "txtotalprice" on a separate line.(¶Ô¾şÿÿÿÿ
