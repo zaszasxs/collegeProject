@@ -3,6 +3,7 @@ package com.example.proe;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
@@ -24,6 +25,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.proe.Adapter.AdapterOrderDetail;
 import com.example.proe.Model.ModelOrderDetail;
+import com.example.proe.Model.Result;
+import com.example.proe.notification.connect.CallSendNotification;
+import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -312,7 +316,9 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
             Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-        sendFCMNotification(notificationJo);
+
+        simpleGetTokenFromUID(OrderBy, OrderID);
+
     }
 
     private void sendFCMNotification(JSONObject  notificationJo) {
@@ -342,5 +348,33 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
         };
 
         Volley.newRequestQueue(this).add(jsonObjectRequest);
+    }
+
+    private void simpleSendNotification(String recipientToken,final String OrderID) {
+        ArrayList<String> tokens = new ArrayList<>();
+        tokens.add(recipientToken);
+        // ในกรณีที่ต้องการส่ง 2 เครื่อง เช่น ต้องการส่งเครื่อง A และเครื่องตัวเอง เปิดคอมเม้นด้านล่าง
+        //tokens.add(SharedPreferences.getToken(this));
+
+        String NOTIFICATION_TOPIC = "/topics/"+Constants.FCM_TOPIC;
+        String NOTIFICATION_TITLE = "New Order"+ OrderID;
+        String NOTIFICATION_MESSAGE = "Cougratulation...! you have new order.";
+        String NOTIFICATION_TYPE = "NewOrder";
+
+        CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TOPIC, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {
+            @Override
+            public void onChanged(Result modelPushToken) {
+            }
+        });
+    }
+
+    private void simpleGetTokenFromUID(String uid,final String OrderID) {
+        CallSendNotification.getTokenFirebase(uid).observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String token) {
+                simpleSendNotification(token,OrderID);
+            }
+        });
+
     }
 }

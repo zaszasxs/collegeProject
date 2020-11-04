@@ -2,6 +2,7 @@ package com.example.proe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
@@ -269,6 +270,10 @@ public class MainBuyerActivity extends AppCompatActivity {
 
     private void loadOrderBuyer() {
         orderBuyerArrayList = new ArrayList<>();
+        adapterOrderBuyer = new AdapterOrderBuyer(MainBuyerActivity.this,orderBuyerArrayList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(MainBuyerActivity.this);
+        orderRv.setLayoutManager(layoutManager);
+        orderRv.setAdapter(adapterOrderBuyer);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(firebaseAuth.getUid()).child("Order")
@@ -281,8 +286,7 @@ public class MainBuyerActivity extends AppCompatActivity {
                             orderBuyerArrayList.add(modelOrderBuyer);
                         }
 
-                        adapterOrderBuyer = new AdapterOrderBuyer(MainBuyerActivity.this,orderBuyerArrayList);
-                        orderRv.setAdapter(adapterOrderBuyer);
+                        adapterOrderBuyer.notifyDataSetChanged();
                     }
 
                     @Override
@@ -369,11 +373,15 @@ public class MainBuyerActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        SharedPreferences.clearData(getApplicationContext());
-                        progressDialog.setMessage("Logging in");
-                        progressDialog.show();
-                        firebaseAuth.signOut();
-                        checkUser();
+                        try {
+                            SharedPreferences.clearData(getApplicationContext());
+                            progressDialog.setMessage("Logging in");
+                            progressDialog.show();
+                            firebaseAuth.signOut();
+                            checkUser();
+                        }catch (Exception e){
+
+                        }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

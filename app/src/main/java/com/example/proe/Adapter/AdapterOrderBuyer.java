@@ -78,7 +78,7 @@ public class AdapterOrderBuyer extends RecyclerView.Adapter<AdapterOrderBuyer.Ho
 
         holder.txdate.setText(formatedDate);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.getRootView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, OrderDetailBuyerActivity.class);

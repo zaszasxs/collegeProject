@@ -45,9 +45,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnlogin;
     private TextView txforgot,txnoaccount,txregisbuyer;
   private static String TAG = LoginActivity.class.getSimpleName();
-  private EditText etemail, etpassword;
-  private Button btnlogin;
-  private TextView txforgot, txnoaccount;
 
   private FirebaseAuth firebaseAuth;
   private ProgressDialog progressDialog;
@@ -58,12 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
 
-        etemail = findViewById(R.id.etemail);
-        etpassword = findViewById(R.id.etpassword);
-        txforgot = findViewById(R.id.txforgot);
-        txnoaccount = findViewById(R.id.txnoaccount);
-        btnlogin = findViewById(R.id.btnlogin);
-        txregisbuyer = findViewById(R.id.txregisbuyer);
+
+    txregisbuyer = findViewById(R.id.txregisbuyer);
     etemail = findViewById(R.id.etemail);
     etpassword = findViewById(R.id.etpassword);
     txforgot = findViewById(R.id.txforgot);
@@ -108,8 +101,7 @@ public class LoginActivity extends AppCompatActivity {
       }
     });
 
-    FirebaseMessaging.getInstance().getToken()
-        .addOnCompleteListener(new OnCompleteListener<String>() {
+    FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
           @Override
           public void onComplete(@NonNull Task<String> task) {
             if (!task.isSuccessful()) {

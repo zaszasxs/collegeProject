@@ -17,9 +17,10 @@
     android:roundIcon="@drawable/buag"
     android:supportsRtl="true"
     android:theme="@style/AppTheme.NoActionBar">
-    <activity android:name=".OrderDetail"></activity>
+      <activity android:name=".OrderDetailActivity" />
     <activity android:name=".EditSellItemActivity" />
     <activity android:name=".addSellActivity" />
+    <activity android:name=".OrderDetailBuyerActivity"/>
     <activity
       android:name=".BuyerDetailActivity"
       android:windowSoftInputMode="stateHidden" /> <!-- hide keyboard to default -->
@@ -64,21 +65,5 @@
 
 
   </application>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
-
-        <service
-            android:name=".MyFirebaseMessage">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-
-        </service>
-
-    </application>
 
 </manifest>

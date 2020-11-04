@@ -1,23 +1,17 @@
 package com.example.proe;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -39,6 +33,9 @@ import com.example.proe.Adapter.AdapterCartitem;
 import com.example.proe.Adapter.AdapterSellitemUser;
 import com.example.proe.Model.ModelCartitem;
 import com.example.proe.Model.ModelSellItem;
+import com.example.proe.Model.Result;
+import com.example.proe.notification.connect.CallSendNotification;
+import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -502,7 +499,8 @@ public class BuyerDetailActivity extends AppCompatActivity {
     }
 
     private void LoadBuyerSellitem() {
-        initListOrder();
+
+        sellItemslist =new ArrayList<>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(BuyerUid).child("SellItem")
@@ -514,8 +512,10 @@ public class BuyerDetailActivity extends AppCompatActivity {
                             ModelSellItem modelSellItem = ds.getValue(ModelSellItem.class);
                             sellItemslist.add(modelSellItem);
                         }
-                        adapterSellItem.notifyDataSetChanged();
 
+                        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
+
+                        sellitemuserRv.setAdapter(adapterSellItem);
                     }
 
                     @Override
@@ -523,14 +523,6 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
                     }
                 });
-    }
-
-    private void initListOrder() {
-        sellItemslist = new ArrayList<>();
-        adapterSellItem = new AdapterSellitemUser(BuyerDetailActivity.this,sellItemslist);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        sellitemuserRv.setLayoutManager(layoutManager);
-        sellitemuserRv.setAdapter(adapterSellItem);
     }
 
     private void prepareNotificationMessage(String OrderID){
@@ -560,7 +552,8 @@ public class BuyerDetailActivity extends AppCompatActivity {
             Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
-        sendFCMNotification(notificationJo,OrderID);
+        simpleGetTokenFromUID(BuyerUid,OrderID)
+;        //sendFCMNotification(notificationJo,OrderID);
     }
 
     private void sendFCMNotification(JSONObject notificationJo, final String OrderID) {
@@ -598,6 +591,43 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
+
+    private void simpleSendNotification(String recipientToken,final String OrderID) {
+        ArrayList<String> tokens = new ArrayList<>();
+        tokens.add(recipientToken);
+        // ในกรณีที่ต้องการส่ง 2 เครื่อง เช่น ต้องการส่งเครื่อง A และเครื่องตัวเอง เปิดคอมเม้นด้านล่าง
+        //tokens.add(SharedPreferences.getToken(this));
+
+        String NOTIFICATION_TOPIC = "/topics/"+Constants.FCM_TOPIC;
+        String NOTIFICATION_TITLE = "New Order"+ OrderID;
+        String NOTIFICATION_MESSAGE = "Cougratulation...! you have new order.";
+        String NOTIFICATION_TYPE = "NewOrder";
+
+        CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TOPIC, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {
+            @Override
+            public void onChanged(Result modelPushToken) {
+                if (modelPushToken.getStatus()) {
+                    Intent intent = new Intent(BuyerDetailActivity.this, OrderDetailActivity.class);
+                    intent.putExtra("OrderTo",BuyerUid);
+                    intent.putExtra("OrderID", OrderID);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "send error", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void simpleGetTokenFromUID(String uid,final String OrderID) {
+        CallSendNotification.getTokenFirebase(uid).observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String token) {
+                simpleSendNotification(token,OrderID);
+            }
+        });
+
+    }
+
 
 
 }
