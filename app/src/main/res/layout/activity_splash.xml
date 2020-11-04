@@ -11,9 +11,19 @@
         android:id="@+id/icon"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:src="@drawable/buag"
+        android:src="@drawable/unnamed"
         android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Automatic Bottle Separator
+                            Project"
+        android:layout_below="@+id/icon"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
 
 
 </RelativeLayout>

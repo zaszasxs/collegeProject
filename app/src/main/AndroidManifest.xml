@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.proe"
     android:installLocation="auto">
 
@@ -17,16 +18,20 @@
         android:roundIcon="@drawable/buag"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".OrderDetail"></activity>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".OrderDetailBuyerActivity" />
+        <activity android:name=".ShopReviewActivity" />
+        <activity android:name=".WriteReviewActivity" />
         <activity android:name=".EditSellItemActivity" />
         <activity android:name=".addSellActivity" />
-        <activity
-            android:name=".BuyerDetailActivity"
+        <activity android:name=".addInfomationActivity" />
+        <activity android:name=".BuyerDetailActivity"
             android:windowSoftInputMode="stateHidden" /> <!-- hide keyboard to default -->
         <activity android:name=".EditBuyerActivity" />
         <activity android:name=".EditUserActivity" />
         <activity android:name=".MainUserActivity" />
         <activity android:name=".MainBuyerActivity" />
+        <activity android:name=".OrderDetailActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegisterBuyerActivity" />
         <activity android:name=".RegisterUserActivity" />
@@ -41,6 +46,17 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
+
+        <service
+            android:name=".MyFirebaseMessage">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+
+        </service>
+
     </application>
+
+
 
 </manifest>

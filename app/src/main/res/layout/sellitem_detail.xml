@@ -93,37 +93,14 @@
             android:text="Description"
             android:textColor="@color/black"/>
 
-        <RelativeLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:text="฿10 / Kg"
+            android:textSize="15dp"
+            android:id="@+id/txprice"
+            android:textColor="@color/black" />
 
-
-            <TextView
-                android:id="@+id/txquanlity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1 KG"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:layout_toEndOf="@+id/txquanlity"
-                android:layout_marginStart="5dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="฿ 10"
-                android:textSize="15dp"
-                android:layout_marginStart="20dp"
-                android:id="@+id/txprice"
-                android:textColor="@color/black"
-                android:layout_toEndOf="@+id/txquanlity"/>
-        </RelativeLayout>
 
     </LinearLayout>
 

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -13,6 +14,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -24,9 +26,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -39,6 +43,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -51,9 +56,11 @@ import java.util.Locale;
 public class EditUserActivity extends AppCompatActivity implements LocationListener {
 
     private ImageButton btnback, btngps;
-    private EditText etname, etphone, etcountry, etcity, etstate, etcompleteass;
+    private EditText etname, etphone, etcountry, etcity, etstate, etcompleteass, etmachanical;
     private Button btnupdata;
     private ImageView profileIv;
+    private SwitchCompat fcmswitch;
+    private TextView txnofistatus;
 
     private static final int LOCATION_REQUEST_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 200;
@@ -75,6 +82,14 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
     private Uri image_uri;
 
+    private SharedPreferences sp;
+    private SharedPreferences.Editor spEdit;
+
+    private boolean isChecked = false;
+
+    private static final String enableMessage = "Notification are enable";
+    private static final String disableMessage = "Notification are disable";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +99,8 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         btngps = findViewById(R.id.btngps);
         btnupdata = findViewById(R.id.btnupdate);
 
+        txnofistatus = findViewById(R.id.txnofistatus);
+
         profileIv = findViewById(R.id.profileIv);
 
         etname = findViewById(R.id.etname);
@@ -92,6 +109,19 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         etcity = findViewById(R.id.etcity);
         etstate = findViewById(R.id.etstate);
         etcompleteass = findViewById(R.id.etaddress);
+        etmachanical = findViewById(R.id.etmachanical);
+
+        fcmswitch = findViewById(R.id.fcmswitch);
+
+       sp = getSharedPreferences("SETTINGS_SP",MODE_PRIVATE);
+        isChecked = sp.getBoolean("FCM_ENABLED",false);
+        fcmswitch.setChecked(isChecked);
+        if (isChecked){
+            txnofistatus.setText(enableMessage);
+        }
+        else{
+            txnofistatus.setText(disableMessage);
+        }
 
         //ints permission array
         locationpermissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
@@ -139,9 +169,21 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
             }
         });
 
+        fcmswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    subscribeToTopic();
+                }
+                else{
+                    unsubscribeToTopic();
+                }
+            }
+        });
+
     }
 
-    private String Name, Phone, Country, State, City, CompleteAddress;
+    private String Name, Phone, Country, State, City, CompleteAddress, Machanical;
 
     private void inputData() {
         Name = etname.getText().toString().trim();
@@ -150,7 +192,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         State = etstate.getText().toString().trim();
         City = etcity.getText().toString().trim();
         CompleteAddress = etcompleteass.getText().toString().trim();
-
+        Machanical = etmachanical.getText().toString().trim();
 
         updateProfile();
     }
@@ -168,6 +210,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
             hashMap.put("Name", "" + Name);
             hashMap.put("Phone", "" + Phone);
             hashMap.put("CompleteAddress", "" + CompleteAddress);
+            hashMap.put("Mechanical","" + Machanical);
             hashMap.put("Country", "" + Country);
             hashMap.put("State", "" + State);
             hashMap.put("City", "" + City);
@@ -214,6 +257,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                                 hashMap.put("Name", "" + Name);
                                 hashMap.put("Phone", "" + Phone);
                                 hashMap.put("CompleteAddress", "" + CompleteAddress);
+                                hashMap.put("Mechanical", "" + Machanical);
                                 hashMap.put("Country", "" + Country);
                                 hashMap.put("State", "" + State);
                                 hashMap.put("City", "" + City);
@@ -272,6 +316,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                             String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
                             String Country = "" + dataSnapshot1.child("Country").getValue();
                             String City = "" + dataSnapshot1.child("City").getValue();
+                            String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
                             String State = "" + dataSnapshot1.child("State").getValue();
                             String Email = "" + dataSnapshot1.child("Email").getValue();
                             latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
@@ -289,6 +334,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                             etcity.setText(City);
                             etstate.setText(State);
                             etcompleteass.setText(CompleteAddress);
+                            etmachanical.setText(Machanical);
 
                             try {
                                 Picasso.get().load(profileImage).placeholder(R.drawable.ic_account_pirple_24dp).into(profileIv);
@@ -506,5 +552,51 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         }
             super.onActivityResult(requestCode, resultCode, data);
 
+    }
+
+    private void subscribeToTopic(){
+
+        FirebaseMessaging.getInstance().subscribeToTopic(Constants.FCM_TOPIC)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        spEdit = sp.edit();
+                        spEdit.putBoolean("FCM_ENABLED",true);
+                        spEdit.apply();
+
+                        Toast.makeText(EditUserActivity.this, ""+enableMessage, Toast.LENGTH_SHORT).show();
+                        txnofistatus.setText(enableMessage);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(EditUserActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void unsubscribeToTopic(){
+
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(Constants.FCM_TOPIC)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        spEdit = sp.edit();
+                        spEdit.putBoolean("FCM_ENABLED",false);
+                        spEdit.apply();
+
+                        Toast.makeText(EditUserActivity.this, ""+disableMessage, Toast.LENGTH_SHORT).show();
+                        txnofistatus.setText(disableMessage);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(EditUserActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

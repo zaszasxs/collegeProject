@@ -15,28 +15,31 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proe.BuyerDetailActivity;
-import com.example.proe.Filter.FilterBuyer;
 import com.example.proe.Model.ModelBuyerUI;
 import com.example.proe.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer> implements Filterable {
+public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>  {
 
     //view holder
 
     private Context context;
-    public ArrayList<ModelBuyerUI> buyerList,filterlist;
-    public FilterBuyer filter;
+    public ArrayList<ModelBuyerUI> buyerList;
+
 
     public AdapterBuyer(Context context, ArrayList<ModelBuyerUI> buyerList) {
         this.context = context;
         this.buyerList = buyerList;
-        this.filterlist = buyerList;
+
     }
 
-    @NonNull
     @Override
     public Holderbuyer onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //inflate layout
@@ -63,6 +66,8 @@ public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>
         String shopOpen = modelBuyerUI.getShopOpen();
         String shopName = modelBuyerUI.getShopName();
         String profileImage = modelBuyerUI.getProfileImage();
+        
+        LoadReview(modelBuyerUI, holder);
 
         //set data
         holder.shopnameIv.setText(shopName);
@@ -100,18 +105,45 @@ public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>
 
     }
 
+    private float ratingSum = 0;
+    private void LoadReview(ModelBuyerUI modelBuyerUI, final Holderbuyer holder) {
+
+        String BuyerUid = modelBuyerUI.getUid();
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(BuyerUid).child("Ratings")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        ratingSum = 0;
+                        for (DataSnapshot ds: dataSnapshot.getChildren()){
+                            float rating = Float.parseFloat(""+ds.child("ratings").getValue());
+                            ratingSum = ratingSum+rating;
+
+                        }
+
+                        long numberOfReview = dataSnapshot.getChildrenCount();
+                        float avgRating = ratingSum/numberOfReview;
+
+
+                        holder.ratingbar.setRating(avgRating);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
     @Override
     public int getItemCount() {
         return buyerList.size();   // record no. of record
     }
 
-    @Override
-    public Filter getFilter() {
-            if (filter == null){
-                filter = new FilterBuyer(this,filterlist);
-            }
-        return null;
-    }
+
 
     class Holderbuyer extends RecyclerView.ViewHolder{
 

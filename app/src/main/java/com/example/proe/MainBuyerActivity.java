@@ -19,7 +19,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proe.Adapter.AdapterInfoBuyer;
+import com.example.proe.Adapter.AdapterOrderBuyer;
 import com.example.proe.Adapter.AdapterSellItem;
+import com.example.proe.Model.ModelInfoBuyer;
+import com.example.proe.Model.ModelOrderBuyer;
 import com.example.proe.Model.ModelSellItem;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,12 +41,12 @@ import java.util.HashMap;
 
 public class MainBuyerActivity extends AppCompatActivity {
 
-    private TextView NameIv,ShopnameIv,EmailIv,tabboard,tabinfo,txfilter;
-    private ImageButton btnlogout,addbtn,filtersellbtn;
+    private TextView NameIv,ShopnameIv,EmailIv,tabboard,tabinfo,taborder,txfilter,txfilterorder;
+    private ImageButton btnlogout,addbtn,filtersellbtn,filterorderbtn,btnreview,postbtn;
     private EditText etsearch;
     private ImageView profileIv;
-    private RelativeLayout relativeboard,relativeinfo;
-    private RecyclerView sellitemRv;
+    private RelativeLayout relativeboard,relativeorder,relativeinfo;
+    private RecyclerView sellitemRv,orderRv,infoRv;
 
 
     private FirebaseAuth firebaseAuth;
@@ -50,6 +54,13 @@ public class MainBuyerActivity extends AppCompatActivity {
 
     private ArrayList<ModelSellItem> sellItemslist;
     private AdapterSellItem adapterSellItem;
+
+    private ArrayList<ModelOrderBuyer> orderBuyerArrayList;
+    private AdapterOrderBuyer adapterOrderBuyer;
+
+    private ArrayList<ModelInfoBuyer> infoBuyerArrayList;
+    private AdapterInfoBuyer adapterInfoBuyer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +72,27 @@ public class MainBuyerActivity extends AppCompatActivity {
         EmailIv = findViewById(R.id.emailIv);
         tabboard = findViewById(R.id.tabboard);
         tabinfo = findViewById(R.id.tabinfo);
+        taborder = findViewById(R.id.taborder);
         txfilter = findViewById(R.id.txfilter);
+        txfilterorder = findViewById(R.id.txfilterorder);
 
         etsearch = findViewById(R.id.etsearch);
 
-
         relativeboard = findViewById(R.id.relativeboard);
-        relativeinfo = findViewById(R.id.relativeinfo);
+        relativeinfo = findViewById(R.id.relativeorder);
+        relativeorder = findViewById(R.id.relativeorder);
 
         profileIv = findViewById(R.id.profileIv);
 
         btnlogout = findViewById(R.id.btnlogout);
         addbtn = findViewById(R.id.addbtn);
         filtersellbtn = findViewById(R.id.filtersellbtn);
-
+        filterorderbtn = findViewById(R.id.filterorderbtn);
+        btnreview = findViewById(R.id.btnreview);
+        postbtn = findViewById(R.id.postbtn);
         sellitemRv = findViewById(R.id.sellitemRv);
-
+        orderRv = findViewById(R.id.orderRv);
+        infoRv = findViewById(R.id.infoRv);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
@@ -84,6 +100,8 @@ public class MainBuyerActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
         loadSellitem();
+        loadOrderBuyer();
+        loadInfoBuyer();
 
         showDashboardUI();
 
@@ -123,6 +141,13 @@ public class MainBuyerActivity extends AppCompatActivity {
             }
         });
 
+        postbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainBuyerActivity.this,addInfomationActivity.class));
+            }
+        });
+
 
         profileIv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,12 +163,21 @@ public class MainBuyerActivity extends AppCompatActivity {
             }
         });
 
+        taborder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showOrderUI();
+            }
+        });
+
         tabinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showInfoUI();
+                showInformationUI();
             }
         });
+
+
 
         filtersellbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +200,95 @@ public class MainBuyerActivity extends AppCompatActivity {
             }
         });
 
+        filterorderbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String[] option ={"ALL","In Progress","Completed","Cancelled"};
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainBuyerActivity.this);
+                builder.setTitle("Filter Order: ")
+                        .setItems(option, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (which ==0){
+                                    txfilterorder.setText("Showing All Order");
+                                    adapterOrderBuyer.getFilter().filter("");
+                                }
+                                else{
+
+                                    String optionClick = option[which];
+                                    txfilterorder.setText("Showing " +optionClick+ " Order");
+                                    adapterOrderBuyer.getFilter().filter(optionClick);
+
+                                }
+                            }
+                        })
+                        .show();
+            }
+        });
+
+        btnreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainBuyerActivity.this,ShopReviewActivity.class);
+                intent.putExtra("BuyerUid", ""+ firebaseAuth.getUid());
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    private void loadInfoBuyer() {
+        infoBuyerArrayList = new ArrayList<>();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(firebaseAuth.getUid()).child("Information")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        infoBuyerArrayList.clear();
+
+                        for (DataSnapshot ds : dataSnapshot.getChildren()){
+                            ModelInfoBuyer modelInfoBuyer = ds.getValue(ModelInfoBuyer.class);
+                            infoBuyerArrayList.add(modelInfoBuyer);
+                        }
+
+                        adapterInfoBuyer = new AdapterInfoBuyer(MainBuyerActivity.this,infoBuyerArrayList);
+                        infoRv.setAdapter(adapterInfoBuyer);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
+
+    private void loadOrderBuyer() {
+        orderBuyerArrayList = new ArrayList<>();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(firebaseAuth.getUid()).child("Order")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        orderBuyerArrayList.clear();
+                        for (DataSnapshot ds : dataSnapshot.getChildren()){
+                            ModelOrderBuyer modelOrderBuyer = ds.getValue(ModelOrderBuyer.class);
+                            orderBuyerArrayList.add(modelOrderBuyer);
+                        }
+
+                        adapterOrderBuyer = new AdapterOrderBuyer(MainBuyerActivity.this,orderBuyerArrayList);
+                        orderRv.setAdapter(adapterOrderBuyer);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     private void loadFilterItem(final String select) {
@@ -232,6 +355,7 @@ public class MainBuyerActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
     private void MakeOffline() {
         progressDialog.setMessage("Logging Out...");
@@ -307,26 +431,51 @@ public class MainBuyerActivity extends AppCompatActivity {
                 });
     }
 
-    private void showInfoUI() {
-        relativeboard.setVisibility(View.GONE);
-        relativeinfo.setVisibility(View.VISIBLE);
 
-        tabboard.setTextColor(getResources().getColor(R.color.white));
-        tabboard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-
-        tabinfo.setTextColor(getResources().getColor(R.color.black));
-        tabinfo.setBackgroundResource(R.drawable.sharp_recmenu1);
-    }
 
     private void showDashboardUI() {
         relativeboard.setVisibility(View.VISIBLE);
         relativeinfo.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.GONE);
+
+        tabboard.setTextColor(getResources().getColor(R.color.black));
+        tabboard.setBackgroundResource(R.drawable.sharp_recmenu1);
 
         tabinfo.setTextColor(getResources().getColor(R.color.white));
         tabinfo.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-        tabboard.setTextColor(getResources().getColor(R.color.black));
-        tabboard.setBackgroundResource(R.drawable.sharp_recmenu1);
+        taborder.setTextColor(getResources().getColor(R.color.white));
+        taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
+    private void showOrderUI() {
+        relativeboard.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.VISIBLE);
+
+        taborder.setTextColor(getResources().getColor(R.color.black));
+        taborder.setBackgroundResource(R.drawable.sharp_recmenu1);
+
+        tabboard.setTextColor(getResources().getColor(R.color.white));
+        tabboard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        tabinfo.setTextColor(getResources().getColor(R.color.white));
+        tabinfo.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
+    private void showInformationUI() {
+        relativeboard.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.VISIBLE);
+        relativeorder.setVisibility(View.GONE);
+
+        tabinfo.setTextColor(getResources().getColor(R.color.black));
+        tabinfo.setBackgroundResource(R.drawable.sharp_recmenu1);
+
+        tabboard.setTextColor(getResources().getColor(R.color.white));
+        tabboard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        taborder.setTextColor(getResources().getColor(R.color.white));
+        taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
 
 }

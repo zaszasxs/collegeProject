@@ -1,18 +1,18 @@
 package com.example.proe.Model;
 
 public class ModelCartitem {
-    String id,Sid,name,price,cost,quantity;
+    private String id,Sid,name,price,cost,num;
 
     public ModelCartitem() {
     }
 
-    public ModelCartitem(String id, String sid, String name, String price, String cost, String quantity) {
+    public ModelCartitem(String id, String sid, String name, String price, String cost, String num) {
         this.id = id;
         this.Sid = sid;
         this.name = name;
         this.price = price;
         this.cost = cost;
-        this.quantity = quantity;
+        this.num = num;
     }
 
     public String getId() {
@@ -55,11 +55,11 @@ public class ModelCartitem {
         this.cost = cost;
     }
 
-    public String getQuantity() {
-        return quantity;
+    public String getNum() {
+        return num;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setNum(String num) {
+        this.num = num;
     }
 }

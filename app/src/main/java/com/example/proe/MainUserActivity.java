@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,6 +19,9 @@ import com.example.proe.Adapter.AdapterBuyer;
 import com.example.proe.Adapter.AdapterOrderUser;
 import com.example.proe.Model.ModelBuyerUI;
 import com.example.proe.Model.ModelOrderUser;
+import com.example.proe.Model.ModelPMG;
+
+import com.example.proe.Model.Mechanical;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,11 +38,11 @@ import java.util.HashMap;
 
 public class MainUserActivity extends AppCompatActivity {
 
-    private TextView NameIv,EmailIv,tabpmg,tabbuyer,tabinfo,cityIv;
+    private TextView NameIv,EmailIv,tabpmg,tabbuyer,taborder,tabinfo,txplastic,txmetal,txglass,txerror, txVolumnP, txVolumnM, txVolumnG;
     private EditText search_bar;
-    private ImageButton btnlogout,filterbuyerbtn;
+    private ImageButton btnlogout;
     private ImageView profileIv;
-    private RelativeLayout relativepmg,relativebuyer,relativeinfo;
+    private RelativeLayout relativepmg,relativebuyer, relativeorder,relativeinfo;
     private RecyclerView buyerRv,orderRv;
 
     private FirebaseAuth firebaseAuth;
@@ -53,7 +54,13 @@ public class MainUserActivity extends AppCompatActivity {
     private ArrayList<ModelOrderUser> OrderUsersliat;
     private AdapterOrderUser adapterOrderUser;
 
-    private String buyerUid;
+    private String BuyerUid;
+
+    private ArrayList<ModelPMG> modelPMGArrayList;
+
+    private DatabaseReference storageBinReference;
+
+
 
 
     @Override
@@ -65,50 +72,36 @@ public class MainUserActivity extends AppCompatActivity {
         EmailIv = findViewById(R.id.EmailIv);
         tabpmg = findViewById(R.id.tabpmg);
         tabbuyer = findViewById(R.id.tabbuyer);
+        taborder = findViewById(R.id.taborder);
         tabinfo = findViewById(R.id.tabinfo);
         relativepmg = findViewById(R.id.relativepmg);
-        relativeinfo = findViewById(R.id.relativeinfo);
+        relativeorder = findViewById(R.id.relativeorder);
         relativebuyer = findViewById(R.id.relativebuyer);
+        relativeinfo = findViewById(R.id.relativeinfo);
         buyerRv = findViewById(R.id.buyerRv);
         orderRv = findViewById(R.id.orderRv);
+        txplastic = findViewById(R.id.txplastic);
+        txmetal = findViewById(R.id.txmetal);
+        txglass = findViewById(R.id.txglass);
+        txerror = findViewById(R.id.txerror);
+        txVolumnP = findViewById(R.id.txVolumnP);
+        txVolumnM = findViewById(R.id.txVolumnM);
+        txVolumnG = findViewById(R.id.txVolumnG);
 
         profileIv = findViewById(R.id.profileIv);
         search_bar =findViewById(R.id.search_bar);
 
 
-
         btnlogout = findViewById(R.id.btnlogout);
-        filterbuyerbtn = findViewById(R.id.filterbuyerbtn);
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
 
+
         showPMGUI();
 
-        search_bar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                try {
-
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +109,7 @@ public class MainUserActivity extends AppCompatActivity {
                 MakeOffline();
             }
         });
+
 
         profileIv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +129,13 @@ public class MainUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showBuyerUI();
+            }
+        });
+
+        taborder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showOrderUI();
             }
         });
 
@@ -204,7 +205,6 @@ public class MainUserActivity extends AppCompatActivity {
                             NameIv.setText(Name);
                             EmailIv.setText(Email);
 
-
                             try {
                                 Picasso.get().load(profileImage).placeholder(R.drawable.ic_account_pirple_24dp).into(profileIv);
                             } catch (Exception e) {
@@ -214,6 +214,7 @@ public class MainUserActivity extends AppCompatActivity {
                             //load only buyer in these user city
                             loadBuyer(City);
                             loadOrder();
+                            LoadMyMechanical();
 
                         }
                     }
@@ -224,6 +225,88 @@ public class MainUserActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void LoadMyMechanical() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
+        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Mechanical")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String pathMechanical = dataSnapshot.getValue().toString();
+                        initReferenceMechanical(pathMechanical);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
+    private void initReferenceMechanical(String pathMechanical) {
+        DatabaseReference storageBinReference = FirebaseDatabase.getInstance().getReference("Mechanical");
+        storageBinReference.child(pathMechanical).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                Mechanical modelMechan = dataSnapshot.getValue(Mechanical.class);
+
+                String ulplastic = "";
+                String ulmetal = "";
+                String ulglass = "";
+
+                txplastic.setText(" : "+modelMechan.getPlastic() + " Kg.");
+                txmetal.setText(" : "+ modelMechan.getMetal() +" Kg.");
+                txglass.setText(" : "+ modelMechan.getGlass() + " Kg.");
+
+                String err = modelMechan.getError();
+
+                if (err.length() > 1){
+                    txerror.setVisibility(View.VISIBLE);
+                    txerror.setText(" : "+ modelMechan.getError());
+
+                } else {
+                   txerror.setVisibility(View.INVISIBLE);
+
+                }
+
+                if (modelMechan.getUlglass() >= 2 && modelMechan.getUlglass() <= 38 ) ulglass+=modelMechan.getUlglass();
+
+                if (modelMechan.getUlmetal() >= 2 && modelMechan.getUlmetal() <= 38 ) ulmetal+=modelMechan.getUlmetal();
+
+                if (modelMechan.getUlplastic() >= 2 && modelMechan.getUlplastic() <= 38 ) ulplastic+=modelMechan.getUlplastic();
+
+                txVolumnP.setVisibility(View.VISIBLE);
+                txVolumnP.setText(ulplastic);
+
+                txVolumnM.setVisibility(View.VISIBLE);
+                txVolumnM.setText(ulmetal);
+
+                txVolumnG.setVisibility(View.VISIBLE);
+                txVolumnG.setText(ulglass);
+
+                if (ulplastic.length() >  0) findViewById(R.id.fullImg).setVisibility(View.VISIBLE);
+                else findViewById(R.id.fullImg).setVisibility(View.GONE);
+
+                if (ulmetal.length() >  0) findViewById(R.id.fullImg).setVisibility(View.VISIBLE);
+                else findViewById(R.id.fullImg).setVisibility(View.GONE);
+
+                if (ulglass.length() >  0) findViewById(R.id.fullImg).setVisibility(View.VISIBLE);
+                else findViewById(R.id.fullImg).setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
 
     private void loadOrder() {
         OrderUsersliat = new ArrayList<>();
@@ -271,7 +354,6 @@ public class MainUserActivity extends AppCompatActivity {
     private void loadBuyer(final String city) {
         modelBuyerUIS = new ArrayList<>();
 
-
         DatabaseReference databaseReference =FirebaseDatabase.getInstance().getReference("User");
         databaseReference.orderByChild("AccountType").equalTo("Buyer")
                 .addValueEventListener(new ValueEventListener() {
@@ -304,8 +386,9 @@ public class MainUserActivity extends AppCompatActivity {
 
     private void showPMGUI() {
         relativebuyer.setVisibility(View.GONE);
-        relativeinfo.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.GONE);
         relativepmg.setVisibility(View.VISIBLE);
+        relativeinfo.setVisibility(View.GONE);
 
         tabpmg.setTextColor(getResources().getColor(R.color.black));
         tabpmg.setBackgroundResource(R.drawable.sharp_recmenu1);
@@ -313,14 +396,18 @@ public class MainUserActivity extends AppCompatActivity {
         tabbuyer.setTextColor(getResources().getColor(R.color.white));
         tabbuyer.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
+        taborder.setTextColor(getResources().getColor(R.color.white));
+        taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
         tabinfo.setTextColor(getResources().getColor(R.color.white));
         tabinfo.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
 
     private void showBuyerUI() {
         relativebuyer.setVisibility(View.VISIBLE);
-        relativeinfo.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.GONE);
         relativepmg.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.GONE);
 
         tabpmg.setTextColor(getResources().getColor(R.color.white));
         tabpmg.setBackgroundColor(getResources().getColor(android.R.color.transparent));
@@ -328,16 +415,39 @@ public class MainUserActivity extends AppCompatActivity {
         tabbuyer.setTextColor(getResources().getColor(R.color.black));
         tabbuyer.setBackgroundResource(R.drawable.sharp_recmenu1);
 
+        taborder.setTextColor(getResources().getColor(R.color.white));
+        taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
         tabinfo.setTextColor(getResources().getColor(R.color.white));
         tabinfo.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
 
     }
 
+    private void showOrderUI() {
+        relativebuyer.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.VISIBLE);
+        relativepmg.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.GONE);
+
+        tabpmg.setTextColor(getResources().getColor(R.color.white));
+        tabpmg.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        tabbuyer.setTextColor(getResources().getColor(R.color.white));
+        tabbuyer.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+
+        taborder.setTextColor(getResources().getColor(R.color.black));
+        taborder.setBackgroundResource(R.drawable.sharp_recmenu1);
+
+        tabinfo.setTextColor(getResources().getColor(R.color.white));
+        tabinfo.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
     private void showInfoUI() {
         relativebuyer.setVisibility(View.GONE);
-        relativeinfo.setVisibility(View.VISIBLE);
+        relativeorder.setVisibility(View.GONE);
         relativepmg.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.VISIBLE);
 
         tabpmg.setTextColor(getResources().getColor(R.color.white));
         tabpmg.setBackgroundColor(getResources().getColor(android.R.color.transparent));
@@ -347,6 +457,11 @@ public class MainUserActivity extends AppCompatActivity {
 
         tabinfo.setTextColor(getResources().getColor(R.color.black));
         tabinfo.setBackgroundResource(R.drawable.sharp_recmenu1);
+
+        taborder.setTextColor(getResources().getColor(R.color.white));
+        taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
+
+
 
 }

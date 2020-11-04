@@ -31,7 +31,7 @@ public class EditSellItemActivity extends AppCompatActivity {
 
     private String SellitemID;
     private TextView txcategory;
-    private EditText etdescription,etquanlity,etprice,ettitle;
+    private EditText etdescription,etprice,ettitle;
     private Button btnupdate;
     private ImageView imagesell;
     private ImageButton btnback;
@@ -47,7 +47,6 @@ public class EditSellItemActivity extends AppCompatActivity {
         SellitemID = getIntent().getStringExtra("SellitemID");
 
         txcategory = findViewById(R.id.txcategory);
-        etquanlity = findViewById(R.id.etquanlity);
         imagesell = findViewById(R.id.imagesell);
         ettitle = findViewById(R.id.ettitle);
         etdescription = findViewById(R.id.etdescription);
@@ -85,7 +84,7 @@ public class EditSellItemActivity extends AppCompatActivity {
 
     }
 
-    private String Itemtitle,Itemdescription,Itemquanlity,Itemprice,Itemcategory;
+    private String Itemtitle,Itemdescription,Itemprice,Itemcategory;
 
     private void loadSellitem() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
@@ -98,14 +97,12 @@ public class EditSellItemActivity extends AppCompatActivity {
                         String imagesell =""+dataSnapshot.child("imagesell").getValue();
                         String Itemcategory =""+dataSnapshot.child("Itemcategory").getValue();
                         String Itemdescription =""+dataSnapshot.child("Itemdescription").getValue();
-                        String Itemquanlity =""+dataSnapshot.child("Itemquanlity").getValue();
                         String Itemprice =""+dataSnapshot.child("Itemprice").getValue();
                         String timestamp =""+dataSnapshot.child("timestamp").getValue();
                         String Uid = ""+dataSnapshot.child("Uid").getValue();
 
                         ettitle.setText(Itemtitle);
                         etdescription.setText(Itemdescription);
-                        etquanlity.setText(Itemquanlity);
                         etprice.setText(Itemprice);
                     }
 
@@ -154,17 +151,13 @@ public class EditSellItemActivity extends AppCompatActivity {
         Itemtitle = ettitle.getText().toString().trim();
         Itemcategory = txcategory.getText().toString().trim();
         Itemdescription = etdescription.getText().toString().trim();
-        Itemquanlity = etquanlity.getText().toString().trim();
         Itemprice = etprice.getText().toString().trim();
 
         if (TextUtils.isEmpty(Itemtitle)){
             Toast.makeText(this, "Title is required", Toast.LENGTH_SHORT).show();
             return;    //don't proceed further
         }
-        if (TextUtils.isEmpty(Itemquanlity)){
-            Toast.makeText(this, "Quantity is required", Toast.LENGTH_SHORT).show();
-            return;    //don't proceed further
-        }
+
         if (TextUtils.isEmpty(Itemcategory)){
             Toast.makeText(this, "category is required", Toast.LENGTH_SHORT).show();
             return;    //don't proceed further
@@ -186,7 +179,6 @@ public class EditSellItemActivity extends AppCompatActivity {
         hashMap.put("Itemtitle",""+Itemtitle);
         hashMap.put("Itemcategory",""+Itemcategory);
         hashMap.put("Itemdescription",""+Itemdescription);
-        hashMap.put("Itemquanlity",""+Itemquanlity);
         hashMap.put("Itemprice",""+Itemprice);
         hashMap.put("Uid",""+firebaseAuth.getUid());
 

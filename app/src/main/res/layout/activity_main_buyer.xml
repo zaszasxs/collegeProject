@@ -22,6 +22,14 @@
             android:src="@drawable/ic_logoutpirple_24dp" />
 
         <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnreview"
+            android:layout_toStartOf="@id/postbtn"
+            android:src="@drawable/ic_star_pirple_24dp"
+            android:background="@null"/>
+
+        <ImageButton
             android:id="@+id/addbtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -30,6 +38,17 @@
             android:background="@null"
             android:onClick="btn_adddialog"
             android:src="@drawable/ic_shopping_cart_24dp"
+            tools:ignore="OnClick" />
+
+        <ImageButton
+            android:id="@+id/postbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/addbtn"
+            android:background="@null"
+            android:onClick="btn_adddialog"
+            android:src="@drawable/ic_edit_pirple_24dp"
             tools:ignore="OnClick" />
 
         <TextView
@@ -83,78 +102,153 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Dashboard"
+                android:text="Sellitem"
                 android:textColor="@color/black"
                 android:background="@drawable/sharp_recmenu1"/>
+
+            <TextView
+                android:id="@+id/taborder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Order"
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/tabinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Info"
+                android:text="Information"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeboard"
-        android:layout_below="@+id/toolbar"
-        tools:ignore="NotSibling">
-        <EditText
-            android:id="@+id/etsearch"
+        android:id="@+id/scrollview"
+        android:layout_below="@+id/toolbar">
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/relativeboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            tools:ignore="NotSibling">
+
+            <EditText
+                android:id="@+id/etsearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toStartOf="@+id/filtersellbtn"
+                android:background="@drawable/sharp_recoffline"
+                android:drawableStart="@drawable/ic_search_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="Search"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/filtersellbtn"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_widgets_black_24dp" />
+
+            <TextView
+                android:id="@+id/txfilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etsearch"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="Showing All"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sellitemRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txfilterorder"
+                android:layout_marginTop="80dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_sellitem" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeorder"
+        android:layout_below="@+id/toolbar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txfilterorder"
             android:layout_margin="5dp"
-            android:background="@drawable/sharp_recoffline"
-            android:layout_toStartOf="@+id/filtersellbtn"
-            android:drawableStart="@drawable/ic_search_black_24dp"
-            android:hint="Search"
-            android:drawablePadding="10dp"
-            android:padding="10dp"/>
+            android:layout_toStartOf="@+id/filterorderbtn"
+            android:background="@drawable/sharp_rect2"
+            android:padding="10dp"
+            android:text="Showing All Order"/>
+
         <ImageButton
-            android:id="@+id/filtersellbtn"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:id="@+id/filterorderbtn"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:background="@null"
             android:scaleType="fitXY"
             android:src="@drawable/ic_widgets_black_24dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txfilter"
-            android:layout_below="@+id/etsearch"
-            android:text="Showing All"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderRv"
             android:layout_width="match_parent"
-            android:layout_height="325dp"
-            android:layout_below="@+id/txfilter"
-            android:id="@+id/sellitemRv"
-            tools:listitem="@layout/row_sellitem"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
-
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txfilterorder"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            tools:listitem="@layout/row_order_buyer" />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativeinfo"
         android:layout_below="@+id/toolbar">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/infoRv"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            tools:listitem="@layout/row_info_buyer"/>
+
+
+
+
 
     </RelativeLayout>
+
 
 </RelativeLayout>

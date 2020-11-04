@@ -19,13 +19,17 @@
             android:background="@null"
             android:src="@drawable/ic_navigate_before_black_24dp" />
 
-        <ImageButton
-            android:id="@+id/btngps"
-            android:layout_width="30dp"
+        <Button
+            android:id="@+id/btnupdate"
+            android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
-            android:background="@null"
-            android:src="@drawable/ic_gps_fixed_black_24dp" />
+            android:width="120dp"
+            android:background="@drawable/sharp_rect1"
+            android:text="UPDATE"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -135,6 +139,14 @@
             android:inputType="textPostalAddress"
             android:padding="10dp" />
 
+        <ImageButton
+            android:id="@+id/btngps"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:src="@drawable/ic_gps_pirple_24dp" />
+
     </LinearLayout>
 
     <EditText
@@ -151,16 +163,54 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp" />
 
-    <Button
-        android:id="@+id/btnupdate"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etmachanical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etaddress"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/sharp_cir11"
-        android:width="120dp"
-        android:layout_marginTop="10dp"
-        android:text="UPDATE"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/sharp_rect2"
+        android:drawableStart="@drawable/ic_power_input_yellow_24dp"
+        android:drawablePadding="5dp"
+        android:hint="Machanical Name"
+        android:inputType="textPostalAddress|textMultiLine"
+        android:padding="10dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etmachanical">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fcmswitch"
+            android:background="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="Push Notification"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txnofistatus"
+            android:background="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/fcmswitch"
+            android:text="Notification are disabled"
+            android:textColor="@color/gray"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray00"
+            android:layout_below="@+id/txnofistatus"/>
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

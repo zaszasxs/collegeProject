@@ -81,6 +81,8 @@
             android:id="@+id/etdescription"
             android:inputType="textCapSentences|textMultiLine"/>
 
+
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,22 +90,9 @@
             android:padding="10dp"
             android:layout_below="@+id/etdescription"
             android:background="@drawable/sharp_rect2"
-            android:drawableStart="@drawable/ic_select_all_black_24dp"
-            android:drawablePadding="5dp"
-            android:hint="Quanlity e.g kg,g,Ltr"
-            android:id="@+id/etquanlity"
-            android:inputType="textCapWords"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
-            android:padding="10dp"
-            android:layout_below="@+id/etquanlity"
-            android:background="@drawable/sharp_rect2"
             android:drawableStart="@drawable/ic_attach_money_black_24dp"
             android:drawablePadding="5dp"
-            android:hint="price"
+            android:hint="price / Kg"
             android:id="@+id/etprice"
             android:inputType="textCapWords"/>
 

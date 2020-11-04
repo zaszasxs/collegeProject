@@ -22,7 +22,7 @@ import p32929.androideasysql_library.EasyDB;
 public class AdapterCartitem extends RecyclerView.Adapter<AdapterCartitem.HolderCartitem>{
 
     private Context context;
-    private ArrayList <ModelCartitem> cartitems;
+    public ArrayList <ModelCartitem> cartitems;
 
     public AdapterCartitem(Context context, ArrayList<ModelCartitem> cartitems) {
         this.context = context;
@@ -39,17 +39,18 @@ public class AdapterCartitem extends RecyclerView.Adapter<AdapterCartitem.Holder
     @Override
     public void onBindViewHolder(@NonNull HolderCartitem holder, final int position) {
         ModelCartitem modelCartitem = cartitems.get(position);
+
         final String id = modelCartitem.getId();
         String getSid = modelCartitem.getSid();
         String title = modelCartitem.getName();
         final String cost = modelCartitem.getCost();
         String price = modelCartitem.getPrice();
-        String quantity = modelCartitem.getQuantity();
+        String num = modelCartitem.getNum();
 
         holder.txtitle.setText(""+title);
         holder.txprice.setText("฿"+cost);
-        holder.txpriceeach.setText("฿"+price);
-        holder.txnum.setText("/"+quantity+"");
+        holder.txpriceeach.setText("฿"+ price );
+        holder.txnum.setText("["+num+"]");
 
         holder.txremove.setOnClickListener(new View.OnClickListener() {
             @Override

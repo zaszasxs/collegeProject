@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proe.Model.ModelOrderUser;
-import com.example.proe.OrderDetail;
+import com.example.proe.OrderDetailActivity;
 import com.example.proe.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,12 +26,11 @@ import java.util.Calendar;
 public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.HolderOrderUser> {
 
     private Context context;
-    private ArrayList<ModelOrderUser> modelOrderUsers;
+    public ArrayList<ModelOrderUser> modelOrderUsers;
 
     public AdapterOrderUser(Context context,ArrayList<ModelOrderUser> modelOrderUsers){
         this.context = context;
         this.modelOrderUsers = modelOrderUsers;
-
     }
 
     @NonNull
@@ -57,13 +56,13 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
         holder.txstatus.setText(OrderStatus);
         holder.txorder.setText("OrderID: "+OrderID);
 
-        if (modelOrderUser.equals("In Progress")){
+        if (OrderStatus.equals("In Progress")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.colorPrimary));
         }
-        else if (modelOrderUser.equals("Completed")){
+        else if (OrderStatus.equals("Completed")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.green));
         }
-        else if (modelOrderUser.equals("Cancelled")){
+        else if (OrderStatus.equals("Cancelled")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.red));
         }
 
@@ -76,7 +75,7 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, OrderDetail.class);
+                Intent intent = new Intent(context, OrderDetailActivity.class);
                 intent.putExtra("OrderTo",OrderTo);
                 intent.putExtra("OrderID",OrderID);
                 context.startActivity(intent);
@@ -114,7 +113,7 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
             super(itemView);
 
             txorder = itemView.findViewById(R.id.txorder);
-            txdata = itemView.findViewById(R.id.txdata);
+            txdata = itemView.findViewById(R.id.txdate);
             txstatus = itemView.findViewById(R.id.txstatus);
             txamount = itemView.findViewById(R.id.txamount);
             shopnameIv =  itemView.findViewById(R.id.shopnameIv);

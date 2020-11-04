@@ -1,22 +1,16 @@
 package com.example.proe;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -25,18 +19,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.proe.Adapter.AdapterCartitem;
-import com.example.proe.Adapter.AdapterSellItem;
 import com.example.proe.Adapter.AdapterSellitemUser;
 import com.example.proe.Model.ModelCartitem;
 import com.example.proe.Model.ModelSellItem;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,8 +42,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import p32929.androideasysql_library.Column;
 import p32929.androideasysql_library.EasyDB;
@@ -53,13 +54,14 @@ import p32929.androideasysql_library.EasyDB;
 public class BuyerDetailActivity extends AppCompatActivity {
 
     private ImageView probuyerIv;
-    private TextView ShopnameIv, PhoneIv, EmailIv, opencloseIv, addressIv,txfilter,txcartcount;
-    private ImageButton callbtn,backbtn,mapbtn,filtersellbtn,cartbtn;
+    private TextView ShopnameIv, PhoneIv, EmailIv, opencloseIv, addressIv,txfilter,txcartcount,txprofile;
+    private ImageButton callbtn,backbtn,mapbtn,filtersellbtn,cartbtn,btnreview;
     private EditText etsearch;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private String BuyerUid;
+    private RatingBar ratingbar;
 
     private RecyclerView sellitemuserRv;
     private ArrayList<ModelSellItem> sellItemslist;
@@ -70,7 +72,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
 
     private String mylatitude, mylongitude , myPhone;
-    private String shopName, shopPhone, shopEmail, shopAddress, shoplatitude, shoplongitude;
+    private String shopName, shopPhone, shopEmail, shopAddress, shoplatitude, shoplongitude , shopdescription;
 
     private EasyDB easyDB;
 
@@ -88,8 +90,10 @@ public class BuyerDetailActivity extends AppCompatActivity {
         addressIv = findViewById(R.id.addressIv);
         txfilter = findViewById(R.id.txfilter);
         txcartcount = findViewById(R.id.txcartcount);
+        txprofile = findViewById(R.id.txprofile);
 
         etsearch = findViewById(R.id.etsearch);
+        ratingbar = findViewById(R.id.ratingbar);
 
         sellitemuserRv = findViewById(R.id.sellitemuserRv);
 
@@ -98,6 +102,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         mapbtn = findViewById(R.id.mapbtn);
         cartbtn = findViewById(R.id.cartbtn);
         filtersellbtn = findViewById(R.id.filtersellbtn);
+        btnreview = findViewById(R.id.btnreview);
 
         BuyerUid = getIntent().getStringExtra("BuyerUid");
 
@@ -109,6 +114,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         LoadMyInfo();
         LoadBuyerInfo();
         LoadBuyerSellitem();
+        LoadReview();
 
 
         easyDB = EasyDB.init(this,"ITEM_DB")
@@ -197,8 +203,46 @@ public class BuyerDetailActivity extends AppCompatActivity {
             }
         });
 
+        btnreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuyerDetailActivity.this,ShopReviewActivity.class);
+                intent.putExtra("BuyerUid",BuyerUid);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    private float ratingSum = 0;
+    private void LoadReview() {
 
 
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(BuyerUid).child("Ratings")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        ratingSum = 0;
+                        for (DataSnapshot ds: dataSnapshot.getChildren()){
+                            float rating = Float.parseFloat(""+ds.child("ratings").getValue());
+                            ratingSum = ratingSum+rating;
+
+                        }
+
+                        long numberOfReview = dataSnapshot.getChildrenCount();
+                        float avgRating = ratingSum/numberOfReview;
+
+
+                        ratingbar.setRating(avgRating);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 
     private void deletecartData() {
@@ -253,7 +297,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
             String name = res.getString(3);
             String price = res.getString(4);
             String cost = res.getString(5);
-            String quantity = res.getString(6);
+            String num = res.getString(6);
 
             totalprice = totalprice + Double.parseDouble(cost);
 
@@ -263,7 +307,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
                     ""+name,
                     ""+price,
                     ""+cost,
-                    ""+quantity
+                    ""+num
             );
 
             cartitems.add(modelCartitem);
@@ -332,29 +376,30 @@ public class BuyerDetailActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         for (int i=0 ; i< cartitems.size() ; i++){
+
                             String Sid = cartitems.get(i).getSid();
                             String id = cartitems.get(i).getId();
                             String cost = cartitems.get(i).getCost();
                             String name = cartitems.get(i).getName();
                             String price = cartitems.get(i).getPrice();
-                            String quantity = cartitems.get(i).getQuantity();
+                            String num = cartitems.get(i).getNum();
 
                             HashMap<String, String> hashMap1 = new HashMap<>();
                             hashMap1.put("Sid",Sid);
                             hashMap1.put("name",name);
                             hashMap1.put("cost",cost);
                             hashMap1.put("price",price);
-                            hashMap1.put("quantity",quantity);
+                            hashMap1.put("num",num);
 
                             reference.child(timestamp).child("Items").child(Sid).setValue(hashMap);
                         }
+
                         progressDialog.dismiss();
                         Toast.makeText(BuyerDetailActivity.this, "Order Placed Successfully...", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(BuyerDetailActivity.this, OrderDetail.class);
-                        intent.putExtra("OrderTo",BuyerUid);
-                        intent.putExtra("OrderID",timestamp);
-                        startActivity(intent);
+                        prepareNotificationMessage(timestamp);
+
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -380,7 +425,6 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
     }
 
-
     private void LoadBuyerInfo() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(BuyerUid).addValueEventListener(new ValueEventListener() {
@@ -391,16 +435,17 @@ public class BuyerDetailActivity extends AppCompatActivity {
                 shopAddress = ""+dataSnapshot.child("CompleteAddress").getValue();
                 shopEmail = ""+dataSnapshot.child("Email").getValue();
                 shopPhone = ""+dataSnapshot.child("Phone").getValue();
+                shopdescription = ""+dataSnapshot.child("Description").getValue();
                 shoplatitude = ""+dataSnapshot.child("Latitude").getValue();
                 shoplongitude = ""+dataSnapshot.child("Longitude").getValue();
                 String profileImage = ""+dataSnapshot.child("profileImage").getValue();
                 String shopOpen = ""+dataSnapshot.child("ShopOpen").getValue();
 
-
                 ShopnameIv.setText(shopName);
                 addressIv.setText(shopAddress);
                 EmailIv.setText(shopEmail);
                 PhoneIv.setText(shopPhone);
+                txprofile.setText(shopdescription);
 
                 if (shopOpen.equals("true")){
                     opencloseIv.setText("Open");
@@ -474,6 +519,72 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void prepareNotificationMessage(String OrderID){
+        //when user place, send notification to seller
+
+        //preparex data for notification
+        String NOTIFICATION_TOPIC = "/topics/"+Constants.FCM_TOPIC;
+        String NOTIFICATION_TITLE = "New Order"+ OrderID;
+        String NOTIFICATION_MESSAGE = "Cougratulation...! you have new order.";
+        String NOTIFICATION_TYPE = "NewOrder";
+
+        JSONObject notificationJo = new JSONObject();
+        JSONObject notificationBodyJo = new JSONObject();
+
+        try {
+            notificationBodyJo.put("notificationType",NOTIFICATION_TYPE);
+            notificationBodyJo.put("Uid",firebaseAuth.getUid());
+            notificationBodyJo.put("BuyerUid",BuyerUid);
+            notificationBodyJo.put("OrderID",OrderID);
+            notificationBodyJo.put("notificationTitle",NOTIFICATION_TITLE);
+            notificationBodyJo.put("notificationMessage",NOTIFICATION_MESSAGE);
+            //where to send
+            notificationJo.put("to",NOTIFICATION_TOPIC);
+            notificationJo.put("data",notificationBodyJo);
+        }
+        catch (Exception e){
+            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        sendFCMNotification(notificationJo,OrderID);
+    }
+
+    private void sendFCMNotification(JSONObject notificationJo, final String OrderID) {
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("https://fcm.googleapis.com/fcm/send", notificationJo, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //after sending fcm start order detail activity
+                Intent intent = new Intent(BuyerDetailActivity.this, OrderDetailActivity.class);
+                intent.putExtra("OrderTo",BuyerUid);
+                intent.putExtra("OrderID", OrderID);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //if failed sending fcm, still start order detail activity
+                Intent intent = new Intent(BuyerDetailActivity.this, OrderDetailActivity.class);
+                intent.putExtra("OrderTo",BuyerUid);
+                intent.putExtra("OrderID", OrderID);
+                startActivity(intent);
+
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Content-Type","application/json");
+                headers.put("Authorization","key = "+ Constants.FCM_KEY);
+
+                return headers;
+            }
+        };
+
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
 
 

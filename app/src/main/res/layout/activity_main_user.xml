@@ -21,12 +21,14 @@
             android:background="@null"
             android:src="@drawable/ic_logoutyellow_24dp" />
 
+
+
         <TextView
             android:id="@+id/NameIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/profileIv"
-            android:text="Name"
+            android:text="Varintorn Homthong"
             android:textColor="@color/white"
             android:textStyle="bold" />
         <TextView
@@ -35,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/NameIv"
             android:layout_toEndOf="@id/profileIv"
-            android:text="E-mail"
+            android:text="varintorn.homthong@gmail.com"
             android:textColor="@color/white" />
 
         <com.blogspot.atifsoftwares.circularimageview.CircularImageView
@@ -62,8 +64,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="PMG"
-                android:textColor="@color/black"
-                android:background="@drawable/sharp_recmenu1"/>
+                android:background="@drawable/sharp_recmenu1"
+                android:textColor="@color/black" />
             <TextView
                 android:id="@+id/tabbuyer"
                 android:layout_width="wrap_content"
@@ -74,59 +76,179 @@
                 android:textColor="@color/white"
                 />
             <TextView
+                android:id="@+id/taborder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Order"
+                android:textColor="@color/white"/>
+            <TextView
                 android:id="@+id/tabinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Info"
+                android:text="Information"
+
                 android:textColor="@color/white"/>
 
 
         </LinearLayout>
 
     </RelativeLayout>
-    
+
     <RelativeLayout
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativepmg"
         android:layout_below="@+id/toolbar">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txmechanic"
+            android:text="Mechanical Name : 1"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"/>
+
+
+        <LinearLayout
+            android:id="@+id/liPMG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullImg"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txplastic"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp"
+                android:drawableStart="@drawable/ic_water_mini"
+                android:text=" : 2.27 Kg"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txmetal"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:drawableStart="@drawable/ic_soda_mini"
+                android:text=" : 7.8 Kg"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txglass"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_below="@+id/metalid"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:drawableStart="@drawable/ic_beer_bottle_mini"
+                android:text=" : 0.75 Kg"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txerror"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/liPMG"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:drawableStart="@drawable/ic_error_outline_black_24dp"
+            android:text=" not error "
+            android:textColor="@color/green"
+            android:textSize="30dp" />
+
+        <LinearLayout
+            android:id="@+id/liulPMG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullImg"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="22dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txVolumnP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fullImg"
+                android:layout_alignStart="@+id/fullImg"
+                android:layout_alignEnd="@+id/fullImg"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="0dp"
+                android:text="empty"
+                android:textColor="@color/green"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txVolumnM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fullImg"
+                android:layout_alignStart="@+id/fullImg"
+                android:layout_alignEnd="@+id/fullImg"
+                android:layout_marginStart="0dp"
+                android:text=" FULL(30) "
+                android:textColor="@color/red"
+                android:background="@drawable/sharp_recoffline"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txVolumnG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fullImg"
+                android:layout_alignStart="@+id/fullImg"
+                android:layout_alignEnd="@+id/fullImg"
+                android:layout_marginStart="0dp"
+                android:text="empty"
+                android:textColor="@color/green"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="0dp"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fullImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txmechanic"
+            android:layout_alignStart="@+id/txmechanic"
+            android:layout_alignEnd="@+id/txmechanic"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="14dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_error_outline_black_24dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativebuyer"
         android:layout_below="@+id/toolbar">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/sharp_rect2"
-            android:id="@+id/search_bar"
-            android:drawableStart="@drawable/ic_search_black_24dp"
-            android:hint="Search"
-            android:padding="10dp"
-            android:layout_toStartOf="@+id/filterbuyerbtn"/>
-        <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_widgets_black_24dp"
-            android:id="@+id/filterbuyerbtn"
-            android:background="@null"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
-            android:scaleType="fitXY"/>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/buyerRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/search_bar"
             android:layout_marginTop="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/row_sharp"/>
@@ -137,7 +259,7 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeinfo"
+        android:id="@+id/relativeorder"
         android:layout_below="@+id/toolbar">
         
         <androidx.recyclerview.widget.RecyclerView
@@ -148,6 +270,26 @@
             android:id="@+id/orderRv"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/row_order_user"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeinfo"
+        android:layout_below="@+id/toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/infoRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            tools:listitem="@layout/row_info_user" />
+
 
     </RelativeLayout>
 

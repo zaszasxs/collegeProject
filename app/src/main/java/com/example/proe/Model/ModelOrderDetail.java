@@ -1,18 +1,26 @@
 package com.example.proe.Model;
 
 public class ModelOrderDetail {
-
-    private String Sid,name,cost,price,quantity;
+    private String id,Sid,name,price,cost,num;
 
     public ModelOrderDetail() {
     }
 
-    public ModelOrderDetail(String sid, String name, String cost, String price, String quantity) {
+    public ModelOrderDetail(String id, String sid, String name, String price, String cost, String num) {
+        this.id = id;
         this.Sid = sid;
         this.name = name;
-        this.cost = cost;
         this.price = price;
-        this.quantity = quantity;
+        this.cost = cost;
+        this.num = num;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getSid() {
@@ -31,14 +39,6 @@ public class ModelOrderDetail {
         this.name = name;
     }
 
-    public String getCost() {
-        return cost;
-    }
-
-    public void setCost(String cost) {
-        this.cost = cost;
-    }
-
     public String getPrice() {
         return price;
     }
@@ -47,11 +47,19 @@ public class ModelOrderDetail {
         this.price = price;
     }
 
-    public String getQuantity() {
-        return quantity;
+    public String getCost() {
+        return cost;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
     }
 }

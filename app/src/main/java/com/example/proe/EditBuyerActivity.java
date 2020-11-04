@@ -14,6 +14,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -25,9 +26,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -40,6 +43,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -52,10 +56,11 @@ import java.util.Locale;
 public class EditBuyerActivity extends AppCompatActivity implements LocationListener {
 
     private ImageButton btnback,btngps;
-    private EditText etname,etphone,etshopname,etcountry,etcity,etstate,etaddress;
+    private EditText etname,etphone,etshopname,etcountry,etcity,etstate,etaddress,etdescription;
     private Button btnupdata;
+    private TextView txnofistatus;
     private ImageView profileIv;
-    private SwitchCompat swShopOpen;
+    private SwitchCompat swShopOpen,fcmswitch;
 
     private static final int LOCATION_REQUEST_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 200;
@@ -77,6 +82,14 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
 
     private Uri image_uri;
 
+    private SharedPreferences sp;
+    private SharedPreferences.Editor spEdit;
+
+    private boolean isChecked = false;
+
+    private static final String enableMessage = "Notification are enable";
+    private static final String disableMessage = "Notification are disable";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +109,8 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
         etcity = findViewById(R.id.etcity);
         etstate = findViewById(R.id.etstate);
         etaddress = findViewById(R.id.etaddress);
+        etdescription = findViewById(R.id.etdescription);
+        txnofistatus = findViewById(R.id.txnofistatus);
 
 
         //ints permission array
@@ -111,6 +126,17 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
         checkUser();
 
         swShopOpen = findViewById(R.id.swShopOpen);
+        fcmswitch = findViewById(R.id.fcmswitch);
+
+        sp = getSharedPreferences("SETTINGS_SP",MODE_PRIVATE);
+        isChecked = sp.getBoolean("FCM_ENABLED",false);
+        fcmswitch.setChecked(isChecked);
+        if (isChecked){
+            txnofistatus.setText(enableMessage);
+        }
+        else{
+            txnofistatus.setText(disableMessage);
+        }
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +164,6 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
             public void onClick(View v) {
                 inputData();
 
-
             }
         });
 
@@ -149,9 +174,21 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
             }
         });
 
+        fcmswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    subscribeToTopic();
+                }
+                else{
+                    unsubscribeToTopic();
+                }
+            }
+        });
+
     }
 
-    private String Name,ShopName,Phone,Country,State,City,CompleteAddress;
+    private String Name,ShopName,Phone,Country,State,City,CompleteAddress,Description;
     private Boolean ShopOpen;
     private void inputData() {
         Name = etname.getText().toString().trim();
@@ -161,6 +198,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
         State = etstate.getText().toString().trim();
         City = etcity.getText().toString().trim();
         CompleteAddress = etaddress.getText().toString().trim();
+        Description = etdescription.getText().toString().trim();
         ShopOpen = swShopOpen.isChecked();
 
         updateProfile();
@@ -180,6 +218,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
             hashMap.put("ShopName",""+ShopName);
             hashMap.put("Phone",""+Phone);
             hashMap.put("CompleteAddress",""+CompleteAddress);
+            hashMap.put("Description",""+Description);
             hashMap.put("Country",""+Country);
             hashMap.put("State",""+State);
             hashMap.put("City",""+City);
@@ -228,6 +267,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                                 hashMap.put("ShopName",""+ShopName);
                                 hashMap.put("Phone",""+Phone);
                                 hashMap.put("CompleteAddress",""+CompleteAddress);
+                                hashMap.put("Description",""+Description);
                                 hashMap.put("Country",""+Country);
                                 hashMap.put("State",""+State);
                                 hashMap.put("City",""+City);
@@ -291,6 +331,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                             String State = ""+dataSnapshot1.child("State").getValue();
                             String ShopOpen = ""+dataSnapshot1.child("ShopOpen").getValue();
                             String ShopName = ""+dataSnapshot1.child("ShopName").getValue();
+                            String Description = ""+dataSnapshot1.child("Description").getValue();
                             String Email = ""+dataSnapshot1.child("Email").getValue();
                             latitude = Double.parseDouble(""+dataSnapshot1.child("Latitude").getValue());
                             longitude = Double.parseDouble(""+dataSnapshot1.child("Longitude").getValue());
@@ -308,6 +349,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                             etcity.setText(City);
                             etstate.setText(State);
                             etaddress.setText(CompleteAddress);
+                            etdescription.setText(Description);
 
 
                             if (ShopOpen.equals("true")){
@@ -541,5 +583,51 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
         }
         super.onActivityResult(requestCode, resultCode, data);
 
+    }
+
+    private void subscribeToTopic(){
+
+        FirebaseMessaging.getInstance().subscribeToTopic(Constants.FCM_TOPIC)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        spEdit = sp.edit();
+                        spEdit.putBoolean("FCM_ENABLED",true);
+                        spEdit.apply();
+
+                        Toast.makeText(EditBuyerActivity.this, ""+enableMessage, Toast.LENGTH_SHORT).show();
+                        txnofistatus.setText(enableMessage);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(EditBuyerActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void unsubscribeToTopic(){
+
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(Constants.FCM_TOPIC)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        spEdit = sp.edit();
+                        spEdit.putBoolean("FCM_ENABLED",false);
+                        spEdit.apply();
+
+                        Toast.makeText(EditBuyerActivity.this, ""+disableMessage, Toast.LENGTH_SHORT).show();
+                        txnofistatus.setText(disableMessage);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(EditBuyerActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

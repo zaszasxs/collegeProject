@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class addSellActivity extends AppCompatActivity {
 
     private TextView txcategory;
-    private EditText etdescription,etquanlity,etprice,ettitle;
+    private EditText etdescription,etprice,ettitle;
     private Button btnadd;
     private ImageView imagesell;
     private ImageButton btnback;
@@ -42,7 +42,6 @@ public class addSellActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_sell);
 
         txcategory = findViewById(R.id.txcategory);
-        etquanlity = findViewById(R.id.etquanlity);
         imagesell = findViewById(R.id.imagesell);
         ettitle = findViewById(R.id.ettitle);
         etdescription = findViewById(R.id.etdescription);
@@ -120,17 +119,13 @@ public class addSellActivity extends AppCompatActivity {
         Itemtitle = ettitle.getText().toString().trim();
         Itemcategory = txcategory.getText().toString().trim();
         Itemdescription = etdescription.getText().toString().trim();
-        Itemquanlity = etquanlity.getText().toString().trim();
         Itemprice = etprice.getText().toString().trim();
 
         if (TextUtils.isEmpty(Itemtitle)){
             Toast.makeText(this, "Title is required", Toast.LENGTH_SHORT).show();
             return;    //don't proceed further
         }
-        if (TextUtils.isEmpty(Itemquanlity)){
-            Toast.makeText(this, "Quantity is required", Toast.LENGTH_SHORT).show();
-            return;    //don't proceed further
-        }
+
         if (TextUtils.isEmpty(Itemcategory)){
             Toast.makeText(this, "category is required", Toast.LENGTH_SHORT).show();
             return;    //don't proceed further
@@ -155,7 +150,6 @@ public class addSellActivity extends AppCompatActivity {
         hashMap.put("Itemtitle",""+Itemtitle);
         hashMap.put("Itemcategory",""+Itemcategory);
         hashMap.put("Itemdescription",""+Itemdescription);
-        hashMap.put("Itemquanlity",""+Itemquanlity);
         hashMap.put("Itemprice",""+Itemprice);
         hashMap.put("timestamp",""+timestamp);
         hashMap.put("Uid",""+firebaseAuth.getUid());

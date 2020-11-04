@@ -58,7 +58,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     private void recoverPassword() {
         Email = etemail.getText().toString().trim();
-        if(Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
             Toast.makeText(this, "Invaild Email", Toast.LENGTH_SHORT).show();
             return;
         }

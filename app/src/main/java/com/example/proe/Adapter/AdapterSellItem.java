@@ -59,15 +59,14 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
         String icon = modelSellItem.getImagesell();
         String category = modelSellItem.getItemcategory();
         String description = modelSellItem.getItemdescription();
-        String quantity = modelSellItem.getItemquanlity();
         String price = modelSellItem.getItemprice();
         String timestamp = modelSellItem.getTimestamp();
 
 
         holder.txtitle.setText(title);
         holder.txcategory.setText(category);
-        holder.txprice.setText("฿"+price);
-        holder.txquanlity.setText(quantity);
+        holder.txprice.setText("฿"+ price +"/ Kg");
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,14 +98,12 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
         String icon = modelSellItem.getImagesell();
         String category = modelSellItem.getItemcategory();
         String description = modelSellItem.getItemdescription();
-        String quantity = modelSellItem.getItemquanlity();
         String price = modelSellItem.getItemprice();
         String timestamp = modelSellItem.getTimestamp();
 
         txtitle.setText(title);
         txcategory.setText(category);
-        txprice.setText("฿"+price);
-        txquanlity.setText(quantity);
+        txprice.setText("฿"+ price +"/ Kg");
 
         bottomSheetDialog.show();
 
@@ -185,7 +182,7 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
     class HolderSellItem extends RecyclerView.ViewHolder{
 
         private ImageView imagesell;
-        private TextView txcategory,txtitle,txquanlity,txprice;
+        private TextView txcategory,txtitle,txprice;
 
         public HolderSellItem(@NonNull View itemView) {
             super(itemView);
@@ -193,11 +190,9 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
              imagesell = itemView.findViewById(R.id.imagesell);
              txtitle = itemView.findViewById(R.id.txtitle);
              txcategory = itemView.findViewById(R.id.txcategory);
-             txquanlity = itemView.findViewById(R.id.txquanlity);
              txprice = itemView.findViewById(R.id.txprice);
              
         }
-
 
     }
 }

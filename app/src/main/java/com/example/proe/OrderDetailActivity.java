@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.proe.Adapter.AdapterSellItem;
-import com.example.proe.Model.ModelSellItem;
+import com.example.proe.Adapter.AdapterOrderDetail;
+import com.example.proe.Model.ModelOrderDetail;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,18 +27,18 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class OrderDetail extends AppCompatActivity {
+public class OrderDetailActivity extends AppCompatActivity {
 
-    private String OrderTo,OrderID;
+    String OrderTo,OrderID;
 
-    private ImageButton btnback;
-    private TextView txorder,txdata,txstatus,shopnameIv,txtotalitem,txtotalprice,addressIv;
+    private ImageButton btnback,btnreview;
+    private TextView txorder,txdate,txstatus,shopnameIv,txtotalitem,txtotalprice,addressIv;
 
     private RecyclerView itemRv;
-    private FirebaseAuth firebaseAuth;
+    private ArrayList<ModelOrderDetail> orderDetailArrayList ;
+    private RecyclerView.Adapter adapterOrderDetail;
 
-    private ArrayList<ModelSellItem> sellItemslist;
-    private AdapterSellItem adapterSellItem;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +47,24 @@ public class OrderDetail extends AppCompatActivity {
 
         btnback = findViewById(R.id.btnback);
         txorder = findViewById(R.id.txorder);
-        txdata = findViewById(R.id.txdata);
+        txdate = findViewById(R.id.txdate);
         txstatus = findViewById(R.id.txstatus);
         shopnameIv = findViewById(R.id.shopnameIv);
         txtotalprice = findViewById(R.id.txtotalprice);
         txtotalitem = findViewById(R.id.txtotalitem);
         addressIv = findViewById(R.id.addressIv);
-
         itemRv = findViewById(R.id.itemRv);
+        btnreview =findViewById(R.id.btnreview);
 
         Intent intent = getIntent();
         OrderTo = intent.getStringExtra("OrderTo");
         OrderID = intent.getStringExtra("OrderID");
 
         firebaseAuth = FirebaseAuth.getInstance();
+
         LoadBuyerInfo();
         LoadOrderDetail();
-        LoadBuyerSellitem();
+        LoadOrderSellitem();
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,28 +72,36 @@ public class OrderDetail extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        btnreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(OrderDetailActivity.this,WriteReviewActivity.class);
+                intent1.putExtra("BuyerUid",OrderTo);
+                startActivity(intent1);
+            }
+        });
+
+
     }
 
-    private void LoadBuyerSellitem() {
+    private void LoadOrderSellitem() {
 
-        sellItemslist = new ArrayList<>();
+        orderDetailArrayList = new ArrayList<>();
 
-
-        DatabaseReference databaseReference =FirebaseDatabase.getInstance().getReference("User");
-        databaseReference.child(firebaseAuth.getUid()).child("SellItem")
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(OrderTo).child("Order").child(OrderID).child("Items")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        sellItemslist.clear();
-                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-                            ModelSellItem modelSellItem =dataSnapshot1.getValue(ModelSellItem.class);
 
-                            sellItemslist.add(modelSellItem);
+                        for (DataSnapshot ds : dataSnapshot.getChildren()){
+                            ModelOrderDetail modelOrderDetail = ds.getValue(ModelOrderDetail.class);
+                            orderDetailArrayList.add(modelOrderDetail);
                         }
 
-                        adapterSellItem = new AdapterSellItem(OrderDetail.this,sellItemslist);
-
-                        itemRv.setAdapter(adapterSellItem);
+                        adapterOrderDetail = new AdapterOrderDetail(OrderDetailActivity.this, orderDetailArrayList);
+                        itemRv.setAdapter(adapterOrderDetail);
 
                         txtotalitem.setText(""+dataSnapshot.getChildrenCount());
                     }
@@ -137,7 +146,7 @@ public class OrderDetail extends AppCompatActivity {
                         txorder.setText(OrderID);
                         txstatus.setText(OrderStatus);
                         txtotalprice.setText("฿"+OrderCost);
-                        txdata.setText(formatedDate);
+                        txdate.setText(formatedDate);
 
                         findAddress(Latitude,   Longitude);
                     }

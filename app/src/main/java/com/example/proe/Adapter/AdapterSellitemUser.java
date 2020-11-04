@@ -17,7 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proe.BuyerDetailActivity;
-import com.example.proe.Filter.FilterSellItem;
 import com.example.proe.Filter.FilterSellItemUser;
 import com.example.proe.Model.ModelSellItem;
 import com.example.proe.R;
@@ -57,14 +56,12 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         String icon = modelSellItem.getImagesell();
         String category = modelSellItem.getItemcategory();
         String description = modelSellItem.getItemdescription();
-        String quanlity = modelSellItem.getItemquanlity();
         String price = modelSellItem.getItemprice();
         String timestamp = modelSellItem.getTimestamp();
 
         holder.txtitle.setText(title);
         holder.txcategory.setText(category);
-        holder.txprice.setText("฿"+price);
-        holder.txquanlity.setText(quanlity);
+        holder.txprice.setText("฿"+ price +"/ Kg");
         holder.txdescription.setText(description);
 
         holder.txcart.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +82,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
 
     private double cost = 0;
     private double finalprice = 0;
-    public int quanlity = 0;
+    public int num = 0;
     private void showSellitemDialog(ModelSellItem modelSellItem) {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_buyer,null);
 
@@ -106,12 +103,11 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         String icon = modelSellItem.getImagesell();
         String category = modelSellItem.getItemcategory();
         String description = modelSellItem.getItemdescription();
-        String quantity = modelSellItem.getItemquanlity();
         String price = modelSellItem.getItemprice();
 
         cost = Double.parseDouble(price.replaceAll("฿",""));
         finalprice = Double.parseDouble(price.replaceAll("฿",""));
-        quanlity = 1;
+        num = 1;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
@@ -119,8 +115,8 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         txtitle.setText(""+title);
         txcategory.setText(""+category);
         txdescription.setText(""+description);
-        txquanlity.setText(""+quantity);
-        txprice.setText("฿"+modelSellItem.getItemprice());
+        txnum.setText(""+num);
+        txprice.setText("฿"+modelSellItem.getItemprice()+"/ Kg");
         txfinalprice.setText("฿"+finalprice);
 
         final AlertDialog dialog = builder.create();
@@ -130,22 +126,22 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
             @Override
             public void onClick(View v) {
                 finalprice = finalprice + cost;
-                quanlity++;
+                num++;
 
                 txfinalprice.setText("฿"+finalprice);
-                txnum.setText(""+quanlity);
+                txnum.setText(""+ num);
             }
         });
 
         desbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if (quanlity >1){
+               if (num >1){
                    finalprice = finalprice - cost;
-                   quanlity--;
+                   num--;
 
                    txfinalprice.setText("฿"+finalprice);
-                   txnum.setText(""+quanlity);
+                   txnum.setText(""+ num);
                }
 
             }
@@ -157,10 +153,10 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
                 String title = txtitle.getText().toString().trim();
                 String price = txprice.getText().toString().trim().replace("฿","");
                 String finalprice = txfinalprice.getText().toString().trim().replace("฿","");
-                String quanlity = txquanlity.getText().toString().trim();
+                String num = txnum.getText().toString().trim();
 
                 //add to db(sqlite)
-                addtoCart(id,title,price,finalprice,quanlity);
+                addtoCart(id,title,price,finalprice,num);
 
                 dialog.dismiss();
             }
@@ -169,7 +165,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
     }
 
     private int itemID = 1;
-    private void addtoCart(String id, String title, String price, String finalprice, String quanlity) {
+    private void addtoCart(String id, String title, String price, String finalprice, String num) {
         itemID++;
 
         EasyDB easyDB = EasyDB.init(context,"ITEM_DB")
@@ -187,7 +183,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
                 .addData("Item_Name",title)
                 .addData("Item_Price",price)
                 .addData("Item_Finalprice",finalprice)
-                .addData("Item_Quanlity",quanlity)
+                .addData("Item_Quanlity",num)
                 .doneDataAdding();
 
         Toast.makeText(context, "Added to cart...", Toast.LENGTH_SHORT).show();
@@ -212,14 +208,13 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
     class HolderSellitemUser extends RecyclerView.ViewHolder {
 
         private ImageView imagesell;
-        private TextView txcategory,txtitle,txquanlity,txprice,txcart,txdescription;
+        private TextView txcategory,txtitle,txprice,txcart,txdescription;
         public HolderSellitemUser(@NonNull View itemView) {
             super(itemView);
 
             imagesell = itemView.findViewById(R.id.imagesell);
             txtitle = itemView.findViewById(R.id.txtitle);
             txcategory = itemView.findViewById(R.id.txcategory);
-            txquanlity = itemView.findViewById(R.id.txquanlity);
             txprice = itemView.findViewById(R.id.txprice);
             txcart = itemView.findViewById(R.id.txcart);
             txdescription = itemView.findViewById(R.id.txdescription);

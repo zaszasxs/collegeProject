@@ -2,7 +2,7 @@ package com.example.proe.Model;
 
 public class ModelSellItem {
 
-    private String SellitemID,Itemtitle,Itemcategory,imagesell,Itemdescription,Itemquanlity,
+    private String SellitemID,Itemtitle,Itemcategory,imagesell,Itemdescription,
             Itemprice,timestamp,Uid;
 
     public ModelSellItem() {
@@ -14,8 +14,7 @@ public class ModelSellItem {
         this.Itemcategory = itemcategory;
         this.imagesell = imagesell;
         this.Itemdescription = itemdescription;
-        this.Itemquanlity = itemquanlity;
-        this. Itemprice = itemprice;
+        this.Itemprice = itemprice;
         this.timestamp = timestamp;
         this. Uid = uid;
     }
@@ -63,13 +62,6 @@ public class ModelSellItem {
         Itemdescription = itemdescription;
     }
 
-    public String getItemquanlity() {
-        return Itemquanlity;
-    }
-
-    public void setItemquanlity(String itemquanlity) {
-        Itemquanlity = itemquanlity;
-    }
 
     public String getItemprice() {
         return Itemprice;
