@@ -3,6 +3,7 @@ package com.example.proe.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,14 +48,14 @@ public class AdapterOrderBuyer extends RecyclerView.Adapter<AdapterOrderBuyer.Ho
 
     @Override
     public void onBindViewHolder(@NonNull HolderOrderBuyer holder, int position) {
-        ModelOrderBuyer modelOrderBuyer = orderBuyerArrayList.get(position);
+        final ModelOrderBuyer modelOrderBuyer = orderBuyerArrayList.get(position);
 
         final String OrderID = modelOrderBuyer.getOrderID();
         String OrderTime = modelOrderBuyer.getOrderTime();
         String OrderStatus = modelOrderBuyer.getOrderStatus();
         String OrderCost = modelOrderBuyer.getOrderCost();
         final String OrderBy = modelOrderBuyer.getOrderBy();
-        String OrderTo = modelOrderBuyer.getOrderTo();
+        final String OrderTo = modelOrderBuyer.getOrderTo();
 
         loadUserInfo(modelOrderBuyer, holder);
 
@@ -81,9 +82,11 @@ public class AdapterOrderBuyer extends RecyclerView.Adapter<AdapterOrderBuyer.Ho
         holder.itemView.getRootView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("ssss",""+modelOrderBuyer);
                 Intent intent = new Intent(context, OrderDetailBuyerActivity.class);
                 intent.putExtra("OrderID",OrderID);
                 intent.putExtra("OrderBy",OrderBy);
+                intent.putExtra("OrderTo",OrderTo);
                 context.startActivity(intent);
             }
         });

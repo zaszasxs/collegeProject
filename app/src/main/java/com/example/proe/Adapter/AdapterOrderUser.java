@@ -3,6 +3,7 @@ package com.example.proe.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
 
     @Override
     public void onBindViewHolder(@NonNull HolderOrderUser holder, int position) {
-        ModelOrderUser modelOrderUser = modelOrderUsers.get(position);
+        final ModelOrderUser modelOrderUser = modelOrderUsers.get(position);
         final String OrderID = modelOrderUser.getOrderID();
         String OrderTime = modelOrderUser.getOrderTime();
         String OrderStatus = modelOrderUser.getOrderStatus();

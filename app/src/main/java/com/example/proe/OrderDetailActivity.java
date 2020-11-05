@@ -88,41 +88,23 @@ public class OrderDetailActivity extends AppCompatActivity {
 
     initListOrder();
 
-
-    final DatabaseReference mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
-    final Query query = mFirebaseDatabaseReference.child("User");
     final int[] OrderCost = {0};
-    query.addValueEventListener(new ValueEventListener() {
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem");
+    reference.addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        sellItemslist.clear();
         if (dataSnapshot.exists()) {
-          sellItemslist.clear();
-          for (final DataSnapshot ds : dataSnapshot.getChildren()) {
-            String uid = "" + ds.getRef().getKey();
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid).child("SellItem");
-            reference.addValueEventListener(new ValueEventListener() {
-              @Override
-              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                  for (DataSnapshot ds : dataSnapshot.getChildren()) {
+          for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                    ModelOrderDetail2 question = ds.getValue(ModelOrderDetail2.class);
-                    sellItemslist.add(question);
-                    OrderCost[0] += Integer.parseInt(question.getItemprice());
+            ModelOrderDetail2 question = ds.getValue(ModelOrderDetail2.class);
+            sellItemslist.add(question);
+            OrderCost[0] += Integer.parseInt(question.getItemprice());
 
-                    adapterSellItem.notifyDataSetChanged();
+            adapterSellItem.notifyDataSetChanged();
 
-                    txtotalprice.setText("฿" + OrderCost[0]);
-                    txtotalitem.setText("" + sellItemslist.size());
-                  }
-                }
-              }
-
-              @Override
-              public void onCancelled(@NonNull DatabaseError databaseError) {
-
-              }
-            });
+            txtotalprice.setText("฿" + OrderCost[0]);
+            txtotalitem.setText("" + sellItemslist.size());
           }
         }
         adapterSellItem.notifyDataSetChanged();
