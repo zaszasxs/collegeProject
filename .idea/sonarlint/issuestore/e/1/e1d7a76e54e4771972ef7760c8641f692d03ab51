@@ -1,0 +1,17 @@
+
+{
+java:S1104"`Make orderDetailArrayList a static final constant or non-public and provide accessors if needed.(¿†®îÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(çÊÀøÿÿÿÿ
+@
+java:S1659:"%Declare "txprice" on a separate line.(ìÓ„Úıÿÿÿÿ
+V	java:S125."<This block of commented-out lines of code should be removed.(øöìùÿÿÿÿ
+>
+java:S1659:"#Declare "txnum" on a separate line.(ìÓ„Úıÿÿÿÿ
+•
+java:S1319"The type of the "orderDetailArrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(üÈäè
+š
+java:S1319"The type of the "orderDetailArrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(¿†®îÿÿÿÿÿ
+D
+java:S1659:")Declare "txpriceeach" on a separate line.(ìÓ„Úıÿÿÿÿ
+h
+java:S1858)"F"getItemprice" returns a string, there's no need to call "toString()".(ĞíúÓøÿÿÿÿ8¡İê´Ù.

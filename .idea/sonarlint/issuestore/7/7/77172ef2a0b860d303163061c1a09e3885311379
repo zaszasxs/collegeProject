@@ -1,0 +1,13 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Þµ®¢ÿÿÿÿÿ
+C
+java:S1659"!Declare "Sid" on a separate line.(íðÄ´øÿÿÿÿ8…·‹µÙ.
+D
+java:S1659""Declare "name" on a separate line.(íðÄ´øÿÿÿÿ8…·‹µÙ.
+E
+java:S1659"#Declare "price" on a separate line.(íðÄ´øÿÿÿÿ8…·‹µÙ.
+D
+java:S1659""Declare "cost" on a separate line.(íðÄ´øÿÿÿÿ8…·‹µÙ.
+C
+java:S1659"!Declare "num" on a separate line.(íðÄ´øÿÿÿÿ8…·‹µÙ.
+o	java:S116"NRename this field "Sid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íðÄ´øÿÿÿÿ8…·‹µÙ.
