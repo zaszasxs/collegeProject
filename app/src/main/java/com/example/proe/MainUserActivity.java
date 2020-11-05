@@ -234,9 +234,10 @@ public class MainUserActivity extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        String pathMechanical = dataSnapshot.getValue().toString();
-                        initReferenceMechanical(pathMechanical);
+                        if (dataSnapshot.exists()) {
+                            String pathMechanical = dataSnapshot.getValue().toString();
+                            initReferenceMechanical(pathMechanical);
+                        }
                     }
 
                     @Override
@@ -318,7 +319,7 @@ public class MainUserActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 OrderUsersliat.clear();
-                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                for (final DataSnapshot ds: dataSnapshot.getChildren()){
                     String uid = ""+ds.getRef().getKey();
 
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid).child("Order");

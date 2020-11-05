@@ -37,8 +37,8 @@ public class AdapterOrderDetail2 extends RecyclerView.Adapter<AdapterOrderDetail
         ModelOrderDetail2 modelOrderDetail = orderDetailArrayList.get(position);
 
 
-        String title = modelOrderDetail.getItemtitl();
-        String price = modelOrderDetail.getItemprice();
+        String title = modelOrderDetail.getItemtitle();
+        String price = modelOrderDetail.getItemprice().toString();
 
 
         holder.txtitle.setText(""+title);

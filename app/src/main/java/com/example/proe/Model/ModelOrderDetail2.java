@@ -1,52 +1,13 @@
 package com.example.proe.Model;
 
 public class ModelOrderDetail2 {
-    String Itemcategory;
-    String Itemdescriptio;
-    String Itemprice;
-    String Itemtitl;
-    String SellitemI;
     String Uid;
-
-    public String getItemcategory() {
-        return Itemcategory;
-    }
-
-    public void setItemcategory(String itemcategory) {
-        Itemcategory = itemcategory;
-    }
-
-    public String getItemdescriptio() {
-        return Itemdescriptio;
-    }
-
-    public void setItemdescriptio(String itemdescriptio) {
-        Itemdescriptio = itemdescriptio;
-    }
-
-    public String getItemprice() {
-        return Itemprice;
-    }
-
-    public void setItemprice(String itemprice) {
-        Itemprice = itemprice;
-    }
-
-    public String getItemtitl() {
-        return Itemtitl;
-    }
-
-    public void setItemtitl(String itemtitl) {
-        Itemtitl = itemtitl;
-    }
-
-    public String getSellitemI() {
-        return SellitemI;
-    }
-
-    public void setSellitemI(String sellitemI) {
-        SellitemI = sellitemI;
-    }
+    String timestamp;
+    String SellitemID;
+    String Itemcategory;
+    String Itemprice;
+    String Itemtitle;
+    String Itemdescription;
 
     public String getUid() {
         return Uid;
@@ -64,5 +25,43 @@ public class ModelOrderDetail2 {
         this.timestamp = timestamp;
     }
 
-    String timestamp;
+    public String getSellitemID() {
+        return SellitemID;
+    }
+
+    public void setSellitemID(String sellitemID) {
+        SellitemID = sellitemID;
+    }
+
+    public String getItemcategory() {
+        return Itemcategory;
+    }
+
+    public void setItemcategory(String itemcategory) {
+        Itemcategory = itemcategory;
+    }
+
+    public String getItemprice() {
+        return Itemprice;
+    }
+
+    public void setItemprice(String itemprice) {
+        Itemprice = itemprice;
+    }
+
+    public String getItemtitle() {
+        return Itemtitle;
+    }
+
+    public void setItemtitle(String itemtitle) {
+        Itemtitle = itemtitle;
+    }
+
+    public String getItemdescription() {
+        return Itemdescription;
+    }
+
+    public void setItemdescription(String itemdescription) {
+        Itemdescription = itemdescription;
+    }
 }

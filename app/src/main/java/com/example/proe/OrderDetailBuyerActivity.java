@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
@@ -24,7 +25,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.proe.Adapter.AdapterOrderDetail;
+import com.example.proe.Adapter.AdapterOrderDetail2;
 import com.example.proe.Model.ModelOrderDetail;
+import com.example.proe.Model.ModelOrderDetail2;
 import com.example.proe.Model.Result;
 import com.example.proe.notification.connect.CallSendNotification;
 import com.example.proe.utils.Utils;
@@ -35,6 +38,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
@@ -61,6 +65,8 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     private AdapterOrderDetail adapterOrderDetail;
 
 
+    private ArrayList<ModelOrderDetail2> sellItemslist;
+    private AdapterOrderDetail2 adapterSellItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -264,30 +270,86 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     private void loadOrderSellitem() {
 
         orderDetailArrayList = new ArrayList<>();
+        initListOrder();
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+//        reference.child(firebaseAuth.getUid()).child("Order").child(OrderID).child("Items")
+//                .addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        orderDetailArrayList.clear();
+//                        for (DataSnapshot ds :dataSnapshot.getChildren()){
+//                            ModelOrderDetail modelOrderDetail = ds.getValue(ModelOrderDetail.class);
+//                            orderDetailArrayList.add(modelOrderDetail);
+//                        }
+//
+//                        adapterOrderDetail = new AdapterOrderDetail(OrderDetailBuyerActivity.this,orderDetailArrayList);
+//                        itemRv.setAdapter(adapterOrderDetail);
+//
+//                        txtotalitem.setText(""+dataSnapshot.getChildrenCount());
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-        reference.child(firebaseAuth.getUid()).child("Order").child(OrderID).child("Items")
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        orderDetailArrayList.clear();
-                        for (DataSnapshot ds :dataSnapshot.getChildren()){
-                            ModelOrderDetail modelOrderDetail = ds.getValue(ModelOrderDetail.class);
-                            orderDetailArrayList.add(modelOrderDetail);
-                        }
+        final DatabaseReference mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        Query query = mFirebaseDatabaseReference.child("User");
+        final int[] OrderCost = {0};
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    sellItemslist.clear();
+                    for (final DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String uid = "" + ds.getRef().getKey();
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(uid).child("SellItem");
+                        reference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()) {
+                                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                        adapterOrderDetail = new AdapterOrderDetail(OrderDetailBuyerActivity.this,orderDetailArrayList);
-                        itemRv.setAdapter(adapterOrderDetail);
+                                        ModelOrderDetail2 question = ds.getValue(ModelOrderDetail2.class);
+                                        sellItemslist.add(question);
 
-                        txtotalitem.setText(""+dataSnapshot.getChildrenCount());
+                                        adapterSellItem.notifyDataSetChanged();
+
+                                        OrderCost[0] += Integer.parseInt(question.getItemprice());
+
+
+                                        txtotalprice.setText("฿" + OrderCost[0]);
+                                        txtotalitem.setText("" + sellItemslist.size());
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                     }
+                }
+                adapterSellItem.notifyDataSetChanged();
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
     }
+
+    private void initListOrder() {
+        sellItemslist = new ArrayList<>();
+        adapterSellItem = new AdapterOrderDetail2(OrderDetailBuyerActivity.this, sellItemslist);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        itemRv.setLayoutManager(layoutManager);
+        itemRv.setAdapter(adapterSellItem);
+    }
+
 
     private void prepareNotificationMessage(String OrderID, String message){
         //when user place, send notification to seller

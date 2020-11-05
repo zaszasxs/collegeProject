@@ -1,6 +1,4 @@
 
-c
-3app/src/main/java/com/example/proe/OrderDetail.java,6/f/6f857469b6c9a1be5d31bddc85f0e19828f4bbb6
 k
 ;app/src/main/java/com/example/proe/BuyerDetailActivity.java,0/d/0d5421203f8efe7acf7754891bfd3dbc1cee8429
 f
@@ -53,3 +51,19 @@ S
 #app/src/main/res/values/strings.xml,d/2/d2281fbb3027de2722081a53408dd77628bf080e
 L
 .idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
+p
+@app/src/main/java/com/example/proe/Adapter/AdapterOrderUser.java,0/a/0a86208fcf0578240b6d1abb45c626f2c0d6baef
+l
+<app/src/main/java/com/example/proe/Model/ModelOrderUser.java,c/a/ca962ce0d4c68d32b3bd72ecf722b8c84ae32adc
+s
+Capp/src/main/java/com/example/proe/Adapter/AdapterOrderDetail2.java,e/1/e1d7a76e54e4771972ef7760c8641f692d03ab51
+o
+?app/src/main/java/com/example/proe/Model/ModelOrderDetail2.java,a/1/a175a8d167a8201ee27eef3348ae432225d8e294
+n
+>app/src/main/java/com/example/proe/Model/ModelOrderDetail.java,7/7/77172ef2a0b860d303163061c1a09e3885311379
+r
+Bapp/src/main/java/com/example/proe/Adapter/AdapterOrderDetail.java,3/3/33c5a0546f9d85378ce54ad96e34a732f6ca2895
+k
+;app/src/main/java/com/example/proe/OrderDetailActivity.java,d/8/d83f4ef8a686c174663c8d863df8318b12d77f49
+p
+@app/src/main/java/com/example/proe/OrderDetailBuyerActivity.java,2/4/24b5693583646d6aa616f36381c6c65bc1adc717

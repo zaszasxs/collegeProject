@@ -1,47 +1,51 @@
 
-u
-java:S1450."ZRemove the "txnoaccount" field and declare it as a local variable in the relevant methods.(‡ƒÿéıÿÿÿÿ
-^
-java:S1144ˆ";Remove this unused private "simpleSendNotification" method.(ØÙ³ÿüÿÿÿÿ8‹ö“õØ.
-n	java:S117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÓú¹8‹ö“õØ.
-H
-java:S5411“"*Use the primitive boolean expression here.(éùÌó8‹ö“õØ.
-=
-java:S1659,"(Declare "etpassword" on a separate line.(­a
-r
-java:S1450."WRemove the "txforgot" field and declare it as a local variable in the relevant methods.(‡ƒÿéıÿÿÿÿ
-¤
-java:S1186°"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üÍëëØ.
-^	java:S125Œ"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ8‰öåõØ.
-O
-java:S1874z"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä8ú„ùôØ.
-V	java:S110*"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
-Q
-java:S18741"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
-k	java:S116j"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã ª~8üÍëëØ.
-V
-java:S1172¶"3Remove this unused method parameter "dataSnapshot".(şË—ßùÿÿÿÿ8¿œ¸íØ.
+]	java:S110*"<This class has 9 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ8ë©é÷Ø.
+n	java:S116x"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã ª~8š·Á¢Ù.
 X
-java:S1144œ":Remove this unused private "simpleGetTokenFromUID" method.(—ğˆ¯8ü—ßõØ.
+java:S18742"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8š·Á¢Ù.
+F
+java:S1659.")Declare "txnoaccount" on a separate line.(İ‡ñš8š·Á¢Ù.
+i	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õíõ68š·Á¢Ù.
+X
+java:S1874C"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8š·Á¢Ù.
+s
+java:S1450x"WRemove the "Password" field and declare it as a local variable in the relevant methods.(ã ª~8š·Á¢Ù.
+p
+java:S1450x"TRemove the "Email" field and declare it as a local variable in the relevant methods.(ã ª~8š·Á¢Ù.
+P
+java:S1874œ"2Remove this use of "setMessage"; it is deprecated.(•şˆÃ8š·Á¢Ù.
+x
+java:S1450."[Remove the "txregisbuyer" field and declare it as a local variable in the relevant methods.(İ‡ñš8š·Á¢Ù.
+w
+java:S1450."ZRemove the "txnoaccount" field and declare it as a local variable in the relevant methods.(İ‡ñš8š·Á¢Ù.
+¤
+java:S1186¾"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8š·Á¢Ù.
+G
+java:S1659."*Declare "txregisbuyer" on a separate line.(İ‡ñš8š·Á¢Ù.
+P
+java:S1874ˆ"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä8š·Á¢Ù.
+V
+java:S1172Ä"3Remove this unused method parameter "dataSnapshot".(şË—ßùÿÿÿÿ8š·Á¢Ù.
+B
+java:S1659x"&Declare "Password" on a separate line.(ã ª~8š·Á¢Ù.
+X
+java:S1144ª":Remove this unused private "simpleGetTokenFromUID" method.(—ğˆ¯8š·Á¢Ù.
 _
 java:S1128"BRemove this unused import 'com.example.proe.Model.ModelPushToken'.(ÉÚˆ8Ğ´ôØ.
-s
-java:S1450j"WRemove the "Password" field and declare it as a local variable in the relevant methods.(ã ª~8ú„ùôØ.
-n	java:S116j"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã ª~8üÍëëØ.
-P
-java:S1874"2Remove this use of "setMessage"; it is deprecated.(•şˆÃ8üÍëëØ.
-p
-java:S1450j"TRemove the "Email" field and declare it as a local variable in the relevant methods.(ã ª~8ú„ùôØ.
-r
-java:S1450-"WRemove the "btnlogin" field and declare it as a local variable in the relevant methods.(ç—²ßøÿÿÿÿ
-p
-java:S3008+"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—­„òÿÿÿÿÿ8²›¨áØ.
+y
+java:S1450-"WRemove the "btnlogin" field and declare it as a local variable in the relevant methods.(ç—²ßøÿÿÿÿ8š·Á¢Ù.
+k	java:S116x"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã ª~8š·Á¢Ù.
+^	java:S125š"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ8š·Á¢Ù.
+n	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÓú¹8š·Á¢Ù.
 D
-java:S1659.")Declare "txnoaccount" on a separate line.(‡ƒÿéıÿÿÿÿ
+java:S1659,"(Declare "etpassword" on a separate line.(­a8š·Á¢Ù.
+H
+java:S5411¡"*Use the primitive boolean expression here.(éùÌó8š·Á¢Ù.
+^
+java:S1144–";Remove this unused private "simpleSendNotification" method.(ØÙ³ÿüÿÿÿÿ8š·Á¢Ù.
+t
+java:S1450."WRemove the "txforgot" field and declare it as a local variable in the relevant methods.(İ‡ñš8š·Á¢Ù.
 ¤
-java:S1186í"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8–¼¹íØ.
-X
-java:S1874@"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8üÍëëØ.
-i	java:S100l"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õíõ68üÍëëØ.
-B
-java:S1659j"&Declare "Password" on a separate line.(ã ª~8üÍëëØ.
+java:S1186û"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8š·Á¢Ù.
+p
+java:S3008/"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—­„òÿÿÿÿÿ8š·Á¢Ù.
