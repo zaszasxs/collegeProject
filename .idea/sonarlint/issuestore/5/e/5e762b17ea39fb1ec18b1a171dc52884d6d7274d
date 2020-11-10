@@ -1,121 +1,139 @@
 
-l
-java:S1192ª"PDefine a constant instead of duplicating this literal "CompleteAddress" 3 times.(Î÷éØøÿÿÿÿ
-e
-java:S1192®"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(¸ôëœşÿÿÿÿ
-_
-java:S1192«"HDefine a constant instead of duplicating this literal "Country" 3 times.(¸—ÌÇ
-a
-java:S1192¯"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(°»Îˆ
-b
-java:S1192©"FDefine a constant instead of duplicating this literal "Phone" 3 times.(ÁÂÌÌşÿÿÿÿ
-b
-java:S1192¬"FDefine a constant instead of duplicating this literal "State" 3 times.(Ûú‹†ıÿÿÿÿ
+?
+java:S1481Ç"(Remove this unused "uid" local variable.(Ÿ‡„†
 D
-java:S1199À"-Extract this nested code block into a method.(“í‘ê
-I
-java:S1199Ì"-Extract this nested code block into a method.(®¹ƒúÿÿÿÿ
-I
-java:S1199Ú"-Extract this nested code block into a method.(Ï¥‰§üÿÿÿÿ
-P	java:S1103"<This class has 9 parents which is greater than 5 authorized.(áãÌc
-g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Åç—
-g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«
-g	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µªŞ
-l	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ
-g	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÚÇ®
-g	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™
-g	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ
-l	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëşøøÿÿÿÿ
+java:S1659;"'Declare "etcountry" on a separate line.(Îê·Ò8ıÖ±²Ú.
 Y
-java:S2259ô"BA "NullPointerException" could be thrown; "data" is nullable here.(µÛŸ©
-q
-java:S14505"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
-p
-java:S14505"URemove the "btngps" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
-n
-java:S14507"XRemove the "btnupdata" field and declare it as a local variable in the relevant methods.(æÅïØ
-t
-java:S1450I"^Remove the "locationManager" field and declare it as a local variable in the relevant methods.(ô­âº
-˜
-java:S1186¯"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÀÄŞ’
-˜
-java:S1186´"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅğÙ
-?
-java:S16595"$Declare "btngps" on a separate line.(èÇ–ıÿÿÿÿ
-@
-java:S16596"%Declare "etphone" on a separate line.(š»æøûÿÿÿÿ
-B
-java:S16596"'Declare "etcountry" on a separate line.(š»æøûÿÿÿÿ
-?
-java:S16596"$Declare "etcity" on a separate line.(š»æøûÿÿÿÿ
-@
-java:S16596"%Declare "etstate" on a separate line.(š»æøûÿÿÿÿ
+java:S1854Å"=Remove this useless assignment to local variable "timestamp".(¥¼Ù½ûÿÿÿÿ
 F
-java:S16596"+Declare "etcompleteass" on a separate line.(š»æøûÿÿÿÿ
-=
-java:S1659J"'Declare "longitude" on a separate line.(şÖ‹·
-9
-java:S1659"#Declare "Phone" on a separate line.(úüÔ
-;
-java:S1659"%Declare "Country" on a separate line.(úüÔ
-9
-java:S1659"#Declare "State" on a separate line.(úüÔ
-8
-java:S1659""Declare "City" on a separate line.(úüÔ
-C
-java:S1659"-Declare "CompleteAddress" on a separate line.(úüÔ
-i	java:S116L"TRename this field "image_uri" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ä¨å
-d	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-e	java:S116"PRename this field "Phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-g	java:S116"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-e	java:S116"PRename this field "State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-d	java:S116"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-o	java:S116"ZRename this field "CompleteAddress" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úüÔ
-Q
-java:S1874F"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
-Q
-java:S1874f"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
-N
-java:S1874Ÿ"2Remove this use of "setMessage"; it is deprecated.(×âºÂÿÿÿÿÿ
-d	java:S100ˆ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù
-
-java:S1186°"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-N
-java:S1854œ"7Remove this useless assignment to local variable "uid".(Ÿ‡„†
-Y
-java:S1854š"=Remove this useless assignment to local variable "timestamp".(¥¼Ù½ûÿÿÿÿ
-V
-java:S1854˜":Remove this useless assignment to local variable "online".(­¨Øøÿÿÿÿ
-P
-java:S1854”"9Remove this useless assignment to local variable "Email".(ˆ÷Í™
-V
-java:S1854"?Remove this useless assignment to local variable "AccountType".(ãîÅ«
-[
-java:S1117"DRename "CompleteAddress" which hides the field declared at line 144.(—Åç—
-S
-java:S1117‘"<Rename "Country" which hides the field declared at line 144.(µªŞ
-U
-java:S1117’"9Rename "City" which hides the field declared at line 144.(·‚´ÿÿÿÿÿ
-Q
-java:S1117“":Rename "State" which hides the field declared at line 144.(ŒÚÇ®
-P
-java:S1117—"9Rename "Name" which hides the field declared at line 144.(’ûŞ
-V
-java:S1117™":Rename "Phone" which hides the field declared at line 144.(ëşøøÿÿÿÿ
-e
-java:S3252Ş"NUse static access with "android.provider.MediaStore$MediaColumns" for "TITLE".(ˆå¡¡
-w
-java:S3252ß"[Use static access with "android.provider.MediaStore$Images$ImageColumns" for "DESCRIPTION".(¯ÇÁöşÿÿÿÿ
-n
-java:S3776¾"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ó»×¶şÿÿÿÿ
-=	java:S131¿""Add a default case to this switch.(×ö³–úÿÿÿÿ
-G
-java:S1481"0Remove this unused "AccountType" local variable.(ãîÅ«
-A
-java:S1481”"*Remove this unused "Email" local variable.(ˆ÷Í™
-G
-java:S1481˜"+Remove this unused "online" local variable.(­¨Øøÿÿÿÿ
+java:S1659¸"#Declare "Phone" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
 J
-java:S1481š".Remove this unused "timestamp" local variable.(¥¼Ù½ûÿÿÿÿ
+java:S1481Å".Remove this unused "timestamp" local variable.(¥¼Ù½ûÿÿÿÿ
+A
+java:S1659;"$Declare "etcity" on a separate line.(Îê·Ò8ıÖ±²Ú.
+g	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Åç—
+n
+java:S1192u"LDefine a constant instead of duplicating this literal "FCM_ENABLED" 3 times.(şÜ­¾ûÿÿÿÿ8ıÖ±²Ú.
+˜
+java:S1186Û"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÀÄŞ’
+N
+java:S1874Ç"2Remove this use of "setMessage"; it is deprecated.(×âºÂÿÿÿÿÿ
+_
+java:S1192Ô"HDefine a constant instead of duplicating this literal "Country" 3 times.(¸—ÌÇ
+r	java:S116¸"PRename this field "Phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+w	java:S116¸"URename this field "Machanical" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+
+java:S1186Ü"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+g	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™
+t
+java:S1450>"XRemove the "fcmswitch" field and declare it as a local variable in the relevant methods.(ÍÙ÷T8ıÖ±²Ú.
+U
+java:S1117¼"9Rename "City" which hides the field declared at line 184.(·‚´ÿÿÿÿÿ
+R
+java:S1874ƒ"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+G
+java:S1481º"0Remove this unused "AccountType" local variable.(ãîÅ«
+b
+java:S1117½"?Rename "Machanical" which hides the field declared at line 184.(÷›²Ğúÿÿÿÿ8ıÖ±²Ú.
+l	java:S117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëşøøÿÿÿÿ
+E
+java:S1659¸""Declare "City" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+=	java:S131ë""Add a default case to this switch.(×ö³–úÿÿÿÿ
+P	java:S1108"<This class has 9 parents which is greater than 5 authorized.(áãÌc
+=
+java:S1659Q"'Declare "longitude" on a separate line.(şÖ‹·
+I
+java:S1199†"-Extract this nested code block into a method.(Ï¥‰§üÿÿÿÿ
+I
+java:S1199ø"-Extract this nested code block into a method.(®¹ƒúÿÿÿÿ
+B
+java:S1659;"%Declare "etphone" on a separate line.(Îê·Ò8ıÖ±²Ú.
+G
+java:S1481Ã"+Remove this unused "online" local variable.(­¨Øøÿÿÿÿ
+w
+java:S3252‹"[Use static access with "android.provider.MediaStore$Images$ImageColumns" for "DESCRIPTION".(¯ÇÁöşÿÿÿÿ
+n
+java:S1192Ó"KDefine a constant instead of duplicating this literal "Mechanical" 3 times.(Šéëæûÿÿÿÿ8ıÖ±²Ú.
+A
+java:S1481¿"*Remove this unused "Email" local variable.(ˆ÷Í™
+t
+java:S1450P"^Remove the "locationManager" field and declare it as a local variable in the relevant methods.(ô­âº
+Q
+java:S1874M"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+l	java:S117¼"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ
+b
+java:S1192Ñ"FDefine a constant instead of duplicating this literal "Phone" 3 times.(ÁÂÌÌşÿÿÿÿ
+V
+java:S1854º"?Remove this useless assignment to local variable "AccountType".(ãîÅ«
+[
+java:S1117¹"DRename "CompleteAddress" which hides the field declared at line 184.(—Åç—
+H
+java:S1659¸"%Declare "Country" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+S
+java:S1117»"<Rename "Country" which hides the field declared at line 184.(µªŞ
+{	java:S115["ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(àñ®íøÿÿÿÿ8ıÖ±²Ú.
+P
+java:S1659¸"-Declare "CompleteAddress" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+e
+java:S3252Š"NUse static access with "android.provider.MediaStore$MediaColumns" for "TITLE".(ˆå¡¡
+|	java:S116¸"ZRename this field "CompleteAddress" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+g	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«
+s	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷›²Ğúÿÿÿÿ8ıÖ±²Ú.
+B
+java:S1659;"%Declare "etstate" on a separate line.(Îê·Ò8ıÖ±²Ú.
+V
+java:S1117Ä":Rename "Phone" which hides the field declared at line 184.(ëşøøÿÿÿÿ
+e
+java:S1192×"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(¸ôëœşÿÿÿÿ
+n
+java:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ó»×¶şÿÿÿÿ
+t	java:S116¸"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+z
+java:S1450X"XRemove the "isChecked" field and declare it as a local variable in the relevant methods.(È¥«ùÿÿÿÿ8ıÖ±²Ú.
+l
+java:S1192Ò"PDefine a constant instead of duplicating this literal "CompleteAddress" 3 times.(Î÷éØøÿÿÿÿ
+P
+java:S1117Â"9Rename "Name" which hides the field declared at line 184.(’ûŞ
+˜
+java:S1186à"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅğÙ
+g	java:S117¾"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÚÇ®
+q	java:S116¸"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+d	java:S100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù
+G
+java:S1659;"*Declare "etmachanical" on a separate line.(Îê·Ò8ıÖ±²Ú.
+i	java:S116S"TRename this field "image_uri" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ä¨å
+p
+java:S1450:"URemove the "btngps" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
+u	java:S115Z"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÙÏáK8ıÖ±²Ú.
+r	java:S116¸"PRename this field "State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+N
+java:S1854Ç"7Remove this useless assignment to local variable "uid".(Ÿ‡„†
+F
+java:S1659¸"#Declare "State" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+K
+java:S1659¸"(Declare "Machanical" on a separate line.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+Y
+java:S2259 "BA "NullPointerException" could be thrown; "data" is nullable here.(µÛŸ©
+b
+java:S1192Õ"FDefine a constant instead of duplicating this literal "State" 3 times.(Ûú‹†ıÿÿÿÿ
+q	java:S116¸"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÎšÍúÿÿÿÿ8ıÖ±²Ú.
+P
+java:S1854¿"9Remove this useless assignment to local variable "Email".(ˆ÷Í™
+a
+java:S1192Ø"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(°»Îˆ
+n
+java:S1450<"XRemove the "btnupdata" field and declare it as a local variable in the relevant methods.(æÅïØ
+g	java:S117»"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µªŞ
+V
+java:S1854Ã":Remove this useless assignment to local variable "online".(­¨Øøÿÿÿÿ
+Q
+java:S1117¾":Rename "State" which hides the field declared at line 184.(ŒÚÇ®
+D
+java:S1199ì"-Extract this nested code block into a method.(“í‘ê
+g	java:S117Â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ
+q
+java:S1450:"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(èÇ–ıÿÿÿÿ
+H
+java:S1659;"+Declare "etcompleteass" on a separate line.(Îê·Ò8ıÖ±²Ú.
 ?
-java:S1481œ"(Remove this unused "uid" local variable.(Ÿ‡„†
+java:S1659:"$Declare "btngps" on a separate line.(èÇ–ıÿÿÿÿ

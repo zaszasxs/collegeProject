@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center_horizontal"
+  android:orientation="horizontal">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+
+    <ImageView
+      android:id="@+id/ivStatusBg"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/shape_status_not_error" />
+
+    <ImageView
+      android:id="@+id/ivIconStatus"
+      android:layout_width="100dp"
+      android:layout_height="80dp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginEnd="-10dp"
+      android:background="@drawable/simple_iot"
+      android:backgroundTint="@color/white"
+      android:rotation="-50"
+      android:scaleType="centerCrop" />
+
+    <TextView
+      android:id="@+id/txerror"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:ellipsize="end"
+      android:lines="2"
+      android:paddingTop="15dp"
+      android:text="Not Error"
+      android:textColor="@color/white"
+      android:textSize="20sp" />
+  </RelativeLayout>
+
+</LinearLayout>

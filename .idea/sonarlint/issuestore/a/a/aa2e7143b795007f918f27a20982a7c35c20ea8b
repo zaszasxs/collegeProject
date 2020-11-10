@@ -1,141 +1,183 @@
 
-I
-java:S1874§"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä
-n	java:S117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™8·½²²Ù.
-p	java:S100ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òàğØşÿÿÿÿ8·½²²Ù.
-S
-java:S1874¾"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8·½²²Ù.
-S
-java:S1874’"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8·½²²Ù.
-n	java:S116*"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÎû8·½²²Ù.
-o	java:S116+"URename this field "search_bar" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Šê™ÿÿÿÿÿ
-i	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ºİ°úÿÿÿÿ
-
-java:S1186á"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-b
-java:S1117"GRename "storageBinReference" which hides the field declared at line 62.(Ïù°ê8·½²²Ù.
-g	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ
-D
-java:S1659*"'Declare "txplastic" on a separate line.(íÎû8·½²²Ù.
-o	java:S116:"SRename this field "BuyerUid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ÆÀÈ8·½²²Ù.
-G
-java:S1874•"0Remove this use of "getColor"; it is deprecated.(ù†ôã
-V	java:S110("<This class has 9 parents which is greater than 5 authorized.(Ôñ…İıÿÿÿÿ
-G
-java:S1874¨"0Remove this use of "getColor"; it is deprecated.(ù†ôã
-S
-java:S1874¥"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8·½²²Ù.
 N
-java:S1874È"0Remove this use of "getColor"; it is deprecated.(Ø¿›‡8·½²²Ù.
-L
-java:S1874´"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ
-l	java:S117Í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ
-S
-java:S1068>"7Remove this unused "storageBinReference" private field.(³‚Ş@8·½²²Ù.
-L
-java:S1874©"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ
+java:S1874¾"0Remove this use of "getColor"; it is deprecated.(ù†ôã8İŸîµÚ.
+N
+java:S1874©"0Remove this use of "getColor"; it is deprecated.(ş›§ø8°©ãµÚ.
 ¤
-java:S1186×"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8·½²²Ù.
+java:S1186–"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8İŸîµÚ.
+s
+java:S3252Í"PUse static access with "android.view.ViewGroup$LayoutParams" for "WRAP_CONTENT".(„¢‘«ıÿÿÿÿ8™ÌÌµÚ.
+E
+java:S1659<"(Declare "txmechanic" on a separate line.(ÙÛªİ8ü“‚´Ú.
 N
-java:S1874Ê"0Remove this use of "getColor"; it is deprecated.(Ñêõ8·½²²Ù.
+java:S1874¦"0Remove this use of "getColor"; it is deprecated.(¶à÷8°©ãµÚ.
+G
+java:S1659A"%Declare "orderRv" on a separate line.(‰¶¨£ûÿÿÿÿ8ü“‚´Ú.
+X
+java:S1874D"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8ü“‚´Ú.
+n	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ8™ÌÌµÚ.
+n	java:S116<"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÛªİ8ü“‚´Ú.
+P
+java:S1874ó"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä8™ÌÌµÚ.
 N
-java:S1874¦"0Remove this use of "getColor"; it is deprecated.(ş›§ø8·½²²Ù.
-B
-java:S1659*"%Declare "txerror" on a separate line.(íÎû8·½²²Ù.
-t
-java:S1450+"YRemove the "search_bar" field and declare it as a local variable in the relevant methods.(“Šê™ÿÿÿÿÿ
-I
-java:S1874œ"2Remove this use of "setMessage"; it is deprecated.(¼Ù“Ì
-m	java:S116*"QRename this field "NameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÎû8·½²²Ù.
-B
-java:S1659*"%Declare "txmetal" on a separate line.(íÎû8·½²²Ù.
-B
-java:S1659*"%Declare "txglass" on a separate line.(íÎû8·½²²Ù.
-s	java:S1167"YRename this field "OrderUsersliat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞÜáôûÿÿÿÿ
+java:S1481•"0Remove this unused "AccountType" local variable.(ãîÅ«8™ÌÌµÚ.
+p	java:S100ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ºİ°úÿÿÿÿ8™ÌÌµÚ.
+m	java:S116<"QRename this field "NameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÛªİ8Áˆè²Ú.
+s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ8Ë¹ÌµÚ.
+S
+java:S1874æ"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8İŸîµÚ.
+S
+java:S1068P"7Remove this unused "storageBinReference" private field.(³‚Ş@8ü“‚´Ú.
+{
+java:S1450T"YRemove the "fbSettings" field and declare it as a local variable in the relevant methods.(îÚ ¶şÿÿÿÿ8ü“‚´Ú.
+S
+java:S1874İ"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ8İŸîµÚ.
 ¤
-java:S1186€"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8·½²²Ù.
-d	java:S100Â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù
-m
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.( Íİã8·½²²Ù.
-N
-java:S1874“"0Remove this use of "getColor"; it is deprecated.(ş›§ø8·½²²Ù.
-G
-java:S1874µ"0Remove this use of "getColor"; it is deprecated.(Ø¿›‡
-N
-java:S1874½"0Remove this use of "getColor"; it is deprecated.(ù†ôã8·½²²Ù.
-S
-java:S1874Ç"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ8·½²²Ù.
-G
-java:S1481Ê"0Remove this unused "AccountType" local variable.(ãîÅ«
-N
-java:S1874Ë"0Remove this use of "getColor"; it is deprecated.(¶à÷8·½²²Ù.
-M
-java:S1659."+Declare "relativebuyer" on a separate line.(æøİóüÿÿÿÿ8·½²²Ù.
-L
-java:S1874Ÿ"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ
-f	java:S117ñ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¥™&
-G
-java:S1874·"0Remove this use of "getColor"; it is deprecated.(Ñêõ
-;
-java:S1659/"%Declare "orderRv" on a separate line.(’ÁŞ¢
-S
-java:S1874º"0Remove this use of "getColor"; it is deprecated.(©¦Şİüÿÿÿÿ8·½²²Ù.
-G
-java:S1874¸"0Remove this use of "getColor"; it is deprecated.(¶à÷
-L
-java:S1874¢"0Remove this use of "getColor"; it is deprecated.(õíÏêÿÿÿÿÿ
-A
-java:S1659*"$Declare "tabpmg" on a separate line.(íÎû8·½²²Ù.
-B
-java:S1659*"%Declare "tabinfo" on a separate line.(íÎû8·½²²Ù.
-
-java:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-L
-java:S1874Œ"0Remove this use of "getColor"; it is deprecated.(ù”¨üúÿÿÿÿ
-G
-java:S1874"0Remove this use of "getColor"; it is deprecated.(Ñêõ
-L
-java:S1874–"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ
+java:S1186Ù"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8…Ô·ÃÚ.
+j
+java:S1192ï"GDefine a constant instead of duplicating this literal "Alert " 3 times.(²¬æúÿÿÿÿ8Ë¹ÌµÚ.
+^
+java:S1117ß"@Rename "tvDeviceName" which hides the field declared at line 82.(Şªã‰8™ÌÌµÚ.
+¤
+java:S1186û"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8™ÌÌµÚ.
+p
+java:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.( Íİã8™ÌÌµÚ.
+i
+java:S1192ë"KDefine a constant instead of duplicating this literal "alertMetal" 3 times.(ÄçŒ8Á¢ÒµÚ.
 D
-java:S1659*"'Declare "txVolumnM" on a separate line.(íÎû8·½²²Ù.
-S
-java:S1874Ğ"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8·½²²Ù.
-D
-java:S1659*"'Declare "txVolumnG" on a separate line.(íÎû8·½²²Ù.
-C
-java:S1659*"&Declare "taborder" on a separate line.(íÎû8·½²²Ù.
-M
-java:S1659."+Declare "relativeorder" on a separate line.(æøİóüÿÿÿÿ8·½²²Ù.
-V
-java:S1854Ê"?Remove this useless assignment to local variable "AccountType".(ãîÅ«
-Q
-java:S1874a"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
-G
-java:S1874"0Remove this use of "getColor"; it is deprecated.(¶à÷
+java:S1659<"'Declare "txVolumnP" on a separate line.(ÙÛªİ8ü“‚´Ú.
 N
-java:S1874Ñ"0Remove this use of "getColor"; it is deprecated.(ş›§ø8·½²²Ù.
-I
-java:S1068:",Remove this unused "BuyerUid" private field.(®ÆÀÈ8·½²²Ù.
+java:S1874¶"0Remove this use of "getColor"; it is deprecated.(Ø¿›‡8°©ãµÚ.
 W
-java:S1068<"5Remove this unused "modelPMGArrayList" private field.(ûïëÊÿÿÿÿÿ8·½²²Ù.
-Q
-java:S18742"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
-B
-java:S1659*"%Declare "EmailIv" on a separate line.(íÎû8·½²²Ù.
-C
-java:S1659*"&Declare "tabbuyer" on a separate line.(íÎû8·½²²Ù.
-G
-java:S1874 "0Remove this use of "getColor"; it is deprecated.(Ø¿›‡
-u
-java:S1450,"XRemove the "btnlogout" field and declare it as a local variable in the relevant methods.(×¸´ò8·½²²Ù.
-D
-java:S1659*"'Declare "txVolumnP" on a separate line.(íÎû8·½²²Ù.
-G
-java:S1874Í"0Remove this use of "getColor"; it is deprecated.(±ìí†
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+java:S1068N"5Remove this unused "modelPMGArrayList" private field.(ûïëÊÿÿÿÿÿ8ü“‚´Ú.
 L
-java:S1659."*Declare "relativeinfo" on a separate line.(æøİóüÿÿÿÿ8·½²²Ù.
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-g	java:S117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«
+java:S11288"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8‚ë«µÚ.
+¤
+java:S1186¬"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8™ÌÌµÚ.
+¤
+java:S1186õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8İŸîµÚ.
+B
+java:S1659<"%Declare "tabinfo" on a separate line.(ÙÛªİ8ü“‚´Ú.
+N
+java:S1874¥"0Remove this use of "getColor"; it is deprecated.(Ñêõ8İŸîµÚ.
+¤
+java:S1186­"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8™ÌÌµÚ.
+S
+java:S1874¸"0Remove this use of "getColor"; it is deprecated.(õíÏêÿÿÿÿÿ8İŸîµÚ.
+D
+java:S1659<"'Declare "txVolumnM" on a separate line.(ÙÛªİ8ü“‚´Ú.
+v	java:S116="URename this field "search_bar" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Šê™ÿÿÿÿÿ8ü“‚´Ú.
+I
+java:S1068L",Remove this unused "BuyerUid" private field.(®ÆÀÈ8ü“‚´Ú.
+N
+java:S1874Ş"0Remove this use of "getColor"; it is deprecated.(Ø¿›‡8°©ãµÚ.
+o
+java:S1192Æ"LDefine a constant instead of duplicating this literal "AccountType" 3 times.(Í„‚œıÿÿÿÿ8°ÃÚ.
+I
+java:S1075–"&Remove this hard-coded path-delimiter.(óÛºùÿÿÿÿ8™ÌÌµÚ.
+N
+java:S1874à"0Remove this use of "getColor"; it is deprecated.(Ñêõ8İŸîµÚ.
+S
+java:S1874»"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8İŸîµÚ.
+N
+java:S1874¼"0Remove this use of "getColor"; it is deprecated.(ş›§ø8°©ãµÚ.
+C
+java:S1659<"&Declare "tabbuyer" on a separate line.(ÙÛªİ8ü“‚´Ú.
+S
+java:S1874Ğ"0Remove this use of "getColor"; it is deprecated.(©¦Şİüÿÿÿÿ8İŸîµÚ.
+N
+java:S1874Ë"0Remove this use of "getColor"; it is deprecated.(Ø¿›‡8°©ãµÚ.
+F
+java:S1659A"$Declare "infoRv" on a separate line.(‰¶¨£ûÿÿÿÿ8£š—ÃÚ.
+N
+java:S1874Î"0Remove this use of "getColor"; it is deprecated.(¶à÷8°©ãµÚ.
+S
+java:S1874Ê"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ8İŸîµÚ.
+]
+java:S1854•"?Remove this useless assignment to local variable "AccountType".(ãîÅ«8™ÌÌµÚ.
+n
+java:S1192å"KDefine a constant instead of duplicating this literal "deviceName" 5 times.(ş–˜øÿÿÿÿ8™ÌÌµÚ.
+D
+java:S1659<"'Declare "txplastic" on a separate line.(ÙÛªİ8ü“‚´Ú.
+k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù8™ÌÌµÚ.
+I
+java:S1075–"&Remove this hard-coded path-delimiter.(óÛºùÿÿÿÿ8™ÌÌµÚ.
+t
+java:S1450="YRemove the "search_bar" field and declare it as a local variable in the relevant methods.(“Šê™ÿÿÿÿÿ
+A
+java:S1659<"$Declare "tabpmg" on a separate line.(ÙÛªİ8ü“‚´Ú.
+X
+java:S1874|"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8™ÌÌµÚ.
+¤
+java:S1186á"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8Ã›™ÃÚ.
+z	java:S116I"YRename this field "OrderUsersliat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞÜáôûÿÿÿÿ8ü“‚´Ú.
+M
+java:S1659@"+Declare "relativebuyer" on a separate line.(æøİóüÿÿÿÿ8Áˆè²Ú.
+N
+java:S1874ç"0Remove this use of "getColor"; it is deprecated.(ş›§ø8°©ãµÚ.
+B
+java:S1659<"%Declare "txglass" on a separate line.(ÙÛªİ8ü“‚´Ú.
+¤
+java:S1186¿"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8™ÌÌµÚ.
+u
+java:S1450>"XRemove the "btnlogout" field and declare it as a local variable in the relevant methods.(×¸´ò8ü“‚´Ú.
+¤
+java:S1186º"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8İŸîµÚ.
+o	java:S116L"SRename this field "BuyerUid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ÆÀÈ8ü“‚´Ú.
+S
+java:S1874¬"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8°©ãµÚ.
+C
+java:S1659<"&Declare "taborder" on a separate line.(ÙÛªİ8ü“‚´Ú.
+N
+java:S1874ã"0Remove this use of "getColor"; it is deprecated.(±ìí†8İŸîµÚ.
+S
+java:S1874¢"0Remove this use of "getColor"; it is deprecated.(ù”¨üúÿÿÿÿ8İŸîµÚ.
+p	java:S100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òàğØşÿÿÿÿ8™ÌÌµÚ.
+D
+java:S1659<"'Declare "txVolumnG" on a separate line.(ÙÛªİ8ü“‚´Ú.
+m	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“¥™&8İŸîµÚ.
+S
+java:S1874µ"0Remove this use of "getColor"; it is deprecated.(ñ¾œùÿÿÿÿ8İŸîµÚ.
+N
+java:S1874Í"0Remove this use of "getColor"; it is deprecated.(Ñêõ8İŸîµÚ.
+¤
+java:S1186–"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8İŸîµÚ.
+i
+java:S1192ì"KDefine a constant instead of duplicating this literal "alertGlass" 3 times.(ÉØà‡8Á¢ÒµÚ.
+e
+java:S1117Æ"GRename "storageBinReference" which hides the field declared at line 80.(Ïù°ê8™ÌÌµÚ.
+N
+java:S1874«"0Remove this use of "getColor"; it is deprecated.(ù†ôã8İŸîµÚ.
+n	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«8™ÌÌµÚ.
+S
+java:S1874Ô"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8°©ãµÚ.
+B
+java:S1659<"%Declare "txmetal" on a separate line.(ÙÛªİ8ü“‚´Ú.
+S
+java:S1874¿"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8°©ãµÚ.
+s
+java:S3252Í"PUse static access with "android.view.ViewGroup$LayoutParams" for "MATCH_PARENT".(„¢‘«ıÿÿÿÿ8™ÌÌµÚ.
+N
+java:S1874á"0Remove this use of "getColor"; it is deprecated.(¶à÷8°©ãµÚ.
+n	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™8™ÌÌµÚ.
+B
+java:S1659<"%Declare "EmailIv" on a separate line.(ÙÛªİ8ü“‚´Ú.
+]	java:S110:"<This class has 9 parents which is greater than 5 authorized.(Ôñ…İıÿÿÿÿ8ü“‚´Ú.
+L
+java:S1659@"*Declare "relativeinfo" on a separate line.(æøİóüÿÿÿÿ8ü“‚´Ú.
+N
+java:S1874Ó"0Remove this use of "getColor"; it is deprecated.(ù†ôã8İŸîµÚ.
+M
+java:S1659@"+Declare "relativeorder" on a separate line.(æøİóüÿÿÿÿ8ü“‚´Ú.
+M
+java:S1659R"+Declare "tvDeviceName3" on a separate line.(·Æ…áÿÿÿÿÿ8ü“‚´Ú.
+P
+java:S1874è"2Remove this use of "setMessage"; it is deprecated.(¼Ù“Ì8™ÌÌµÚ.
+¤
+java:S1186í"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8İŸîµÚ.
+S
+java:S1874¨"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8İŸîµÚ.
+k
+java:S1192ê"MDefine a constant instead of duplicating this literal "alertPlastic" 3 times.(êÖø8Á¢ÒµÚ.
+M
+java:S1659R"+Declare "tvDeviceName2" on a separate line.(·Æ…áÿÿÿÿÿ8ü“‚´Ú.

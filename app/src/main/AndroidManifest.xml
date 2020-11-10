@@ -9,6 +9,8 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
   <application
     android:allowBackup="true"
@@ -17,10 +19,13 @@
     android:roundIcon="@drawable/buag"
     android:supportsRtl="true"
     android:theme="@style/AppTheme.NoActionBar">
-      <activity android:name=".OrderDetailActivity" />
+    <activity android:name=".InFormationDetailActivity"
+      android:theme="@style/AppThemeMain"/>
+    <activity android:name=".OrderDetailActivity" />
     <activity android:name=".EditSellItemActivity" />
     <activity android:name=".addSellActivity" />
-    <activity android:name=".OrderDetailBuyerActivity"/>
+    <activity android:name=".OrderDetailBuyerActivity" />
+    <activity android:name=".addInfomationActivity" />
     <activity
       android:name=".BuyerDetailActivity"
       android:windowSoftInputMode="stateHidden" /> <!-- hide keyboard to default -->
@@ -54,16 +59,12 @@
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_channel_id"
       android:value="@string/default_notification_channel_id" />
-
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_icon"
       android:resource="@drawable/crop_image_menu_rotate_left" />
-
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_color"
       android:resource="@color/colorAccent" />
-
-
   </application>
 
 </manifest>

@@ -3,6 +3,15 @@ package com.example.proe.Model;
 public class ModelTokenUser {
   String uid;
   String email;
+  String accountType;
+
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public void setAccountType(String accountType) {
+    this.accountType = accountType;
+  }
 
   public String getUid() {
     return uid;

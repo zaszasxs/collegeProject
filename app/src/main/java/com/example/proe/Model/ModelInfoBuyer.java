@@ -1,19 +1,12 @@
 package com.example.proe.Model;
 
-public class ModelInfoBuyer {
+import java.io.Serializable;
 
-    String InfomationID,Infotitle,Infodescription,timestamp,Uid,InfoTime;
+public class ModelInfoBuyer implements Serializable {
+
+    String InfomationID,Infotitle,Infodescription,timestamp,Uid;
 
     public ModelInfoBuyer() {
-    }
-
-    public ModelInfoBuyer(String infomationID, String infotitle, String infodescription, String timestamp, String uid,String InfoTime) {
-        this.InfomationID = infomationID;
-        this.Infotitle = infotitle;
-        this.Infodescription = infodescription;
-        this.timestamp = timestamp;
-        this.Uid = uid;
-        this.InfoTime = InfoTime;
     }
 
     public String getInfomationID() {
@@ -56,11 +49,4 @@ public class ModelInfoBuyer {
         Uid = uid;
     }
 
-    public String getInfoTime() {
-        return InfoTime;
-    }
-
-    public void setInfoTime(String infoTime) {
-        InfoTime = infoTime;
-    }
 }

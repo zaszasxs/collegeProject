@@ -5,8 +5,10 @@ import android.widget.Toast;
 
 import com.example.proe.LoginActivity;
 import com.example.proe.Model.BodyPushToken;
+import com.example.proe.Model.ModelOrderDetail2;
 import com.example.proe.Model.ModelPushToken;
 import com.example.proe.Model.ModelSellItem;
+import com.example.proe.Model.ModelTokenUser;
 import com.example.proe.Model.Result;
 import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,17 +43,17 @@ public class CallSendNotification {
     mApiService.sendNotification(Constant.KEY_PUSH, bodyPushToken).enqueue(new Callback<ModelPushToken>() {
       @Override
       public void onResponse(Call<ModelPushToken> call, Response<ModelPushToken> response) {
-        if (response.isSuccessful()){
+        if (response.isSuccessful()) {
           result.setStatus(true);
           result.setMessage("Success");
           tokenMutableLiveData.setValue(result);
         }
-        Log.i(TAG,"Success : "+response);
+        Log.i(TAG, "Success : " + response);
       }
 
       @Override
       public void onFailure(Call<ModelPushToken> call, Throwable t) {
-        Log.i(TAG,"Error : "+t.getMessage());
+        Log.i(TAG, "Error : " + t.getMessage());
         result.setStatus(false);
         result.setMessage(t.getMessage());
         tokenMutableLiveData.setValue(result);
@@ -61,7 +63,33 @@ public class CallSendNotification {
     return tokenMutableLiveData;
   }
 
-  public static MutableLiveData<String> getTokenFirebase(String uid){
+  public static MutableLiveData<ArrayList<String>> getTokenFirebaseAll(String userType) {
+    final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("tokenUser");
+    final MutableLiveData<ArrayList<String>> token = new MutableLiveData<>();
+    final ArrayList<String> tokensList = new ArrayList<>();
+
+    databaseReference.orderByChild("accountType").equalTo(userType).addListenerForSingleValueEvent(new ValueEventListener() {
+      @Override
+      public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+        if (dataSnapshot.exists()) {
+          for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            ModelTokenUser modelTokenUser = ds.getValue(ModelTokenUser.class);
+            String token = modelTokenUser.getToken();
+            tokensList.add(token);
+          }
+        }
+        token.setValue(tokensList);
+      }
+
+      @Override
+      public void onCancelled(@NonNull DatabaseError databaseError) {
+        token.setValue(tokensList);
+      }
+    });
+    return token;
+  }
+
+  public static MutableLiveData<String> getTokenFirebase(String uid) {
     final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("tokenUser");
     final MutableLiveData<String> token = new MutableLiveData<>();
     databaseReference.orderByChild("uid").equalTo(uid).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -69,7 +97,7 @@ public class CallSendNotification {
       public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
         if (dataSnapshot.exists()) {
           token.setValue(Utils.recArrayList(dataSnapshot).get(0).get("token").toString());
-        }else {
+        } else {
           token.setValue("");
         }
       }

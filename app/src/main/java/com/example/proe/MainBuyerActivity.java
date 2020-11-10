@@ -2,16 +2,20 @@ package com.example.proe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -26,7 +30,10 @@ import com.example.proe.Adapter.AdapterSellItem;
 import com.example.proe.Model.ModelInfoBuyer;
 import com.example.proe.Model.ModelOrderBuyer;
 import com.example.proe.Model.ModelSellItem;
+import com.example.proe.Model.Result;
 import com.example.proe.notification.SharedPreferences;
+import com.example.proe.notification.connect.CallSendNotification;
+import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +47,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observable;
 
 public class MainBuyerActivity extends AppCompatActivity {
 
@@ -60,7 +68,7 @@ public class MainBuyerActivity extends AppCompatActivity {
     private ArrayList<ModelOrderBuyer> orderBuyerArrayList;
     private AdapterOrderBuyer adapterOrderBuyer;
 
-    private ArrayList<ModelInfoBuyer> infoBuyerArrayList;
+    private ArrayList<ModelInfoBuyer> infoBuyerArrayList = new ArrayList<>();
     private AdapterInfoBuyer adapterInfoBuyer;
 
 
@@ -100,12 +108,14 @@ public class MainBuyerActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
         firebaseAuth = FirebaseAuth.getInstance();
+        clearNotificationAll();
         checkUser();
         loadSellitem();
         loadOrderBuyer();
-        loadInfoBuyer();
 
         showDashboardUI();
+
+        loadInfoBuyer();
 
         etsearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -238,11 +248,11 @@ public class MainBuyerActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void loadInfoBuyer() {
-        infoBuyerArrayList = new ArrayList<>();
+        adapterInfoBuyer = new AdapterInfoBuyer(MainBuyerActivity.this,infoBuyerArrayList);
+        infoRv.setAdapter(adapterInfoBuyer);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(firebaseAuth.getUid()).child("Information")
@@ -255,9 +265,7 @@ public class MainBuyerActivity extends AppCompatActivity {
                             ModelInfoBuyer modelInfoBuyer = ds.getValue(ModelInfoBuyer.class);
                             infoBuyerArrayList.add(modelInfoBuyer);
                         }
-
-                        adapterInfoBuyer = new AdapterInfoBuyer(MainBuyerActivity.this,infoBuyerArrayList);
-                        infoRv.setAdapter(adapterInfoBuyer);
+                        adapterInfoBuyer.notifyDataSetChanged();
                     }
 
                     @Override
@@ -396,6 +404,7 @@ public class MainBuyerActivity extends AppCompatActivity {
 
     private void checkUser() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
+        clearNotificationAll();
         if(user==null){
             startActivity(new Intent(MainBuyerActivity.this,LoginActivity.class));
             finish();
@@ -403,6 +412,11 @@ public class MainBuyerActivity extends AppCompatActivity {
         else{
             LoadMyinfo();
         }
+    }
+
+    private void clearNotificationAll(){
+        NotificationManager nMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        nMgr.cancelAll();
     }
 
     private void LoadMyinfo() {
@@ -459,9 +473,7 @@ public class MainBuyerActivity extends AppCompatActivity {
     }
 
     private void showOrderUI() {
-        relativeboard.setVisibility(View.GONE);
-        relativeinfo.setVisibility(View.GONE);
-        relativeorder.setVisibility(View.VISIBLE);
+        isViewInFomation(false);
 
         taborder.setTextColor(getResources().getColor(R.color.black));
         taborder.setBackgroundResource(R.drawable.sharp_recmenu1);
@@ -474,9 +486,7 @@ public class MainBuyerActivity extends AppCompatActivity {
     }
 
     private void showInformationUI() {
-        relativeboard.setVisibility(View.GONE);
-        relativeinfo.setVisibility(View.VISIBLE);
-        relativeorder.setVisibility(View.GONE);
+        isViewInFomation(true);
 
         tabinfo.setTextColor(getResources().getColor(R.color.black));
         tabinfo.setBackgroundResource(R.drawable.sharp_recmenu1);
@@ -486,6 +496,23 @@ public class MainBuyerActivity extends AppCompatActivity {
 
         taborder.setTextColor(getResources().getColor(R.color.white));
         taborder.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+    }
+
+    private void isViewInFomation(boolean info) {
+        relativeboard.setVisibility(View.GONE);
+        relativeinfo.setVisibility(View.GONE);
+        relativeorder.setVisibility(View.VISIBLE);
+        if (info) {
+            findViewById(R.id.infoRv).setVisibility(View.VISIBLE);
+            findViewById(R.id.orderRv).setVisibility(View.GONE);
+            findViewById(R.id.filterorderbtn).setVisibility(View.GONE);
+            findViewById(R.id.txfilterorder).setVisibility(View.GONE);
+        }else {
+            findViewById(R.id.infoRv).setVisibility(View.GONE);
+            findViewById(R.id.orderRv).setVisibility(View.VISIBLE);
+            findViewById(R.id.filterorderbtn).setVisibility(View.VISIBLE);
+            findViewById(R.id.txfilterorder).setVisibility(View.VISIBLE);
+        }
     }
 
 }

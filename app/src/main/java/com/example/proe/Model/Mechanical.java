@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Mechanical {
-    private int glass, metal, plastic,ulglass, ulmetal, ulplastic;
+    private Double glass, metal, plastic,ulglass, ulmetal, ulplastic;
     private String uid, error;
     private Mechanical() {
     }
@@ -15,7 +15,7 @@ public class Mechanical {
         return glass;
     }
 
-    public void setGlass(int glass) {
+    public void setGlass(Double glass) {
         this.glass = glass;
     }
 
@@ -23,31 +23,31 @@ public class Mechanical {
         return metal;
     }
 
-    public void setMetal(int metal) {
+    public void setMetal(Double metal) {
         this.metal = metal;
     }
 
-    public int getUlglass() {
+    public Double getUlglass() {
         return ulglass;
     }
 
-    public void setUlglass(int ulglass) {
+    public void setUlglass(Double ulglass) {
         this.ulglass = ulglass;
     }
 
-    public int getUlmetal() {
+    public Double getUlmetal() {
         return ulmetal;
     }
 
-    public void setUlmetal(int ulmetal) {
+    public void setUlmetal(Double ulmetal) {
         this.ulmetal = ulmetal;
     }
 
-    public int getUlplastic() {
+    public Double getUlplastic() {
         return ulplastic;
     }
 
-    public void setUlplastic(int ulplastic) {
+    public void setUlplastic(Double ulplastic) {
         this.ulplastic = ulplastic;
     }
 
@@ -55,7 +55,7 @@ public class Mechanical {
         return plastic;
     }
 
-    public void setPlastic(int plastic) {
+    public void setPlastic(Double plastic) {
         this.plastic = plastic;
     }
 

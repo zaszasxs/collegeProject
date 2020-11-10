@@ -13,4 +13,11 @@
     <color name="green">#4CAF50</color>
     <color name="gray">#C5514F4F</color>
     <color name="colorGray00">#f5f0f0</color>
+
+    <color name="bgDeviceFull">#CDEF0909</color>
+    <color name="bgDeviceFull_20">#36EF0909</color>
+
+    <color name="colorOverlap">#59C65B</color>
+    <color name="colorNotError">#027A05</color>
+    <color name="colorError">#CD9F0303</color>
 </resources>

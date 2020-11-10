@@ -1,6 +1,7 @@
 package com.example.proe.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.proe.InFormationDetailActivity;
 import com.example.proe.Model.ModelInfoBuyer;
 import com.example.proe.R;
 
@@ -34,7 +36,7 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HolderInfoBuyer holder, int position) {
+    public void onBindViewHolder(@NonNull HolderInfoBuyer holder, final int position) {
 
         ModelInfoBuyer modelInfoBuyer = infoBuyerArrayList.get(position);
 
@@ -42,20 +44,30 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
         String Infotitle = modelInfoBuyer.getInfotitle();
         String Infodescription = modelInfoBuyer.getInfodescription();
         String Uid = modelInfoBuyer.getUid();
-        String InfoTime = modelInfoBuyer.getInfoTime();
+        String InfoTime = modelInfoBuyer.getTimestamp();
 
-        holder.txinfo.setText("Information ID : "+ InfomationID);
-        holder.txtitle.setText("Information title : "+Infotitle);
+        holder.txinfo.setText("ID : "+ InfomationID);
+        holder.txtitle.setText("Title : "+Infotitle);
 
         Calendar calendar =Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(InfoTime));
-        String formatedDate = DateFormat.format("dd/MM/yyyy hh:mm a",calendar).toString();
+        final String formatedDate = DateFormat.format("dd/MM/yyyy hh:mm a",calendar).toString();
         holder.txdate.setText(formatedDate);
+
+        holder.itemView.getRootView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detail = new Intent(context, InFormationDetailActivity.class);
+                detail.putExtra("dataObj",infoBuyerArrayList.get(position));
+                detail.putExtra("dataCurrent",formatedDate);
+                context.startActivity(detail);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return infoBuyerArrayList.size();
     }
 
     class HolderInfoBuyer extends RecyclerView.ViewHolder {
@@ -65,9 +77,9 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
         public HolderInfoBuyer(@NonNull View itemView) {
             super(itemView);
 
-            txinfo = itemView.findViewById(R.id.txinfo);
-            txdate = itemView.findViewById(R.id.txdate);
-            txtitle = itemView.findViewById(R.id.txtitle);
+            txinfo = itemView.findViewById(R.id.tvInformationId);
+            txdate = itemView.findViewById(R.id.tvInformationDate);
+            txtitle = itemView.findViewById(R.id.tvInformationTitle);
         }
     }
 }

@@ -15,13 +15,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
+import com.example.proe.Model.Result;
+import com.example.proe.notification.connect.CallSendNotification;
+import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class addInfomationActivity extends AppCompatActivity {
@@ -103,8 +108,7 @@ public class addInfomationActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        progressDialog.dismiss();
-                        Toast.makeText(addInfomationActivity.this, "Information Added", Toast.LENGTH_SHORT).show();
+                        getTokensSendNotificationAll("User");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -116,4 +120,32 @@ public class addInfomationActivity extends AppCompatActivity {
                 });
 
     }
+
+    private void getTokensSendNotificationAll(String notificationAccountType){
+        CallSendNotification.getTokenFirebaseAll(notificationAccountType).observe(this, new Observer<ArrayList<String>>() {
+            @Override
+            public void onChanged(ArrayList<String> tokens) {
+                sendInformationNotification(tokens);
+            }
+        });
+    }
+
+    private void sendInformationNotification(ArrayList<String> tokens) {
+        String titleNotification = "Information News!!";
+        String bodyNotification = Infotitle;
+
+        CallSendNotification.sendNotification(Utils.createObject(titleNotification, bodyNotification, tokens)).observe(this, new Observer<Result>() {
+            @Override
+            public void onChanged(Result modelPushToken) {
+                if (modelPushToken.getStatus()) {
+                    progressDialog.dismiss();
+                    Toast.makeText(addInfomationActivity.this, "Information Added", Toast.LENGTH_SHORT).show();
+                } else {
+                    progressDialog.dismiss();
+                    Toast.makeText(addInfomationActivity.this, "Send notification error", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
 }

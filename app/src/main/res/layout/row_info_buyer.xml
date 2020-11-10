@@ -1,58 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginStart="5dp"
+  android:layout_marginEnd="5dp"
+  android:layout_marginTop="-5dp"
+  app:cardBackgroundColor="@color/white"
+  app:cardElevation="5dp"
+  app:cardCornerRadius="10dp"
+  app:cardUseCompatPadding="true">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layDevicePlastic"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="2dp"
-    app:cardElevation="3dp"
-    app:contentPadding="5dp"
-    app:cardBackgroundColor="@color/white">
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txinfo"
-            android:text="Information ID : 121212"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txdate"
-            android:text="10/08/2020"
-            android:layout_toStartOf="@+id/btnnext"
-            android:textColor="@color/gray"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtitle"
-            android:text="Title : 1 "
-            android:layout_marginTop="3dp"
-            android:layout_below="@+id/txinfo"
-            android:textColor="@color/gray" />
+    android:paddingTop="10dp"
+    android:paddingBottom="15dp">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnnext"
-            android:src="@drawable/ic_next_gray_24dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+    <ImageView
+      android:id="@+id/ivIconMechanical"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="8dp"
+      android:background="@drawable/simple_news"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+      android:id="@+id/tvInformationId"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="5dp"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:text="@string/app_name"
+      android:textColor="@color/black"
+      android:textSize="17sp"
+      app:layout_constraintEnd_toStartOf="@+id/ivNext"
+      app:layout_constraintStart_toEndOf="@+id/ivIconMechanical"
+      app:layout_constraintTop_toTopOf="@+id/ivIconMechanical" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="4dp"
-            android:layout_below="@+id/txtitle"
-            android:background="@color/gray"/>
-    </RelativeLayout>
+    <TextView
+      android:id="@+id/tvInformationTitle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
+      android:layout_marginEnd="5dp"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:text="@string/app_name"
+      android:textColor="@color/gray"
+      android:lines="1"
+      android:ellipsize="end"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/ivNext"
+      app:layout_constraintStart_toEndOf="@+id/ivIconMechanical"
+      app:layout_constraintTop_toBottomOf="@+id/tvInformationId" />
+
+    <TextView
+      android:id="@+id/tvInformationDate"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="10dp"
+      android:text="เวลา"
+      android:textSize="12sp"
+      android:visibility="visible"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/ivNext"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/ic_next_gray_24dp"
+      android:backgroundTint="@color/red"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

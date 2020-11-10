@@ -1,190 +1,190 @@
 
-n	java:S117â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ8«ÍÂ¢Ù.
-V
-java:S1854â"8Remove this useless assignment to local variable "Name".(’ûŞ8«ÍÂ¢Ù.
-F
-java:S1659=")Declare "txcartcount" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-T
-java:S1481Ü"6Remove this unused "NOTIFICATION_TYPE" local variable.(‹¶ı‘8«ÍÂ¢Ù.
-s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ8«ÍÂ¢Ù.
-Y
-java:S1854"6Remove this useless assignment to local variable "id".(İôåœøÿÿÿÿ8«ÍÂ¢Ù.
-[
-java:S3878¤"8Remove this array creation and simply pass the elements.(ªÉíáşÿÿÿÿ8«ÍÂ¢Ù.
-g
-java:S1192÷"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(Ñ÷¯8«ÍÂ¢Ù.
-s	java:S117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ8«ÍÂ¢Ù.
-x
-java:S1450>"VRemove the "callbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
 ]
 java:S1117Ÿ":Rename "easyDB" which hides the field declared at line 81.(ˆÎ‘øÿÿÿÿ8«ÍÂ¢Ù.
 N
 java:S1481ã"0Remove this unused "AccountType" local variable.(ãîÅ«8«ÍÂ¢Ù.
-p	java:S100Û"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷—ïşùÿÿÿÿ8«ÍÂ¢Ù.
-V
-java:S1854µ"8Remove this useless assignment to local variable "name".(¿öŸò8«ÍÂ¢Ù.
-s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
-t
-java:S1104Œ"VMake totalprice a static final constant or non-public and provide accessors if needed.(öØ½8«ÍÂ¢Ù.
-o	java:S116C"SRename this field "BuyerUid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ÆÀÈ8«ÍÂ¢Ù.
-¤
-java:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
-G
-java:S1481â")Remove this unused "Name" local variable.(’ûŞ8«ÍÂ¢Ù.
-V
-java:S3878£"8Remove this array creation and simply pass the elements.(ÿ˜™Ç8«ÍÂ¢Ù.
-k
-java:S1192õ"HDefine a constant instead of duplicating this literal "OrderTo" 4 times.(­Â¨ãüÿÿÿÿ8«ÍÂ¢Ù.
-\
-java:S1155İ">Use isEmpty() to check whether the collection is empty or not.(Ë„İø8«ÍÂ¢Ù.
-^
-java:S1854—";Remove this useless assignment to local variable "txtotal".(á¤Â»ıÿÿÿÿ8«ÍÂ¢Ù.
-p	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ†¯ıùÿÿÿÿ8«ÍÂ¢Ù.
-F
-java:S1659O")Declare "shopAddress" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
 V
 java:S3878€"8Remove this array creation and simply pass the elements.(ÿ˜™Ç8«ÍÂ¢Ù.
-k	java:S100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×®ıÖ8«ÍÂ¢Ù.
-¤
-java:S1186ö"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
-^	java:S125¬"<This block of commented-out lines of code should be removed.(Í»£Ÿıÿÿÿÿ8«ÍÂ¢Ù.
-C
-java:S1659="&Declare "txfilter" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-[
-java:S3878"8Remove this array creation and simply pass the elements.(ªÉíáşÿÿÿÿ8«ÍÂ¢Ù.
-O
-java:S1481—",Remove this unused "txtotal" local variable.(á¤Â»ıÿÿÿÿ8«ÍÂ¢Ù.
-]	java:S110:"<This class has 9 parents which is greater than 5 authorized.(è·¦İûÿÿÿÿ8«ÍÂ¢Ù.
-s	java:S117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.
-D
-java:S1659O"'Declare "shopEmail" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
-s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’¥Éñúÿÿÿÿ8«ÍÂ¢Ù.
-K
-java:S1659N")Declare "mylongitude" on a separate line.(†ÛØ›ûÿÿÿÿ8«ÍÂ¢Ù.
-K	java:S108Ï")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8«ÍÂ¢Ù.
-F
-java:S1659=")Declare "opencloseIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-n	java:S117ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™8«ÍÂ¢Ù.
-T
-java:S1481æ"1Remove this unused "profileImage" local variable.(Áéµşÿÿÿÿ8«ÍÂ¢Ù.
-D
-java:S1659="'Declare "addressIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-M
-java:S1659>"+Declare "filtersellbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-q	java:S116="URename this field "ShopnameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
-D
-java:S1659="'Declare "txprofile" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-z
-java:S1450>"XRemove the "btnreview" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-k
-java:S1192o"IDefine a constant instead of duplicating this literal "BuyerUid" 3 times.(Ü»»¢øÿÿÿÿ8«ÍÂ¢Ù.
-w
-java:S1450>"URemove the "mapbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-V
-java:S3878ƒ"8Remove this array creation and simply pass the elements.(‹–œ¬8«ÍÂ¢Ù.
-G
-java:S1659O"*Declare "shoplatitude" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
-x
-java:S1450>"VRemove the "cartbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-p	java:S100Ş"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( åÈêúÿÿÿÿ8«ÍÂ¢Ù.
-s	java:S117€"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôùã®úÿÿÿÿ8«ÍÂ¢Ù.
-x
-java:S1450>"VRemove the "backbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-J
-java:S1659O"-Declare "shopdescription" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
-V
-java:S3878¥"8Remove this array creation and simply pass the elements.(ÉŠôõ8«ÍÂ¢Ù.
-n	java:S116="RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
-H
-java:S1659O"+Declare "shoplongitude" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
-V
-java:S3878‚"8Remove this array creation and simply pass the elements.(ÉŠôõ8«ÍÂ¢Ù.
-¤
-java:S1186ï"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
-D
-java:S1659O"'Declare "shopPhone" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
-[
-java:S3878¡"8Remove this array creation and simply pass the elements.(Ğ‡–ıúÿÿÿÿ8«ÍÂ¢Ù.
-n	java:S117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª8«ÍÂ¢Ù.
-G
-java:S1659>"%Declare "backbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-g
-java:S1192ö"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(‡ŒøÙ8«ÍÂ¢Ù.
-n	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª8«ÍÂ¢Ù.
-s	java:S117Ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
-y
-java:S1450?"WRemove the "etsearch" field and declare it as a local variable in the relevant methods.(ıÓ¼›şÿÿÿÿ8«ÍÂ¢Ù.
-X
-java:S1874q"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8«ÍÂ¢Ù.
-G
-java:S1659N"%Declare "myPhone" on a separate line.(†ÛØ›ûÿÿÿÿ8«ÍÂ¢Ù.
-n	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«8«ÍÂ¢Ù.
-W
-java:S1854ä"9Remove this useless assignment to local variable "Email".(ˆ÷Í™8«ÍÂ¢Ù.
-B
-java:S1659="%Declare "EmailIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-i
-java:S1854Ú"FRemove this useless assignment to local variable "NOTIFICATION_TITLE".(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
-€
-java:S1450K"^Remove the "adapterCartitem" field and declare it as a local variable in the relevant methods.(Â™‹¥ıÿÿÿÿ8«ÍÂ¢Ù.
-g
-java:S1192"JDefine a constant instead of duplicating this literal "not null" 10 times.(‹¡‚¯8«ÍÂ¢Ù.
-H
-java:S1481ä"*Remove this unused "Email" local variable.(ˆ÷Í™8«ÍÂ¢Ù.
-Z
-java:S1481Ú"7Remove this unused "NOTIFICATION_TITLE" local variable.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
-n	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘8«ÍÂ¢Ù.
-[
-java:S1854ç"8Remove this useless assignment to local variable "City".(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.
-c
-java:S1854æ"@Remove this useless assignment to local variable "profileImage".(Áéµşÿÿÿÿ8«ÍÂ¢Ù.
-~
-java:S1450>"\Remove the "filtersellbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
 Ÿ
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±8«ÍÂ¢Ù.
-Ÿ
-java:S1186œ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê8«ÍÂ¢Ù.
-V
-java:S3878¢"8Remove this array creation and simply pass the elements.(‹¡‚¯8«ÍÂ¢Ù.
-c
-java:S1854Ü"ERemove this useless assignment to local variable "NOTIFICATION_TYPE".(‹¶ı‘8«ÍÂ¢Ù.
-n	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘8«ÍÂ¢Ù.
-B
-java:S1659="%Declare "PhoneIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
-v
-java:S1104"XMake txtotalprice a static final constant or non-public and provide accessors if needed.(±ğÖÀ8«ÍÂ¢Ù.
-[
-java:S1144¯"8Remove this unused private "sendFCMNotification" method.(ƒúß§ıÿÿÿÿ8«ÍÂ¢Ù.
-J
-java:S1481"'Remove this unused "id" local variable.(İôåœøÿÿÿÿ8«ÍÂ¢Ù.
-k
-java:S1192ğ"HDefine a constant instead of duplicating this literal "OrderID" 5 times.(Íóğëúÿÿÿÿ8«ÍÂ¢Ù.
-I
-java:S1659>"'Declare "btnreview" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-G
-java:S1481µ")Remove this unused "name" local variable.(¿öŸò8«ÍÂ¢Ù.
-n	java:S116="RRename this field "PhoneIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
-U
-java:S3878"8Remove this array creation and simply pass the elements.(‹¡‚¯8«ÍÂ¢Ù.
-U
-java:S1874è"2Remove this use of "setMessage"; it is deprecated.(’¨¸…úÿÿÿÿ8«ÍÂ¢Ù.
-^	java:S125×"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ8«ÍÂ¢Ù.
-X
-java:S1874B"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8«ÍÂ¢Ù.
-]
-java:S1854ã"?Remove this useless assignment to local variable "AccountType".(ãîÅ«8«ÍÂ¢Ù.
-L
-java:S1481ç")Remove this unused "City" local variable.(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.
-H
-java:S5411á"*Use the primitive boolean expression here.(éùÌó8«ÍÂ¢Ù.
+~
+java:S1450>"\Remove the "filtersellbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117€"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôùã®úÿÿÿÿ8«ÍÂ¢Ù.
+K
+java:S1659N")Declare "mylongitude" on a separate line.(†ÛØ›ûÿÿÿÿ8«ÍÂ¢Ù.
 F
 java:S1659>"$Declare "mapbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
-Z
-java:S3878~"8Remove this array creation and simply pass the elements.(Ğ‡–ıúÿÿÿÿ8«ÍÂ¢Ù.
-s	java:S117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛÃ×ıÿÿÿÿ8«ÍÂ¢Ù.
+[
+java:S1144¯"8Remove this unused private "sendFCMNotification" method.(ƒúß§ıÿÿÿÿ8«ÍÂ¢Ù.
+H
+java:S1481ä"*Remove this unused "Email" local variable.(ˆ÷Í™8«ÍÂ¢Ù.
+s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ8«ÍÂ¢Ù.
+n	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘8«ÍÂ¢Ù.
+V
+java:S3878¥"8Remove this array creation and simply pass the elements.(ÉŠôõ8«ÍÂ¢Ù.
+V
+java:S3878¢"8Remove this array creation and simply pass the elements.(‹¡‚¯8«ÍÂ¢Ù.
+G
+java:S1481â")Remove this unused "Name" local variable.(’ûŞ8«ÍÂ¢Ù.
+[
+java:S1854ç"8Remove this useless assignment to local variable "City".(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.
+W
+java:S1854ä"9Remove this useless assignment to local variable "Email".(ˆ÷Í™8«ÍÂ¢Ù.
+o	java:S116C"SRename this field "BuyerUid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ÆÀÈ8«ÍÂ¢Ù.
+k	java:S100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×®ıÖ8«ÍÂ¢Ù.
+^	java:S125¬"<This block of commented-out lines of code should be removed.(Í»£Ÿıÿÿÿÿ8«ÍÂ¢Ù.
+G
+java:S1659>"%Declare "backbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+€
+java:S1450K"^Remove the "adapterCartitem" field and declare it as a local variable in the relevant methods.(Â™‹¥ıÿÿÿÿ8«ÍÂ¢Ù.
 ¤
-java:S1186Õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
+java:S1186ï"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
+X
+java:S1874B"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8«ÍÂ¢Ù.
+x
+java:S1450>"VRemove the "backbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117Ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
+[
+java:S3878¡"8Remove this array creation and simply pass the elements.(Ğ‡–ıúÿÿÿÿ8«ÍÂ¢Ù.
+V
+java:S3878‚"8Remove this array creation and simply pass the elements.(ÉŠôõ8«ÍÂ¢Ù.
+[
+java:S3878"8Remove this array creation and simply pass the elements.(ªÉíáşÿÿÿÿ8«ÍÂ¢Ù.
+V
+java:S3878ƒ"8Remove this array creation and simply pass the elements.(‹–œ¬8«ÍÂ¢Ù.
+L
+java:S1481ç")Remove this unused "City" local variable.(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.
+X
+java:S1874q"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8«ÍÂ¢Ù.
+F
+java:S1659=")Declare "opencloseIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+w
+java:S1450>"URemove the "mapbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+U
+java:S3878"8Remove this array creation and simply pass the elements.(‹¡‚¯8«ÍÂ¢Ù.
 V
 java:S3878¦"8Remove this array creation and simply pass the elements.(‹–œ¬8«ÍÂ¢Ù.
+¤
+java:S1186ö"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
+^
+java:S1854—";Remove this useless assignment to local variable "txtotal".(á¤Â»ıÿÿÿÿ8«ÍÂ¢Ù.
+Ÿ
+java:S1186œ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê8«ÍÂ¢Ù.
+p	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ†¯ıùÿÿÿÿ8«ÍÂ¢Ù.
+n	java:S116="RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
+V
+java:S1854â"8Remove this useless assignment to local variable "Name".(’ûŞ8«ÍÂ¢Ù.
+B
+java:S1659="%Declare "EmailIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+D
+java:S1659="'Declare "addressIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+p	java:S100Û"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷—ïşùÿÿÿÿ8«ÍÂ¢Ù.
+¤
+java:S1186Õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
+k
+java:S1192õ"HDefine a constant instead of duplicating this literal "OrderTo" 4 times.(­Â¨ãüÿÿÿÿ8«ÍÂ¢Ù.
+n	java:S117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª8«ÍÂ¢Ù.
+C
+java:S1659="&Declare "txfilter" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+U
+java:S1874è"2Remove this use of "setMessage"; it is deprecated.(’¨¸…úÿÿÿÿ8«ÍÂ¢Ù.
+B
+java:S1659="%Declare "PhoneIv" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+G
+java:S1659O"*Declare "shoplatitude" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
+H
+java:S1659O"+Declare "shoplongitude" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
+q	java:S116="URename this field "ShopnameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
+z
+java:S1450>"XRemove the "btnreview" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+\
+java:S1155İ">Use isEmpty() to check whether the collection is empty or not.(Ë„İø8«ÍÂ¢Ù.
+n	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘8«ÍÂ¢Ù.
+F
+java:S1659O")Declare "shopAddress" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
+I
+java:S1659>"'Declare "btnreview" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+g
+java:S1192÷"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(Ñ÷¯8«ÍÂ¢Ù.
+H
+java:S5411á"*Use the primitive boolean expression here.(éùÌó8«ÍÂ¢Ù.
+Z
+java:S1481Ú"7Remove this unused "NOTIFICATION_TITLE" local variable.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
+F
+java:S1659=")Declare "txcartcount" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+Z
+java:S3878~"8Remove this array creation and simply pass the elements.(Ğ‡–ıúÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
+g
+java:S1192ö"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(‡ŒøÙ8«ÍÂ¢Ù.
+V
+java:S1854µ"8Remove this useless assignment to local variable "name".(¿öŸò8«ÍÂ¢Ù.
+s	java:S117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ8«ÍÂ¢Ù.
+¤
+java:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8«ÍÂ¢Ù.
+y
+java:S1450?"WRemove the "etsearch" field and declare it as a local variable in the relevant methods.(ıÓ¼›şÿÿÿÿ8«ÍÂ¢Ù.
+[
+java:S3878¤"8Remove this array creation and simply pass the elements.(ªÉíáşÿÿÿÿ8«ÍÂ¢Ù.
+n	java:S117ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™8«ÍÂ¢Ù.
+v
+java:S1104"XMake txtotalprice a static final constant or non-public and provide accessors if needed.(±ğÖÀ8«ÍÂ¢Ù.
+D
+java:S1659="'Declare "txprofile" on a separate line.(‚Êı˜8«ÍÂ¢Ù.
+G
+java:S1481µ")Remove this unused "name" local variable.(¿öŸò8«ÍÂ¢Ù.
+n	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«8«ÍÂ¢Ù.
+k
+java:S1192ğ"HDefine a constant instead of duplicating this literal "OrderID" 5 times.(Íóğëúÿÿÿÿ8«ÍÂ¢Ù.
+Y
+java:S1854"6Remove this useless assignment to local variable "id".(İôåœøÿÿÿÿ8«ÍÂ¢Ù.
+c
+java:S1854Ü"ERemove this useless assignment to local variable "NOTIFICATION_TYPE".(‹¶ı‘8«ÍÂ¢Ù.
+M
+java:S1659>"+Declare "filtersellbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+J
+java:S1659O"-Declare "shopdescription" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
 G
 java:S1659>"%Declare "cartbtn" on a separate line.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+n	java:S116="RRename this field "PhoneIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚Êı˜8«ÍÂ¢Ù.
+p	java:S100Ş"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( åÈêúÿÿÿÿ8«ÍÂ¢Ù.
+T
+java:S1481æ"1Remove this unused "profileImage" local variable.(Áéµşÿÿÿÿ8«ÍÂ¢Ù.
+c
+java:S1854æ"@Remove this useless assignment to local variable "profileImage".(Áéµşÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’¥Éñúÿÿÿÿ8«ÍÂ¢Ù.
+x
+java:S1450>"VRemove the "callbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+G
+java:S1659N"%Declare "myPhone" on a separate line.(†ÛØ›ûÿÿÿÿ8«ÍÂ¢Ù.
+J
+java:S1481"'Remove this unused "id" local variable.(İôåœøÿÿÿÿ8«ÍÂ¢Ù.
+V
+java:S3878£"8Remove this array creation and simply pass the elements.(ÿ˜™Ç8«ÍÂ¢Ù.
+t
+java:S1104Œ"VMake totalprice a static final constant or non-public and provide accessors if needed.(öØ½8«ÍÂ¢Ù.
+K	java:S108Ï")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8«ÍÂ¢Ù.
+]
+java:S1854ã"?Remove this useless assignment to local variable "AccountType".(ãîÅ«8«ÍÂ¢Ù.
+^	java:S125×"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛÃ×ıÿÿÿÿ8«ÍÂ¢Ù.
+D
+java:S1659O"'Declare "shopEmail" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
+n	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª8«ÍÂ¢Ù.
+g
+java:S1192"JDefine a constant instead of duplicating this literal "not null" 10 times.(‹¡‚¯8«ÍÂ¢Ù.
+n	java:S117â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ8«ÍÂ¢Ù.
+D
+java:S1659O"'Declare "shopPhone" on a separate line.(¹×ÿÂ8«ÍÂ¢Ù.
+i
+java:S1854Ú"FRemove this useless assignment to local variable "NOTIFICATION_TITLE".(ÀÓŒÿÿÿÿÿ8«ÍÂ¢Ù.
+k
+java:S1192o"IDefine a constant instead of duplicating this literal "BuyerUid" 3 times.(Ü»»¢øÿÿÿÿ8«ÍÂ¢Ù.
+]	java:S110:"<This class has 9 parents which is greater than 5 authorized.(è·¦İûÿÿÿÿ8«ÍÂ¢Ù.
+O
+java:S1481—",Remove this unused "txtotal" local variable.(á¤Â»ıÿÿÿÿ8«ÍÂ¢Ù.
+T
+java:S1481Ü"6Remove this unused "NOTIFICATION_TYPE" local variable.(‹¶ı‘8«ÍÂ¢Ù.
+x
+java:S1450>"VRemove the "cartbtn" field and declare it as a local variable in the relevant methods.(—†Æœúÿÿÿÿ8«ÍÂ¢Ù.
+s	java:S117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‚´ÿÿÿÿÿ8«ÍÂ¢Ù.

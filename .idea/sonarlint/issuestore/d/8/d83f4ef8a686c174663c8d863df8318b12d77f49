@@ -1,88 +1,86 @@
 
->
-java:S1659"%Declare "OrderID" on a separate line.(¤ö±òûÿÿÿÿ
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8”±š´Ù.
+`
+java:S1128"ERemove this unused import 'com.example.proe.Adapter.AdapterSellItem'.(­úııÿÿÿÿ
+l	java:S116+"RRename this field "OrderID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ö±òûÿÿÿÿ
 ^
-java:S1128"ERemove this unused import 'com.example.proe.Adapter.AdapterSellItem'.(­úııÿÿÿÿ
-@
-java:S1659"'Declare "addressIv" on a separate line.(¶Ô¾şÿÿÿÿ
-b
-java:S1128"BRemove this unused import 'com.example.proe.Model.ModelOrderUser'.(ššäíüÿÿÿÿ8á•Ã³Ù.
-O	java:S110"<This class has 9 parents which is greater than 5 authorized.(Õ–
-j	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‡ªW8”±š´Ù.
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»šÙ™8”±š´Ù.
-a
-java:S1128"HRemove this unused import 'com.example.proe.Adapter.AdapterOrderDetail'.(Úó·¦üÿÿÿÿ
-o
-java:S1450"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ü¡½¦øÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑòŸüÿÿÿÿ
+java:S1117‰";Rename "OrderID" which hides the field declared at line 43.(«¡êÖşÿÿÿÿ8”±š´Ù.
+l	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åœ€ûşÿÿÿÿ
+s	java:S117Œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼€Ûşÿÿÿÿ8 ÍËŒÚ.
+p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“‹êÕøÿÿÿÿ8”±š´Ù.
+B
+java:S1659."'Declare "addressIv" on a separate line.(¶Ô¾şÿÿÿÿ
+s	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²§¢Öùÿÿÿÿ8å©é³Ù.
+I
+java:S1128$".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+Y
+java:S1854‡";Remove this useless assignment to local variable "OrderBy".(»šÙ™8”±š´Ù.
+l	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØÚÃşÿÿÿÿ
+p	java:S100¾"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ†¯ıùÿÿÿÿ8”±š´Ù.
+Q	java:S110)"<This class has 9 parents which is greater than 5 authorized.(Õ–
+¤
+java:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8”±š´Ù.
 M
-java:S1068"-Remove this unused "mKeyChild" private field.(¤ö±òûÿÿÿÿ8‚Ù²Ù.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²§¢Öùÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åœ€ûşÿÿÿÿ
-v
-java:S1450"[Remove the "firebaseAuth" field and declare it as a local variable in the relevant methods.(“ø8ƒ¤Â³Ù.
+java:S1874™"0Remove this use of "getColor"; it is deprecated.(å—¥#8”±š´Ù.
 C
-java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
-K
-java:S1874"0Remove this use of "getColor"; it is deprecated.(Àä†¯8”±š´Ù.
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8”±š´Ù.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØÚÃşÿÿÿÿ
-A
-java:S1659"(Declare "shopnameIv" on a separate line.(¶Ô¾şÿÿÿÿ
-j	java:S116"RRename this field "OrderTo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ö±òûÿÿÿÿ
+java:S1659."(Declare "shopnameIv" on a separate line.(¶Ô¾şÿÿÿÿ
+E
+java:S1128'"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
+m	java:S117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‡ªW8”±š´Ù.
+r	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔŞ¬şÿÿÿÿ8µ±ÔŒÚ.
+M
+java:S10681"0Remove this unused "firebaseAuth" private field.(“ø8ƒ¤Â³Ù.
+j	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×®ıÖ8æÛÏ²Ù.
+q
+java:S1450-"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ü¡½¦øÿÿÿÿ
+£
+java:S1186r"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8”±š´Ù.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¦Çşÿÿÿÿ8 ÍËŒÚ.
+\
+java:S1128"?Remove this unused import 'com.google.firebase.database.Query'.(ş¶Å®8µ±ÔŒÚ.
+^
+java:S1117Œ";Rename "OrderTo" which hides the field declared at line 43.(æ¼€Ûşÿÿÿÿ8 ÍËŒÚ.
+F	java:S108¹")Either remove or fill this block of code.(”ı¾8”±š´Ù.
+¤
+java:S1186¥"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8ä»¢´Ù.
+T
+java:S1128"9Remove this unused import 'com.example.proe.utils.Utils'.(±•Ğ¶ùÿÿÿÿ
+d
+java:S1128"BRemove this unused import 'com.example.proe.Model.ModelOrderUser'.(ššäíüÿÿÿÿ8á•Ã³Ù.
+?
+java:S1659."$Declare "txdata" on a separate line.(¶Ô¾şÿÿÿÿ
+^
+java:S1854Œ";Remove this useless assignment to local variable "OrderTo".(æ¼€Ûşÿÿÿÿ8”±š´Ù.
+g	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»šÙ™
+h
+java:S1128"FRemove this unused import 'com.example.proe.Adapter.AdapterOrderUser'.(‘Êµ•øÿÿÿÿ8á•Ã³Ù.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑòŸüÿÿÿÿ8 ÍËŒÚ.
+x
+java:S14501"[Remove the "firebaseAuth" field and declare it as a local variable in the relevant methods.(“ø8ƒ¤Â³Ù.
+S
+java:S1874•"0Remove this use of "getColor"; it is deprecated.(»Õ¨¶ùÿÿÿÿ8”±š´Ù.
 J
-java:S1874"0Remove this use of "getColor"; it is deprecated.(å—¥#8”±š´Ù.
-j	java:S116"RRename this field "OrderID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ö±òûÿÿÿÿ
+java:S1481‡",Remove this unused "OrderBy" local variable.(»šÙ™8”±š´Ù.
+D
+java:S1659.")Declare "txtotalitem" on a separate line.(¶Ô¾şÿÿÿÿ
+I
+java:S1659+"'Declare "mKeyChild" on a separate line.(¤ö±òûÿÿÿÿ8ª†Ï²Ù.
+l	java:S116+"RRename this field "OrderTo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ö±òûÿÿÿÿ
+A
+java:S1659."&Declare "txstatus" on a separate line.(¶Ô¾şÿÿÿÿ
+\
+java:S1128"ARemove this unused import 'com.example.proe.Model.ModelSellItem'.(úµıØûÿÿÿÿ
+O
+java:S1068+"-Remove this unused "mKeyChild" private field.(¤ö±òûÿÿÿÿ8‚Ù²Ù.
+@
+java:S1659+"%Declare "OrderID" on a separate line.(¤ö±òûÿÿÿÿ
+O
+java:S1481Œ",Remove this unused "OrderTo" local variable.(æ¼€Ûşÿÿÿÿ8”±š´Ù.
+E
+java:S1659."*Declare "txtotalprice" on a separate line.(¶Ô¾şÿÿÿÿ
+N
+java:S1874—"0Remove this use of "getColor"; it is deprecated.(Àä†¯8”±š´Ù.
+l	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¡êÖşÿÿÿÿ
 O
 java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ìÛù´Ù.
-G
-java:S1659"'Declare "mKeyChild" on a separate line.(¤ö±òûÿÿÿÿ8ª†Ï²Ù.
-P
-java:S1874"0Remove this use of "getColor"; it is deprecated.(»Õ¨¶ùÿÿÿÿ8”±š´Ù.
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×®ıÖ8æÛÏ²Ù.
-Z
-java:S1128"ARemove this unused import 'com.example.proe.Model.ModelSellItem'.(úµıØûÿÿÿÿ
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8ä»¢´Ù.
-V
-java:S1854";Remove this useless assignment to local variable "OrderBy".(»šÙ™8”±š´Ù.
-f
-java:S1128"FRemove this unused import 'com.example.proe.Adapter.AdapterOrderUser'.(‘Êµ•øÿÿÿÿ8á•Ã³Ù.
-B
-java:S1659")Declare "txtotalitem" on a separate line.(¶Ô¾şÿÿÿÿ
-[
-java:S1854";Remove this useless assignment to local variable "OrderTo".(æ¼€Ûşÿÿÿÿ8”±š´Ù.
-[
-java:S1117";Rename "OrderTo" which hides the field declared at line 43.(æ¼€Ûşÿÿÿÿ8”±š´Ù.
-p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔŞ¬şÿÿÿÿ8Ûÿ¨¹Ù.
-C
-java:S1659"*Declare "txtotalprice" on a separate line.(¶Ô¾şÿÿÿÿ
-=
-java:S1659"$Declare "txdata" on a separate line.(¶Ô¾şÿÿÿÿ
-m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“‹êÕøÿÿÿÿ8”±š´Ù.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼€Ûşÿÿÿÿ
-m
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(×®ıÖ8‚á¨´Ù.
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8”±š´Ù.
-G
-java:S1481",Remove this unused "OrderBy" local variable.(»šÙ™8”±š´Ù.
-?
-java:S1659"&Declare "txstatus" on a separate line.(¶Ô¾şÿÿÿÿ
-m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ†¯ıùÿÿÿÿ8”±š´Ù.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¡êÖşÿÿÿÿ
-K
-java:S1068"0Remove this unused "firebaseAuth" private field.(“ø8ƒ¤Â³Ù.
-R
-java:S1128"9Remove this unused import 'com.example.proe.utils.Utils'.(±•Ğ¶ùÿÿÿÿ
-[
-java:S1117";Rename "OrderID" which hides the field declared at line 43.(«¡êÖşÿÿÿÿ8”±š´Ù.
-C	java:S108")Either remove or fill this block of code.(”ı¾8”±š´Ù.
-L
-java:S1481",Remove this unused "OrderTo" local variable.(æ¼€Ûşÿÿÿÿ8”±š´Ù.
-G
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
-p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¦Çşÿÿÿÿ8å©é³Ù.
+c
+java:S1128"HRemove this unused import 'com.example.proe.Adapter.AdapterOrderDetail'.(Úó·¦üÿÿÿÿ

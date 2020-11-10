@@ -1,70 +1,127 @@
 
-G
-java:S1874¿"0Remove this use of "getColor"; it is deprecated.(±ìí†
-F
-java:S1659*"+Declare "filtersellbtn" on a separate line.(µË€¿úÿÿÿÿ
-g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™
-C
-java:S1659)"(Declare "ShopnameIv" on a separate line.(œö‚ıÿÿÿÿ
-V
-java:S1854œ"?Remove this useless assignment to local variable "AccountType".(ãîÅ«
-A
-java:S1659)"&Declare "tabboard" on a separate line.(œö‚ıÿÿÿÿ
-G
-java:S1874Ç"0Remove this use of "getColor"; it is deprecated.(ù†ôã
-@
-java:S1659-"*Declare "relativeinfo" on a separate line.(ŒøÍÛ
-—
-java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê
-g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÊõ‰
-?
-java:S1659*"$Declare "addbtn" on a separate line.(µË€¿úÿÿÿÿ
-g	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ
-g	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«
-I
-java:S1874ù"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä
-G
-java:S1481œ"0Remove this unused "AccountType" local variable.(ãîÅ«
-p
-java:S1450*"URemove the "addbtn" field and declare it as a local variable in the relevant methods.(µË€¿úÿÿÿÿ
-I
-java:S1874î"2Remove this use of "setMessage"; it is deprecated.(¼Ù“Ì
-l	java:S116)"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œö‚ıÿÿÿÿ
-w
-java:S1450*"\Remove the "filtersellbtn" field and declare it as a local variable in the relevant methods.(µË€¿úÿÿÿÿ
-o	java:S116)"URename this field "ShopnameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œö‚ıÿÿÿÿ
+H
+java:S16596"&Declare "tabboard" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+]
+java:S1854®"?Remove this useless assignment to local variable "AccountType".(ãîÅ«8üšÖÂÚ.
+u
+java:S14507"XRemove the "btnlogout" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.
+P
+java:S1874ö"2Remove this use of "setMessage"; it is deprecated.(¼Ù“Ì8üšÖÂÚ.
+[
+java:S1128$"9Remove this unused import 'com.example.proe.utils.Utils'.(±•Ğ¶ùÿÿÿÿ8Óà×ÂÚ.
+y
+java:S1128#"WRemove this unused import 'com.example.proe.notification.connect.CallSendNotification'.(À®Åüûÿÿÿÿ8Óà×ÂÚ.
+S
+java:S1874î"0Remove this use of "getColor"; it is deprecated.(æ…êŒúÿÿÿÿ8üšÖÂÚ.
+z
+java:S14507"]Remove the "filterorderbtn" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.
+N
+java:S1874Ô"0Remove this use of "getColor"; it is deprecated.(ù†ôã8üšÖÂÚ.
+n	java:S117®"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãîÅ«8üšÖÂÚ.
+H
+java:S1659:"+Declare "relativeorder" on a separate line.(Ñá €8ş‹»¿Ú.
+k	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù8üšÖÂÚ.
+N
+java:S11282"1Remove this unused import 'java.util.Observable'.(Ê²ê¸8æ»õÁÚ.
 Q
-java:S18742"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
-L
-java:S1874¼"0Remove this use of "getColor"; it is deprecated.(æ…êŒúÿÿÿÿ
-—
-java:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
-l	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİéêùÿÿÿÿ
-
-java:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-Q	java:S110'"<This class has 9 parents which is greater than 5 authorized.(Š“ø˜
-r
-java:S1450+"WRemove the "etsearch" field and declare it as a local variable in the relevant methods.(ıÓ¼›şÿÿÿÿ
-@
-java:S1659)"%Declare "EmailIv" on a separate line.(œö‚ıÿÿÿÿ
-
-java:S1186ç"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-A
-java:S1659)"&Declare "txfilter" on a separate line.(œö‚ıÿÿÿÿ
-
-java:S1186²"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-L
-java:S1874Ê"0Remove this use of "getColor"; it is deprecated.(ğğçùÿÿÿÿ
-d	java:S100”"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”±‹Ù
+java:S1874k"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+S
+java:S1874Ñ"0Remove this use of "getColor"; it is deprecated.(ğğçùÿÿÿÿ8üšÖÂÚ.
+B
+java:S16597"%Declare "postbtn" on a separate line.(Èñ…Ê8ş‹»¿Ú.
+p	java:S100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ºİ°úÿÿÿÿ8üšÖÂÚ.
+X	java:S1104"<This class has 9 parents which is greater than 5 authorized.(Š“ø˜8ßÖÉÀÚ.
+n	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ûŞ8üšÖÂÚ.
+¤
+java:S1186Ğ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üšÖÂÚ.
+B
+java:S1659;"%Declare "orderRv" on a separate line.(ì€§¾8ş‹»¿Ú.
+˜
+java:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê
+Q
+java:S1874?"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+S
+java:S1874×"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8üšÖÂÚ.
+v	java:S1166"URename this field "ShopnameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+S
+java:S1874ñ"0Remove this use of "getColor"; it is deprecated.(«Èğıÿÿÿÿ8üšÖÂÚ.
+S
+java:S1874å"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8üšÖÂÚ.
+u
+java:S14507"XRemove the "btnreview" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.
+J
+java:S16596"(Declare "ShopnameIv" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+\
+java:S1128!":Remove this unused import 'com.example.proe.Model.Result'.(ªñ²Ûıÿÿÿÿ8Óà×ÂÚ.
+S
+java:S1874á"0Remove this use of "getColor"; it is deprecated.(æ…êŒúÿÿÿÿ8üšÖÂÚ.
+N
+java:S1874ä"0Remove this use of "getColor"; it is deprecated.(ù†ôã8üšÖÂÚ.
+H
+java:S16596"&Declare "txfilter" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+N
+java:S1874Ø"0Remove this use of "getColor"; it is deprecated.(ş›§ø8üšÖÂÚ.
+y
+java:S14507"\Remove the "filtersellbtn" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.
+D
+java:S16597"'Declare "btnreview" on a separate line.(Èñ…Ê8ş‹»¿Ú.
+¤
+java:S1186Ä"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üšÖÂÚ.
 s
-java:S1450*"XRemove the "btnlogout" field and declare it as a local variable in the relevant methods.(µË€¿úÿÿÿÿ
-@
-java:S1659)"%Declare "tabinfo" on a separate line.(œö‚ıÿÿÿÿ
-L
-java:S1874È"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ
-i	java:S100í"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ºİ°úÿÿÿÿ
-F
-java:S1874½"0Remove this use of "getColor"; it is deprecated.(Œú2
-k	java:S116)"QRename this field "NameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œö‚ıÿÿÿÿ
-Q
-java:S1874R"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+java:S14507"VRemove the "postbtn" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.
+I
+java:S16597",Declare "filterorderbtn" on a separate line.(Èñ…Ê8ş‹»¿Ú.
+n	java:S117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷Í™8üšÖÂÚ.
+A
+java:S16597"$Declare "addbtn" on a separate line.(Èñ…Ê8ş‹»¿Ú.
+n	java:S117¯"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÊõ‰8üšÖÂÚ.
+r
+java:S14508"WRemove the "etsearch" field and declare it as a local variable in the relevant methods.(ıÓ¼›şÿÿÿÿ
+r	java:S1166"QRename this field "NameIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+A
+java:S1659;"$Declare "infoRv" on a separate line.(ì€§¾8ş‹»¿Ú.
+s	java:S1166"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+P
+java:S1874‚"2Remove this use of "setMessage"; it is deprecated.(•º¤Ä8ôşşÂÚ.
+S
+java:S1874Ş"0Remove this use of "getColor"; it is deprecated.(©¦Şİüÿÿÿÿ8üšÖÂÚ.
+N
+java:S1874ë"0Remove this use of "getColor"; it is deprecated.(±ìí†8üšÖÂÚ.
+¤
+java:S1186­"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üšÖÂÚ.
+G
+java:S16596"%Declare "tabinfo" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+S
+java:S1874Õ"0Remove this use of "getColor"; it is deprecated.(œ·‡‰üÿÿÿÿ8üšÖÂÚ.
+G
+java:S16596"%Declare "EmailIv" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+H
+java:S16597"+Declare "filtersellbtn" on a separate line.(Èñ…Ê8ş‹»¿Ú.
+H
+java:S16596"&Declare "taborder" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+M
+java:S1874â"0Remove this use of "getColor"; it is deprecated.(Œú28üšÖÂÚ.
+G
+java:S1659:"*Declare "relativeinfo" on a separate line.(Ñá €8ş‹»¿Ú.
+M
+java:S1874ï"0Remove this use of "getColor"; it is deprecated.(Œú28üšÖÂÚ.
+s	java:S117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİéêùÿÿÿÿ8üšÖÂÚ.
+F	java:S108†")Either remove or fill this block of code.(”ı¾8ôşşÂÚ.
+M
+java:S16596"+Declare "txfilterorder" on a separate line.(†™·óøÿÿÿÿ8ş‹»¿Ú.
+N
+java:S1481®"0Remove this unused "AccountType" local variable.(ãîÅ«8üšÖÂÚ.
+Z
+java:S1128"8Remove this unused import 'androidx.lifecycle.Observer'.(ÒÁˆÉşÿÿÿÿ8Óà×ÂÚ.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ôşşÂÚ.
+N
+java:S1874ò"0Remove this use of "getColor"; it is deprecated.(ş›§ø8üšÖÂÚ.
+—
+java:S1186z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
+¤
+java:S1186î"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üšÖÂÚ.
+¤
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8üšÖÂÚ.
+r
+java:S14507"URemove the "addbtn" field and declare it as a local variable in the relevant methods.(Èñ…Ê8ş‹»¿Ú.

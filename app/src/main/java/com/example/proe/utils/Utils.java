@@ -1,6 +1,7 @@
 package com.example.proe.utils;
 
 import com.example.proe.Model.BodyPushToken;
+import com.example.proe.Model.ModelSettings;
 import com.example.proe.Model.ModelTokenUser;
 import com.google.firebase.database.DataSnapshot;
 
@@ -9,7 +10,7 @@ import java.util.HashMap;
 
 public class Utils {
 
-  public static BodyPushToken createObject(String title, String body, ArrayList<String> token){
+  public static BodyPushToken createObject(String title, String body, ArrayList<String> token) {
     BodyPushToken modelPushToken = new BodyPushToken();
     BodyPushToken.DataBean dataBean = new BodyPushToken.DataBean();
     dataBean.setTitle(title);
@@ -23,12 +24,26 @@ public class Utils {
     return modelPushToken;
   }
 
-  public static ModelTokenUser createModelTokenUser(String email,String token,String uid){
+  public static ModelTokenUser createModelTokenUser(String email, String token, String uid, String account) {
     ModelTokenUser modelTokenUser = new ModelTokenUser();
     modelTokenUser.setEmail(email);
     modelTokenUser.setToken(token);
     modelTokenUser.setUid(uid);
+    modelTokenUser.setAccountType(account);
     return modelTokenUser;
+  }
+
+  public static ModelSettings createModelSettings(String deviceName,
+                                                  Double notiPlastic,
+                                                  Double notiMetal,
+                                                  Double notiGlass) {
+    ModelSettings modelSettings = new ModelSettings();
+    modelSettings.setDeviceName(deviceName);
+    modelSettings.setAlertPlastic(notiPlastic);
+    modelSettings.setAlertMetal(notiMetal);
+    modelSettings.setAlertGlass(notiGlass);
+
+    return modelSettings;
   }
 
   public static ArrayList<HashMap<String, Object>> recArrayList(DataSnapshot snapshot) {

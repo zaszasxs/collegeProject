@@ -211,10 +211,11 @@ public class LoginActivity extends AppCompatActivity {
       public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
         String email = userData.get(0).get("Email").toString();
         String uid = userData.get(0).get("uid").toString();
+        String account = userData.get(0).get("AccountType").toString();
 
         if (dataSnapshot.exists()) {
           Map<String, Object> childUpdates = new HashMap<>();
-          childUpdates.put(firebaseAuth.getUid(), Utils.createModelTokenUser(email, token, uid));
+          childUpdates.put(firebaseAuth.getUid(), Utils.createModelTokenUser(email, token, uid, account));
 
           reference.updateChildren(childUpdates)
               .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -230,7 +231,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
               });
         } else {
-          reference.child(firebaseAuth.getUid()).setValue(Utils.createModelTokenUser(email, token, uid))
+          reference.child(firebaseAuth.getUid()).setValue(Utils.createModelTokenUser(email, token, uid,account))
               .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
