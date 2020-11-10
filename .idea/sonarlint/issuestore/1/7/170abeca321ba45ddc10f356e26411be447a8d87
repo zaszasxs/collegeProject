@@ -1,0 +1,29 @@
+
+H
+java:S5411Œ"*Use the primitive boolean expression here.(éùÌó8İñ×ÂÚ.
+@
+java:S1659""%Declare "ettitle" on a separate line.(¸š•Ôıÿÿÿÿ
+g	java:S101 "MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(°¤ÔÈøÿÿÿÿ
+M
+java:S1874_"2Remove this use of "setMessage"; it is deprecated.(¦ú¥ıÿÿÿÿ
+Z
+java:S1128"?Remove this unused import 'androidx.appcompat.app.AlertDialog'.(¼Ìï¨üÿÿÿÿ
+q
+java:S1450$"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ü¡½¦øÿÿÿÿ
+P
+java:S1128"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ
+k
+java:S1450#"URemove the "btnadd" field and declare it as a local variable in the relevant methods.(¶İ¹´
+W
+java:S1128"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨şÿÿÿÿ
+O
+java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ
+V	java:S110 "<This class has 9 parents which is greater than 5 authorized.(°¤ÔÈøÿÿÿÿ
+o	java:S116I"ZRename this field "Infodescription" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í»Ó
+i	java:S116I"TRename this field "Infotitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í»Ó
+Q
+java:S18745"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+Q
+java:S1874'"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+C
+java:S1659I"-Declare "Infodescription" on a separate line.(Í»Ó

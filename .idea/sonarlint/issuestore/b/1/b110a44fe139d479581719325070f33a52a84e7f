@@ -1,0 +1,46 @@
+
+\	java:S107
+"BConstructor has 16 parameters, which is greater than 7 authorized.(à’§Ìüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Þµ®¢ÿÿÿÿÿ
+>
+java:S1659"#Declare "Email" on a separate line.(²ÃÑëøÿÿÿÿ
+=
+java:S1659""Declare "Name" on a separate line.(²ÃÑëøÿÿÿÿ
+A
+java:S1659"&Declare "ShopName" on a separate line.(²ÃÑëøÿÿÿÿ
+>
+java:S1659"#Declare "Phone" on a separate line.(²ÃÑëøÿÿÿÿ
+H
+java:S1659"-Declare "CompleteAddress" on a separate line.(²ÃÑëøÿÿÿÿ
+@
+java:S1659"%Declare "Country" on a separate line.(²ÃÑëøÿÿÿÿ
+>
+java:S1659"#Declare "State" on a separate line.(²ÃÑëøÿÿÿÿ
+=
+java:S1659""Declare "City" on a separate line.(²ÃÑëøÿÿÿÿ
+A
+java:S1659"&Declare "Latitude" on a separate line.(²ÃÑëøÿÿÿÿ
+B
+java:S1659"'Declare "Longitude" on a separate line.(²ÃÑëøÿÿÿÿ
+B
+java:S1659"'Declare "timestamp" on a separate line.(²ÃÑëøÿÿÿÿ
+D
+java:S1659")Declare "AccountType" on a separate line.(²ÃÑëøÿÿÿÿ
+?
+java:S1659"$Declare "online" on a separate line.(²ÃÑëøÿÿÿÿ
+A
+java:S1659"&Declare "ShopOpen" on a separate line.(²ÃÑëøÿÿÿÿ
+E
+java:S1659"*Declare "profileImage" on a separate line.(²ÃÑëøÿÿÿÿ
+j	java:S116"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+i	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+m	java:S116"SRename this field "ShopName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+j	java:S116"PRename this field "Phone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+t	java:S116"ZRename this field "CompleteAddress" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+l	java:S116"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+j	java:S116"PRename this field "State" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+i	java:S116"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+m	java:S116"SRename this field "Latitude" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+n	java:S116"TRename this field "Longitude" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+p	java:S116"VRename this field "AccountType" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ
+m	java:S116"SRename this field "ShopOpen" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ÃÑëøÿÿÿÿ

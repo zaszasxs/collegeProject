@@ -1,0 +1,22 @@
+
+L
+java:S1659"/Declare "tvInfomationTitle" on a separate line.(µöÿË8‹«“ÁÚ.
+|
+java:S1450"ZRemove the "dataCurrent" field and declare it as a local variable in the relevant methods.(Á‰ªñüÿÿÿÿ8©é¼ÁÚ.
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(ŒÄÂøÿÿÿÿ
+K
+java:S1659".Declare "tvInfomationDate" on a separate line.(µöÿË8‹«“ÁÚ.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8³ôªÁÚ.
+N
+java:S1659"1Declare "tvInformationDetail" on a separate line.(µöÿË8‹«“ÁÚ.
+I
+java:S1659",Declare "tvInfomationBy" on a separate line.(µöÿË8ùÚ£ÁÚ.
+X
+java:S1874]"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ8ÃèÁÚ.
+X
+java:S1874"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8ø¶ÂÁÚ.
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8±³ÿÃÚ.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8±³ÿÃÚ.

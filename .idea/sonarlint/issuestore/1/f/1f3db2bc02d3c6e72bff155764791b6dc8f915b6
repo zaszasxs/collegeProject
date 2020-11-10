@@ -1,0 +1,60 @@
+
+Š
+java:S1319""tThe type of the "buyerList" object should be an interface such as "List" rather than the implementation "ArrayList".(ä Ôö
+
+java:S1319%"tThe type of the "buyerList" object should be an interface such as "List" rather than the implementation "ArrayList".(Ð÷Â¸þÿÿÿÿ
+k	java:S117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è °ºúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(çÊžÀøÿÿÿÿ
+k
+java:S1104""UMake buyerList a static final constant or non-public and provide accessors if needed.(ä Ôö
+M
+java:S1128"2Remove this unused import 'android.widget.Filter'.(ëªôÍùÿÿÿÿ
+K
+java:S1128	"6Remove this unused import 'android.widget.Filterable'.(ô…éJ
+S
+java:S1854?"8Remove this useless assignment to local variable "name".(Ë‡œŒüÿÿÿÿ
+X
+java:S1854>"=Remove this useless assignment to local variable "timestamp".(´éÎ•þÿÿÿÿ
+S
+java:S1854<"=Remove this useless assignment to local variable "longitude".(Ù«ÞÎ
+Q
+java:S1854;"<Remove this useless assignment to local variable "latitude".(ô¿Á	
+O
+java:S1854:"9Remove this useless assignment to local variable "email".(è×Ù”
+Q
+java:S18549";Remove this useless assignment to local variable "country".(Î²Ûå
+T
+java:S18548"9Remove this useless assignment to local variable "state".(½äÙúÿÿÿÿ
+S
+java:S18547"8Remove this useless assignment to local variable "city".(ñ†ÒÖûÿÿÿÿ
+Z
+java:S18545"?Remove this useless assignment to local variable "accountType".(ÖÖþ²þÿÿÿÿ
+c	java:S100m"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë‡€à
+
+java:S1186‡"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ð÷‘Þÿÿÿÿÿ
+=
+java:S1659—"&Declare "onlineIv" on a separate line.(‘®…ê
+D
+java:S1659˜"(Declare "shopnameIv" on a separate line.(¸¡çÈþÿÿÿÿ
+C
+java:S1659˜"'Declare "addressIv" on a separate line.(¸¡çÈþÿÿÿÿ
+A
+java:S1659˜"%Declare "phoneIv" on a separate line.(¸¡çÈþÿÿÿÿ
+K
+java:S14815"0Remove this unused "accountType" local variable.(ÖÖþ²þÿÿÿÿ
+D
+java:S14817")Remove this unused "city" local variable.(ñ†ÒÖûÿÿÿÿ
+E
+java:S14818"*Remove this unused "state" local variable.(½äÙúÿÿÿÿ
+B
+java:S14819",Remove this unused "country" local variable.(Î²Ûå
+@
+java:S1481:"*Remove this unused "email" local variable.(è×Ù”
+B
+java:S1481;"-Remove this unused "latitude" local variable.(ô¿Á	
+D
+java:S1481<".Remove this unused "longitude" local variable.(Ù«ÞÎ
+I
+java:S1481>".Remove this unused "timestamp" local variable.(´éÎ•þÿÿÿÿ
+D
+java:S1481?")Remove this unused "name" local variable.(Ë‡œŒüÿÿÿÿ

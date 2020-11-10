@@ -1,0 +1,25 @@
+
+;
+java:S1659K"%Declare "txtitle" on a separate line.(˜†ìô
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆîÓý
+˜
+java:S1319"}The type of the "infoBuyerArrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(Þ˜Úˆúÿÿÿÿ
+y
+java:S1104"^Make infoBuyerArrayList a static final constant or non-public and provide accessors if needed.(¥®‚ˆþÿÿÿÿ
+:
+java:S1659K"$Declare "txdate" on a separate line.(˜†ìô
+M
+java:S1854."7Remove this useless assignment to local variable "Uid".(£ûÖô
+f	java:S117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¸øé
+f	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ûÖô
+^
+java:S1854-"CRemove this useless assignment to local variable "Infodescription".(›ý§¿þÿÿÿÿ
+O
+java:S1481-"4Remove this unused "Infodescription" local variable.(›ý§¿þÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(çÊžÀøÿÿÿÿ
+>
+java:S1481."(Remove this unused "Uid" local variable.(£ûÖô
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ý§¿þÿÿÿÿ
+f	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœ´Ÿ
+˜
+java:S1319"}The type of the "infoBuyerArrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(¥®‚ˆþÿÿÿÿ

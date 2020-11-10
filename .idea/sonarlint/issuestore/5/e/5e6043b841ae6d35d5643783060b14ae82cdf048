@@ -1,0 +1,15 @@
+
+9
+java:S1659	"#Declare "metal" on a separate line.(Ôþé±
+;
+java:S1659	"%Declare "plastic" on a separate line.(Ôþé±
+;
+java:S1659	"%Declare "ulglass" on a separate line.(Ôþé±
+>
+java:S1659
+"#Declare "error" on a separate line.(€Ûƒ·üÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Þµ®¢ÿÿÿÿÿ
+=
+java:S1659	"'Declare "ulplastic" on a separate line.(Ôþé±
+;
+java:S1659	"%Declare "ulmetal" on a separate line.(Ôþé±
