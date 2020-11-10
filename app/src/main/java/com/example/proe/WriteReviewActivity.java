@@ -38,7 +38,6 @@ public class WriteReviewActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +55,6 @@ public class WriteReviewActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         loadMyReview();
-
         loadBuyerInfo();
 
         btnback.setOnClickListener(new View.OnClickListener() {

@@ -46,6 +46,32 @@
         android:layout_toEndOf="@id/profileIv"
         android:text="varintorn.homthong@gmail.com"
         android:textColor="@color/white" />
+        <ImageButton
+            android:id="@+id/addbtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/btnlogout"
+            android:background="@null"
+            android:onClick="btn_adddialog"
+            android:src="@drawable/ic_add_buyer_24dp" />
+
+        <TextView
+            android:id="@+id/NameIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileIv"
+            android:text="Varintorn Homthong"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/EmailIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NameIv"
+            android:layout_toEndOf="@id/profileIv"
+            android:text="varintorn.homthong@gmail.com"
+            android:textColor="@color/white" />
 
       <com.blogspot.atifsoftwares.circularimageview.CircularImageView
         android:id="@+id/profileIv"

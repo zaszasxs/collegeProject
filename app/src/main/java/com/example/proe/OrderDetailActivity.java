@@ -42,7 +42,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
   private String OrderTo, OrderID, mKeyChild;
 
-  private ImageButton btnback;
+  private ImageButton btnback,btnreview;
   private TextView txorder, txdata, txstatus, shopnameIv, txtotalitem, txtotalprice, addressIv;
 
   private RecyclerView itemRv;
@@ -57,6 +57,8 @@ public class OrderDetailActivity extends AppCompatActivity {
     setContentView(R.layout.activity_order_detail);
 
     btnback = findViewById(R.id.btnback);
+    btnreview = findViewById(R.id.btnreview);
+
     txorder = findViewById(R.id.txorder);
     txdata = findViewById(R.id.txdate);
     txstatus = findViewById(R.id.txstatus);
@@ -67,7 +69,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
     itemRv = findViewById(R.id.itemRv);
 
-    Intent intent = getIntent();
+    final Intent intent = getIntent();
     OrderTo = intent.getStringExtra("OrderTo");
     OrderID = intent.getStringExtra("OrderID");
 
@@ -80,6 +82,15 @@ public class OrderDetailActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         onBackPressed();
+      }
+    });
+
+    btnreview.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+          Intent intent = new Intent(OrderDetailActivity.this,WriteReviewActivity.class);
+          intent.putExtra("BuyerUid", OrderTo);
+          startActivity(intent);
       }
     });
   }

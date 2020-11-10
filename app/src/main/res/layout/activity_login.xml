@@ -88,7 +88,7 @@
       android:layout_below="@id/btnlogin"
       android:layout_centerHorizontal="true"
       android:layout_marginStart="5dp"
-      android:layout_marginTop="265dp"
+      android:layout_marginTop="212dp"
       android:layout_marginEnd="5dp"
       android:layout_marginRight="150dp"
       android:layout_marginBottom="5dp"

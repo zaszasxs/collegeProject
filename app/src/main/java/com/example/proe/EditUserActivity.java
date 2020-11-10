@@ -250,18 +250,18 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
               if (uriTask.isSuccessful()) {
                 //image uri received, now upload in database
 
-                HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("uid", "" + firebaseAuth.getUid());
-                hashMap.put("Name", "" + Name);
-                hashMap.put("Phone", "" + Phone);
-                hashMap.put("CompleteAddress", "" + CompleteAddress);
-                hashMap.put("Mechanical", "" + Machanical);
-                hashMap.put("Country", "" + Country);
-                hashMap.put("State", "" + State);
-                hashMap.put("City", "" + City);
-                hashMap.put("Latitude", "" + latitude);
-                hashMap.put("Longitude", "" + longitude);
-                hashMap.put("profileImage", "" + downloadImageUri);
+                                HashMap<String, Object> hashMap = new HashMap<>();
+                                hashMap.put("uid", "" + firebaseAuth.getUid());
+                                hashMap.put("Name", "" + Name);
+                                hashMap.put("Phone", "" + Phone);
+                                hashMap.put("CompleteAddress", "" + CompleteAddress);
+                               // hashMap.put("Mechanical", "" + Machanical);
+                                hashMap.put("Country", "" + Country);
+                                hashMap.put("State", "" + State);
+                                hashMap.put("City", "" + City);
+                                hashMap.put("Latitude", "" + latitude);
+                                hashMap.put("Longitude", "" + longitude);
+                                hashMap.put("profileImage", "" + downloadImageUri);
 
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
                 reference.child(firebaseAuth.getUid()).updateChildren(hashMap)
@@ -303,28 +303,28 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
     }
   }
 
-  private void LoadMyinfo() {
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
-    databaseReference.orderByChild("uid").equalTo(firebaseAuth.getUid())
-        .addValueEventListener(new ValueEventListener() {
-          @Override
-          public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-              String CompleteAddress = "" + dataSnapshot1.child("CompleteAddress").getValue();
-              String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
-              String Country = "" + dataSnapshot1.child("Country").getValue();
-              String City = "" + dataSnapshot1.child("City").getValue();
-              String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
-              String State = "" + dataSnapshot1.child("State").getValue();
-              String Email = "" + dataSnapshot1.child("Email").getValue();
-              latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
-              longitude = Double.parseDouble("" + dataSnapshot1.child("Longitude").getValue());
-              String Name = "" + dataSnapshot1.child("Name").getValue();
-              String online = "" + dataSnapshot1.child("online").getValue();
-              String Phone = "" + dataSnapshot1.child("Phone").getValue();
-              String timestamp = "" + dataSnapshot1.child("timestamp").getValue();
-              String profileImage = "" + dataSnapshot1.child("profileImage").getValue();
-              String uid = "" + dataSnapshot1.child("uid").getValue();
+    private void LoadMyinfo() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
+        databaseReference.orderByChild("uid").equalTo(firebaseAuth.getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String CompleteAddress = "" + dataSnapshot1.child("CompleteAddress").getValue();
+                            String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
+                            String Country = "" + dataSnapshot1.child("Country").getValue();
+                            String City = "" + dataSnapshot1.child("City").getValue();
+                            //String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
+                            String State = "" + dataSnapshot1.child("State").getValue();
+                            String Email = "" + dataSnapshot1.child("Email").getValue();
+                            latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
+                            longitude = Double.parseDouble("" + dataSnapshot1.child("Longitude").getValue());
+                            String Name = "" + dataSnapshot1.child("Name").getValue();
+                            String online = "" + dataSnapshot1.child("online").getValue();
+                            String Phone = "" + dataSnapshot1.child("Phone").getValue();
+                            String timestamp = "" + dataSnapshot1.child("timestamp").getValue();
+                            String profileImage = "" + dataSnapshot1.child("profileImage").getValue();
+                            String uid = "" + dataSnapshot1.child("uid").getValue();
 
               etname.setText(Name);
               etphone.setText(Phone);
