@@ -603,7 +603,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         String NOTIFICATION_MESSAGE = "Cougratulation...! you have new order.";
         String NOTIFICATION_TYPE = "NewOrder";
 
-        CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TOPIC, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {
+        CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TITLE, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {
             @Override
             public void onChanged(Result modelPushToken) {
                 if (modelPushToken.getStatus()) {

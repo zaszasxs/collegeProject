@@ -109,7 +109,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         etcity = findViewById(R.id.etcity);
         etstate = findViewById(R.id.etstate);
         etcompleteass = findViewById(R.id.etaddress);
-        etmachanical = findViewById(R.id.etmachanical);
+        //etmachanical = findViewById(R.id.etmachanical);
 
         fcmswitch = findViewById(R.id.fcmswitch);
 
@@ -192,7 +192,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
         State = etstate.getText().toString().trim();
         City = etcity.getText().toString().trim();
         CompleteAddress = etcompleteass.getText().toString().trim();
-        Machanical = etmachanical.getText().toString().trim();
+        //Machanical = etmachanical.getText().toString().trim();
 
         updateProfile();
     }
@@ -210,7 +210,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
             hashMap.put("Name", "" + Name);
             hashMap.put("Phone", "" + Phone);
             hashMap.put("CompleteAddress", "" + CompleteAddress);
-            hashMap.put("Mechanical","" + Machanical);
+           //hashMap.put("Mechanical","" + Machanical);
             hashMap.put("Country", "" + Country);
             hashMap.put("State", "" + State);
             hashMap.put("City", "" + City);
@@ -257,7 +257,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                                 hashMap.put("Name", "" + Name);
                                 hashMap.put("Phone", "" + Phone);
                                 hashMap.put("CompleteAddress", "" + CompleteAddress);
-                                hashMap.put("Mechanical", "" + Machanical);
+                               // hashMap.put("Mechanical", "" + Machanical);
                                 hashMap.put("Country", "" + Country);
                                 hashMap.put("State", "" + State);
                                 hashMap.put("City", "" + City);
@@ -316,7 +316,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                             String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
                             String Country = "" + dataSnapshot1.child("Country").getValue();
                             String City = "" + dataSnapshot1.child("City").getValue();
-                            String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
+                            //String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
                             String State = "" + dataSnapshot1.child("State").getValue();
                             String Email = "" + dataSnapshot1.child("Email").getValue();
                             latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
