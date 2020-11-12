@@ -61,8 +61,23 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
 
         holder.txtitle.setText(title);
         holder.txcategory.setText(category);
-        holder.txprice.setText("฿"+ price +"/ Kg");
+        holder.txprice.setText("฿"+ price +" / Kg");
         holder.txdescription.setText(description);
+
+        switch (category) {
+            case "Plastic":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
+                break;
+            case "Metal":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
+                break;
+            case "Glass":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
+                break;
+            case "Other":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
+                break;
+        }
 
         holder.txcart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +105,8 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         TextView txcategory = view.findViewById(R.id.txcategory);
         final TextView txtitle = view.findViewById(R.id.txtitle);
         TextView txdescription = view.findViewById(R.id.txdescription);
-        final TextView txquanlity = view.findViewById(R.id.txquanlity);
         final TextView txprice = view.findViewById(R.id.txprice);
-        final TextView txnum = view.findViewById(R.id.txnum);
+        final TextView txquanlity = view.findViewById(R.id.txnum);
         final TextView txfinalprice = view.findViewById(R.id.txfinalprice);
         ImageButton desbtn = view.findViewById(R.id.desbtn);
         ImageButton incbtn = view.findViewById(R.id.incbtn);
@@ -105,6 +119,21 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         String description = modelSellItem.getItemdescription();
         String price = modelSellItem.getItemprice();
 
+        switch (category) {
+            case "Plastic":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
+                break;
+            case "Metal":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
+                break;
+            case "Glass":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
+                break;
+            case "Other":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
+                break;
+        }
+
         cost = Double.parseDouble(price.replaceAll("฿",""));
         finalprice = Double.parseDouble(price.replaceAll("฿",""));
         num = 1;
@@ -115,7 +144,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         txtitle.setText(""+title);
         txcategory.setText(""+category);
         txdescription.setText(""+description);
-        txnum.setText(""+num);
+        txquanlity.setText(""+num);
         txprice.setText("฿"+modelSellItem.getItemprice()+"/ Kg");
         txfinalprice.setText("฿"+finalprice);
 
@@ -129,7 +158,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
                 num++;
 
                 txfinalprice.setText("฿"+finalprice);
-                txnum.setText(""+ num);
+                txquanlity.setText(""+ num);
             }
         });
 
@@ -141,7 +170,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
                    num--;
 
                    txfinalprice.setText("฿"+finalprice);
-                   txnum.setText(""+ num);
+                   txquanlity.setText(""+ num);
                }
 
             }
@@ -153,7 +182,7 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
                 String title = txtitle.getText().toString().trim();
                 String price = txprice.getText().toString().trim().replace("฿","");
                 String finalprice = txfinalprice.getText().toString().trim().replace("฿","");
-                String num = txnum.getText().toString().trim();
+                String num = txquanlity.getText().toString().trim();
 
                 //add to db(sqlite)
                 addtoCart(id,title,price,finalprice,num);

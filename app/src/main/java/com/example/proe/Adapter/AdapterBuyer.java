@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>  {
 
@@ -34,9 +35,9 @@ public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>
     public ArrayList<ModelBuyerUI> buyerList;
 
 
-    public AdapterBuyer(Context context, ArrayList<ModelBuyerUI> buyerList) {
+    public AdapterBuyer(Context context, List<ModelBuyerUI> buyerList) {
         this.context = context;
-        this.buyerList = buyerList;
+        this.buyerList = (ArrayList<ModelBuyerUI>) buyerList;
 
     }
 

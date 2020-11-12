@@ -54,7 +54,6 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
     private EditText etname,etemail,etpassword,etcfpassword
             ,etphone,etcountry,etcity,etstate,etcompleteass;
     private Button btnregiser;
-    private TextView txregisbuyer;
 
     private static final int LOCATION_REQUEST_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 200;
@@ -94,7 +93,6 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
         etcity = findViewById(R.id.etcity);
         etstate = findViewById(R.id.etstate);
         etcompleteass = findViewById(R.id.etaddress);
-        txregisbuyer = findViewById(R.id.txregisbuyer);
 
         locationpermissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
         camerapermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -143,12 +141,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
             }
         });
 
-        txregisbuyer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterUserActivity.this,RegisterBuyerActivity.class));
-            }
-        });
+
 
     }
 

@@ -79,6 +79,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
     private String shopName, shopPhone, shopEmail, shopAddress, shoplatitude, shoplongitude , shopdescription;
 
     private EasyDB easyDB;
+    private String num,price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -286,7 +287,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         shopnameIv.setText(shopName);
         EasyDB easyDB = EasyDB.init(this,"ITEM_DB")
                 .setTableName("ITEM_TABLE")
-                .addColumn(new Column("Item_ID",new String[]{"text","unique"}))
+                .addColumn(new Column("Item_ID", "text","unique"))
                 .addColumn(new Column("Item_SellID",new String[]{"text","not null"}))
                 .addColumn(new Column("Item_Name",new String[]{"text","not null"}))
                 .addColumn(new Column("Item_Price",new String[]{"text","not null"}))
@@ -299,9 +300,9 @@ public class BuyerDetailActivity extends AppCompatActivity {
             String id = res.getString(1);
             String Sid = res.getString(2);
             String name = res.getString(3);
-            String price = res.getString(4);
+            price = res.getString(4);
             String cost = res.getString(5);
-            String num = res.getString(6);
+            num = res.getString(6);
 
             totalprice = totalprice + Double.parseDouble(cost);
 
@@ -395,7 +396,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
                             hashMap1.put("price",price);
                             hashMap1.put("num",num);
 
-                            reference.child(timestamp).child("Items").child(Sid).setValue(hashMap);
+                            reference.child(timestamp).child("Items").child(Sid).setValue(hashMap1);
                         }
 
                         progressDialog.dismiss();

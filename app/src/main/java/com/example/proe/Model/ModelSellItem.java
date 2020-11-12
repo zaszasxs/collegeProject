@@ -46,7 +46,6 @@ public class ModelSellItem {
 
     public String getImagesell() {
 
-
         return imagesell;
     }
 

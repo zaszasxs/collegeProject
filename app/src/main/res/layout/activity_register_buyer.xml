@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="44dp"
             android:layout_centerHorizontal="true"
-            android:text="Register (Buyer)"
+            android:text="ลงทะเบียน (ผู้รับซื้อ)"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -50,108 +50,115 @@
         android:layout_centerHorizontal="true" />
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollview"
-        android:layout_below="@+id/icon_login">
+        android:layout_below="@+id/icon_login"
+        android:layout_marginTop="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/profileIv"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:id="@+id/profileIv"
                 android:layout_below="@+id/icon_login"
                 android:layout_gravity="center"
+                android:background="@drawable/ic_account_buyer_24dp"
                 app:c_border="true"
                 app:c_border_color="@color/colorPrimary"
-                app:c_border_width="1dp"
-                android:background="@drawable/ic_account_buyer_24dp"/>
+                app:c_border_width="1dp" />
 
             <EditText
+                android:id="@+id/etname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etname"
-                android:padding="10dp"
                 android:layout_below="@+id/profileIv"
-                android:hint="Eull Name"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_accessibility_black_24dp"
                 android:drawablePadding="5dp"
-                android:layout_margin="5dp"
+                android:hint="ชื่อ"
                 android:inputType="textPersonName|textCapWords"
-                android:background="@drawable/sharp_rect2" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etshopname"
-                android:padding="10dp"
-                android:layout_below="@+id/etname"
-                android:hint="Shop Name"
-                android:drawableStart="@drawable/ic_store_black_24dp"
-                android:drawablePadding="5dp"
-                android:layout_margin="5dp"
-                android:inputType="textPersonName|textCapWords"
-                android:background="@drawable/sharp_rect2" />
+                android:padding="10dp" />
 
             <EditText
+                android:id="@+id/etshopname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/etname"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
+                android:drawableStart="@drawable/ic_store_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="ชื่อร้านค้า"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp" />
+
+            <EditText
                 android:id="@+id/etemail"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/etaddress"
-                android:hint="E-mail"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_email_black_24dp"
                 android:drawablePadding="5dp"
-                android:layout_margin="5dp"
+                android:hint="อิเมล"
                 android:inputType="textEmailAddress"
-                android:background="@drawable/sharp_rect2" />
+                android:padding="10dp" />
+
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/etpassword"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/etemail"
-                android:hint="Password"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_lock__24dp"
                 android:drawablePadding="5dp"
-                android:layout_margin="5dp"
+                android:hint="รหัสผ่าน"
                 android:inputType="textPassword"
-                android:background="@drawable/sharp_rect2" />
+                android:padding="10dp" />
+
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/etcfpassword"
-                android:padding="10dp"
-                android:layout_below="@+id/etpassword"
-                android:hint="Confirm Password"
-                android:drawableStart="@drawable/ic_lock__24dp"
-                android:drawablePadding="5dp"
-                android:layout_margin="5dp"
-                android:inputType="textPassword"
-                android:background="@drawable/sharp_rect2" />
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/etpassword"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
+                android:drawableStart="@drawable/ic_lock__24dp"
+                android:drawablePadding="5dp"
+                android:hint="ยืนยันรหัสผ่านอีกครั้ง"
+                android:inputType="textPassword"
+                android:padding="10dp" />
+
+            <EditText
                 android:id="@+id/etphone"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/etshopname"
-                android:hint="Phone"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_pirplephone_24dp"
                 android:drawablePadding="5dp"
-                android:layout_margin="5dp"
+                android:hint="หมายเลขเบอร์โทรศัพท์"
                 android:inputType="phone"
-                android:background="@drawable/sharp_rect2" />
+                android:padding="10dp" />
 
             <LinearLayout
                 android:id="@+id/liaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etphone"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
-                android:padding="5dp"
-                android:layout_centerHorizontal="true">
+                android:padding="5dp">
 
                 <EditText
                     android:id="@+id/etcountry"
@@ -163,7 +170,7 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="country"
+                    android:hint="ประเทส"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -177,7 +184,7 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="state"
+                    android:hint="จังหวัด"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -191,36 +198,37 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="city"
+                    android:hint="อำเภอ"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
             </LinearLayout>
+
             <EditText
+                android:id="@+id/etaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etaddress"
-                android:padding="10dp"
                 android:layout_below="@+id/liaddress"
-                android:hint="Complete Address"
+                android:layout_margin="5dp"
+                android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_address_24dp"
                 android:drawablePadding="5dp"
-                android:layout_margin="5dp"
+                android:hint="ที่อยู่"
                 android:inputType="textPostalAddress|textMultiLine"
-                android:background="@drawable/sharp_rect2" />
+                android:padding="10dp" />
 
 
             <Button
                 android:id="@+id/btnregister"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/etcfpassword"
                 android:layout_gravity="center"
-                android:text="register"
                 android:layout_marginTop="10dp"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:background="@drawable/sharp_cir1"
-                android:textColor="@color/black"
-                android:minWidth="120dp"/>
+                android:minWidth="120dp"
+                android:text="ลงทะเบียน"
+                android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>
 

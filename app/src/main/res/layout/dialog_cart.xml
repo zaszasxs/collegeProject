@@ -33,15 +33,15 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorGray00"/>
-        
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartitemRv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cartitemRv"
-            tools:listitem="@layout/row_cartitem"
+            android:padding="5dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:padding="5dp"/>
-        
+            tools:listitem="@layout/row_cartitem" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

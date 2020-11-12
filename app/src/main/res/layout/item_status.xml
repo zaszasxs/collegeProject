@@ -36,8 +36,9 @@
       android:ellipsize="end"
       android:lines="2"
       android:paddingTop="15dp"
-      android:text="Not Error"
+      android:text="เครื่องไม่มีข้อผิดคพลาด"
       android:textColor="@color/white"
+        android:textStyle="bold"
       android:textSize="20sp" />
   </RelativeLayout>
 

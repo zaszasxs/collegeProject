@@ -1,5 +1,6 @@
 package com.example.proe.Model;
 
+
 public class ModelOrderDetail2 {
     String Uid;
     String timestamp;

@@ -218,20 +218,20 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
       DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
       reference.child(firebaseAuth.getUid()).updateChildren(hashMap)
-          .addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-              progressDialog.dismiss();
-              Toast.makeText(EditUserActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
-            }
-          })
-          .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-              progressDialog.dismiss();
-              Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-          });
+              .addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                  progressDialog.dismiss();
+                  Toast.makeText(EditUserActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
+                }
+              })
+              .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                  progressDialog.dismiss();
+                  Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+              });
 
     } else {
       //update with image
@@ -239,57 +239,57 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
       //get storage reference
       StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathandName);
       storageReference.putFile(image_uri)
-          .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-              //image uploaded, get url of uploaded image
-              Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-              while (!uriTask.isSuccessful()) ;
-              Uri downloadImageUri = uriTask.getResult();
+              .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                  //image uploaded, get url of uploaded image
+                  Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                  while (!uriTask.isSuccessful()) ;
+                  Uri downloadImageUri = uriTask.getResult();
 
-              if (uriTask.isSuccessful()) {
-                //image uri received, now upload in database
+                  if (uriTask.isSuccessful()) {
+                    //image uri received, now upload in database
 
-                                HashMap<String, Object> hashMap = new HashMap<>();
-                                hashMap.put("uid", "" + firebaseAuth.getUid());
-                                hashMap.put("Name", "" + Name);
-                                hashMap.put("Phone", "" + Phone);
-                                hashMap.put("CompleteAddress", "" + CompleteAddress);
-                               // hashMap.put("Mechanical", "" + Machanical);
-                                hashMap.put("Country", "" + Country);
-                                hashMap.put("State", "" + State);
-                                hashMap.put("City", "" + City);
-                                hashMap.put("Latitude", "" + latitude);
-                                hashMap.put("Longitude", "" + longitude);
-                                hashMap.put("profileImage", "" + downloadImageUri);
+                    HashMap<String, Object> hashMap = new HashMap<>();
+                    hashMap.put("uid", "" + firebaseAuth.getUid());
+                    hashMap.put("Name", "" + Name);
+                    hashMap.put("Phone", "" + Phone);
+                    hashMap.put("CompleteAddress", "" + CompleteAddress);
+                     hashMap.put("Mechanical", "" + Machanical);
+                    hashMap.put("Country", "" + Country);
+                    hashMap.put("State", "" + State);
+                    hashMap.put("City", "" + City);
+                    hashMap.put("Latitude", "" + latitude);
+                    hashMap.put("Longitude", "" + longitude);
+                    hashMap.put("profileImage", "" + downloadImageUri);
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-                reference.child(firebaseAuth.getUid()).updateChildren(hashMap)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                      @Override
-                      public void onSuccess(Void aVoid) {
-                        progressDialog.dismiss();
-                        Toast.makeText(EditUserActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
-                      }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                      @Override
-                      public void onFailure(@NonNull Exception e) {
-                        progressDialog.dismiss();
-                        Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                      }
-                    });
-              }
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+                    reference.child(firebaseAuth.getUid()).updateChildren(hashMap)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                              @Override
+                              public void onSuccess(Void aVoid) {
+                                progressDialog.dismiss();
+                                Toast.makeText(EditUserActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
+                              }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                              @Override
+                              public void onFailure(@NonNull Exception e) {
+                                progressDialog.dismiss();
+                                Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                              }
+                            });
+                  }
 
-            }
-          })
-          .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-              progressDialog.dismiss();
-              Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-          });
+                }
+              })
+              .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                  progressDialog.dismiss();
+                  Toast.makeText(EditUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+              });
     }
   }
 
@@ -303,52 +303,52 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
     }
   }
 
-    private void LoadMyinfo() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
-        databaseReference.orderByChild("uid").equalTo(firebaseAuth.getUid())
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                            String CompleteAddress = "" + dataSnapshot1.child("CompleteAddress").getValue();
-                            String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
-                            String Country = "" + dataSnapshot1.child("Country").getValue();
-                            String City = "" + dataSnapshot1.child("City").getValue();
-                            //String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
-                            String State = "" + dataSnapshot1.child("State").getValue();
-                            String Email = "" + dataSnapshot1.child("Email").getValue();
-                            latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
-                            longitude = Double.parseDouble("" + dataSnapshot1.child("Longitude").getValue());
-                            String Name = "" + dataSnapshot1.child("Name").getValue();
-                            String online = "" + dataSnapshot1.child("online").getValue();
-                            String Phone = "" + dataSnapshot1.child("Phone").getValue();
-                            String timestamp = "" + dataSnapshot1.child("timestamp").getValue();
-                            String profileImage = "" + dataSnapshot1.child("profileImage").getValue();
-                            String uid = "" + dataSnapshot1.child("uid").getValue();
+  private void LoadMyinfo() {
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
+    databaseReference.orderByChild("uid").equalTo(firebaseAuth.getUid())
+            .addValueEventListener(new ValueEventListener() {
+              @Override
+              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                  String CompleteAddress = "" + dataSnapshot1.child("CompleteAddress").getValue();
+                  String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
+                  String Country = "" + dataSnapshot1.child("Country").getValue();
+                  String City = "" + dataSnapshot1.child("City").getValue();
+                  String Machanical = "" + dataSnapshot1.child("Mechanical").getValue();
+                  String State = "" + dataSnapshot1.child("State").getValue();
+                  String Email = "" + dataSnapshot1.child("Email").getValue();
+                  latitude = Double.parseDouble("" + dataSnapshot1.child("Latitude").getValue());
+                  longitude = Double.parseDouble("" + dataSnapshot1.child("Longitude").getValue());
+                  String Name = "" + dataSnapshot1.child("Name").getValue();
+                  String online = "" + dataSnapshot1.child("online").getValue();
+                  String Phone = "" + dataSnapshot1.child("Phone").getValue();
+                  String timestamp = "" + dataSnapshot1.child("timestamp").getValue();
+                  String profileImage = "" + dataSnapshot1.child("profileImage").getValue();
+                  String uid = "" + dataSnapshot1.child("uid").getValue();
 
-              etname.setText(Name);
-              etphone.setText(Phone);
-              etcountry.setText(Country);
-              etcity.setText(City);
-              etstate.setText(State);
-              etcompleteass.setText(CompleteAddress);
-              etmachanical.setText(Machanical);
+                  etname.setText(Name);
+                  etphone.setText(Phone);
+                  etcountry.setText(Country);
+                  etcity.setText(City);
+                  etstate.setText(State);
+                  etcompleteass.setText(CompleteAddress);
+                  etmachanical.setText(Machanical);
 
-              try {
-                Picasso.get().load(profileImage).placeholder(R.drawable.ic_account_pirple_24dp).into(profileIv);
-              } catch (Exception e) {
-                profileIv.setImageResource(R.drawable.ic_account_pirple_24dp);
+                  try {
+                    Picasso.get().load(profileImage).placeholder(R.drawable.ic_account_pirple_24dp).into(profileIv);
+                  } catch (Exception e) {
+                    profileIv.setImageResource(R.drawable.ic_account_pirple_24dp);
+                  }
+
+
+                }
               }
 
+              @Override
+              public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-          }
-
-          @Override
-          public void onCancelled(@NonNull DatabaseError databaseError) {
-
-          }
-        });
+              }
+            });
   }
 
   private void showImagePickDialog() {
@@ -382,9 +382,9 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
   private boolean checkCameraPermission() {
     boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-        == (PackageManager.PERMISSION_GRANTED);
+            == (PackageManager.PERMISSION_GRANTED);
     boolean result1 = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        == (PackageManager.PERMISSION_GRANTED);
+            == (PackageManager.PERMISSION_GRANTED);
     return result && result1;
   }
 
@@ -407,7 +407,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
   private boolean checkStoragePermission() {
     boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        == (PackageManager.PERMISSION_GRANTED);
+            == (PackageManager.PERMISSION_GRANTED);
     return result;
   }
 
@@ -425,7 +425,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
   private boolean checkLocationPermission() {
     boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
-        (PackageManager.PERMISSION_GRANTED);
+            (PackageManager.PERMISSION_GRANTED);
     return result;
   }
 
@@ -433,6 +433,9 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
     Toast.makeText(this, "Please Wait...", Toast.LENGTH_SHORT).show();
 
     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      return;
+    }
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
   }
 

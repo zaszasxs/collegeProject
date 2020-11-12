@@ -1,6 +1,7 @@
 package com.example.proe;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -52,8 +54,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class MainUserActivity extends AppCompatActivity {
 
@@ -67,7 +72,7 @@ public class MainUserActivity extends AppCompatActivity {
   private FirebaseAuth firebaseAuth;
   private ProgressDialog progressDialog;
 
-  private ArrayList<ModelBuyerUI> modelBuyerUIS;
+  private List<ModelBuyerUI> modelBuyerUIS;
   private AdapterBuyer adapterBuyer;
 
   private ArrayList<ModelOrderUser> OrderUsersliat;
@@ -83,6 +88,7 @@ public class MainUserActivity extends AppCompatActivity {
   private String[] listDevice = {"Plastic", "Metal", "Glass"};
   private FloatingActionButton fbSettings;
   String deviceConnect;
+  List<ModelBuyerUI> listSortRate;
 
   private ArrayList<ModelInfoBuyer> infoBuyerArrayList = new ArrayList<>();
   private AdapterInfoBuyer adapterInfoBuyer;
@@ -311,7 +317,7 @@ public class MainUserActivity extends AppCompatActivity {
 
   private void initSetNameDeviceConnect() {
     if (SharedPreferences.getDeviceConnect(getApplicationContext()).isEmpty()) {
-      txmechanic.setText("Mechanical Name : 1");
+      txmechanic.setText("Mechanical Name : ");
     } else {
       txmechanic.setText("Mechanical Name : " + SharedPreferences.getDeviceConnect(getApplicationContext()));
     }
@@ -463,8 +469,8 @@ public class MainUserActivity extends AppCompatActivity {
         String ulmetal = "";
         String ulglass = "";
 
-        String titleDevice = "Device name : ";
-        String subTitle = "Distance : ";
+        String titleDevice = "ขวดประเภท : ";
+        String subTitle = "น้ำหนัก : ";
         String deviceUnit = " Kg.";
 
         txplastic.setText(subTitle + modelMechan.getPlastic() + deviceUnit);
@@ -478,13 +484,13 @@ public class MainUserActivity extends AppCompatActivity {
 
         isCheckViewDeviceError(modelMechan);
 
-        if (modelMechan.getUlglass() >= 2 && modelMechan.getUlglass() <= 38)
+        if (modelMechan.getUlglass() >= 2 && modelMechan.getUlglass() <= 36)
           ulglass += modelMechan.getUlglass();
 
-        if (modelMechan.getUlmetal() >= 2 && modelMechan.getUlmetal() <= 38)
+        if (modelMechan.getUlmetal() >= 2 && modelMechan.getUlmetal() <= 32)
           ulmetal += modelMechan.getUlmetal();
 
-        if (modelMechan.getUlplastic() >= 2 && modelMechan.getUlplastic() <= 38)
+        if (modelMechan.getUlplastic() >= 2 && modelMechan.getUlplastic() <= 30)
           ulplastic += modelMechan.getUlplastic();
 
         txVolumnP.setVisibility(View.VISIBLE);
@@ -496,7 +502,7 @@ public class MainUserActivity extends AppCompatActivity {
         txVolumnG.setVisibility(View.VISIBLE);
         txVolumnG.setText(ulglass);
 
-        String messageNotiDetail = "Device ";
+        String messageNotiDetail = "ขวดประเภท ";
         String messageNotiSubDetail = " เต็มแล้ว";
 
         if (ulplastic.length() > 0) {
@@ -523,7 +529,7 @@ public class MainUserActivity extends AppCompatActivity {
           findViewById(R.id.tvStatusFull3).setVisibility(View.VISIBLE);
           findViewById(R.id.layDeviceGlass).setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.bgDeviceFull_20));
           NotificationHelper.sendNotification(getApplicationContext(), getResources().getString(R.string.app_name),
-              messageNotiDetail + listDevice[3] + messageNotiSubDetail);
+              messageNotiDetail + listDevice[2] + messageNotiSubDetail);
         } else {
           findViewById(R.id.tvStatusFull3).setVisibility(View.GONE);
           findViewById(R.id.layDeviceGlass).setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
@@ -548,7 +554,7 @@ public class MainUserActivity extends AppCompatActivity {
           String notiMetal = data.get(0).get("alertMetal").toString();
           String notiGlass = data.get(0).get("alertGlass").toString();
 
-          String messageNotiDetail = "Device ";
+          String messageNotiDetail = "ขวดประเภท ";
           String messageNotiSubDetail = " ถึงระยะห่างที่กำหนดไว้";
 
           if (Double.valueOf(notiPlastic) == modelMechan.getPlastic()) {
@@ -577,14 +583,16 @@ public class MainUserActivity extends AppCompatActivity {
     String err = modelMechan.getError();
     TextView txtMessageError = findViewById(R.id.txerror);
     ImageView viewBg = findViewById(R.id.ivStatusBg);
-    if (err.length() > 1) {
+    if (!err.equals("Error")) {
       txtMessageError.setText(modelMechan.getError());
+      txtMessageError.setText("เครื่องไม่มีข้อผิดคพลาด");
       viewBg.setImageResource(R.drawable.shape_status_not_error);
     } else {
       txtMessageError.setText(modelMechan.getError());
+      txtMessageError.setText("เครื่องเกิดข้อผิดพลาด");
       viewBg.setImageResource(R.drawable.shape_status_error);
-      NotificationHelper.sendNotification(getApplicationContext(), "Device Error",
-          "Device error please check your machine.");
+      NotificationHelper.sendNotification(getApplicationContext(), "เครื่องเกิดข้อผิดพลาด",
+          "ขณะนี้ เครื่องเกิดการทำงานที่ผิดปกติ โปรดตรวจสอบเครื่องของคุณ");
       NotificationHelper.viewAnimationShake(getApplicationContext(), findViewById(R.id.ivIconStatus));
     }
   }
@@ -641,6 +649,7 @@ public class MainUserActivity extends AppCompatActivity {
           @Override
           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             modelBuyerUIS.clear();
+
             for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
               ModelBuyerUI modelBuyerUI = dataSnapshot1.getValue(ModelBuyerUI.class);
 
@@ -648,10 +657,15 @@ public class MainUserActivity extends AppCompatActivity {
 
               //show only user city shop
               if (ShopCity.equals(city)) {
+
                 modelBuyerUIS.add(modelBuyerUI);
+                //modelBuyerUIS.sort(Comparator.comparing());
               }
             }
+
+            //modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getEverrage));
             //setup adapter
+            //List<ModelBuyerUI> list  = modelBuyerUIS.stream().sorted(Comparator.comparing(ModelBuyerUI::getRatings.).reversed());
             adapterBuyer = new AdapterBuyer(MainUserActivity.this, modelBuyerUIS);
             //set adapter to recycleview
 

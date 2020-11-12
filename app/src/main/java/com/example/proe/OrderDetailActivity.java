@@ -19,6 +19,7 @@ import com.example.proe.Adapter.AdapterOrderDetail;
 import com.example.proe.Adapter.AdapterOrderDetail2;
 import com.example.proe.Adapter.AdapterOrderUser;
 import com.example.proe.Adapter.AdapterSellItem;
+import com.example.proe.Model.ModelInfoBuyer;
 import com.example.proe.Model.ModelOrderDetail2;
 import com.example.proe.Model.ModelOrderUser;
 import com.example.proe.Model.ModelSellItem;
@@ -100,6 +101,51 @@ public class OrderDetailActivity extends AppCompatActivity {
     initListOrder();
 
     final int[] OrderCost = {0};
+
+//    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("Order").child(OrderID).child("Items");
+//    reference.addValueEventListener(new ValueEventListener() {
+//      @Override
+//      public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+//        sellItemslist.clear();
+//        if (dataSnapshot.exists()) {
+//
+//          for (final DataSnapshot ds : dataSnapshot.getChildren()) {
+//            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem").child(ds.getKey());
+//            reference.addValueEventListener(new ValueEventListener() {
+//                      @Override
+//                      public void onDataChange(@NonNull DataSnapshot dataChild) {
+//
+//                        for (DataSnapshot dataChild2 : dataChild.getChildren()) {
+//                          if (ds.getKey().equals(dataChild.getKey())) {
+//                            //ModelOrderDetail2 question = dataSnapshot2s.getValue(ModelOrderDetail2.class);
+//                            ModelOrderDetail2 question = dataChild.getValue(ModelOrderDetail2.class);
+//                            sellItemslist.add(question);
+//                            OrderCost[0] += Integer.parseInt(question.getItemprice());
+//
+//                            adapterSellItem.notifyDataSetChanged();
+//
+//                            txtotalprice.setText("฿" + OrderCost[0]);
+//                            txtotalitem.setText("" + sellItemslist.size());
+//                          }
+//                        }
+//                      }
+//
+//                      @Override
+//                      public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                      }
+//                    });
+//          }
+//        }
+//        adapterSellItem.notifyDataSetChanged();
+//      }
+//
+//      @Override
+//      public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//      }
+//    });
+
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem");
     reference.addValueEventListener(new ValueEventListener() {
       @Override
@@ -126,6 +172,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
       }
     });
+
   }
 
   private void initListOrder() {

@@ -68,6 +68,21 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
         holder.txprice.setText("฿"+ price +"/ Kg");
 
 
+        switch (category) {
+            case "Plastic":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
+                break;
+            case "Metal":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
+                break;
+            case "Glass":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
+                break;
+            case "Other":
+                holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
+                break;
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

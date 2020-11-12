@@ -163,10 +163,24 @@
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp" />
 
+    <EditText
+        android:id="@+id/etmachanical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etaddress"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/sharp_rect2"
+        android:drawableStart="@drawable/ic_address_24dp"
+        android:drawablePadding="5dp"
+        android:hint="m"
+        android:inputType="textPostalAddress|textMultiLine"
+        android:padding="10dp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etaddress">
+        android:layout_below="@+id/etmachanical">
 
         <androidx.appcompat.widget.SwitchCompat
             android:layout_width="match_parent"

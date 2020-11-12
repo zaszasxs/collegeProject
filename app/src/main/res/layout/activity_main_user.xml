@@ -56,22 +56,6 @@
             android:onClick="btn_adddialog"
             android:src="@drawable/ic_add_buyer_24dp" />
 
-        <TextView
-            android:id="@+id/NameIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/profileIv"
-            android:text="Varintorn Homthong"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/EmailIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/NameIv"
-            android:layout_toEndOf="@id/profileIv"
-            android:text="varintorn.homthong@gmail.com"
-            android:textColor="@color/white" />
 
       <com.blogspot.atifsoftwares.circularimageview.CircularImageView
         android:id="@+id/profileIv"
@@ -107,7 +91,8 @@
           android:layout_height="match_parent"
           android:layout_weight="1"
           android:gravity="center"
-          android:text="Buyer"
+          android:text="ผู้รัยซื้อ"
+
           android:textColor="@color/white" />
 
         <TextView
@@ -116,7 +101,8 @@
           android:layout_height="match_parent"
           android:layout_weight="1"
           android:gravity="center"
-          android:text="Order"
+          android:text="รายการสินค้า"
+            android:textStyle="bold"
           android:textColor="@color/white" />
 
         <TextView
@@ -125,7 +111,8 @@
           android:layout_height="match_parent"
           android:layout_weight="1"
           android:gravity="center"
-          android:text="Information"
+          android:text="ประชาสัมพันธ์"
+
 
           android:textColor="@color/white" />
 

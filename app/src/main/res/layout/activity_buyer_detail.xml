@@ -224,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txfilter"
                     android:layout_below="@+id/filtersellbtn"
-                    android:text="Showing All"
+                    android:text="ั   สินค้าทั้งหมด"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"/>
 
@@ -238,22 +238,6 @@
                     tools:listitem="@layout/row_sellitem_user"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-                <TextView
-                    android:id="@+id/txin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/sellitemuserRv"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Information"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/infomationRv"
-                    android:layout_width="match_parent"
-                    android:layout_height="325dp"
-                    android:layout_below="@+id/txin"
-                    android:layout_marginTop="30dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </RelativeLayout>
         </ScrollView>

@@ -49,8 +49,8 @@ public class AdapterCartitem extends RecyclerView.Adapter<AdapterCartitem.Holder
 
         holder.txtitle.setText(""+title);
         holder.txprice.setText("฿"+cost);
-        holder.txpriceeach.setText("฿"+ price );
-        holder.txnum.setText("["+num+"]");
+        holder.txpriceeach.setText("฿"+ price);
+        holder.txquanlity.setText("["+num+"]");
 
         holder.txremove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +91,7 @@ public class AdapterCartitem extends RecyclerView.Adapter<AdapterCartitem.Holder
 
     class HolderCartitem extends RecyclerView.ViewHolder {
 
-        private TextView txtitle,txprice,txpriceeach,txnum,txremove;
+        private TextView txtitle,txprice,txpriceeach,txquanlity,txremove;
 
         public HolderCartitem(@NonNull View itemView) {
             super(itemView);
@@ -99,7 +99,7 @@ public class AdapterCartitem extends RecyclerView.Adapter<AdapterCartitem.Holder
             txtitle = itemView.findViewById(R.id.txtitle);
             txprice = itemView.findViewById(R.id.txprice);
             txpriceeach = itemView.findViewById(R.id.txpriceeach);
-            txnum = itemView.findViewById(R.id.txnum);
+            txquanlity = itemView.findViewById(R.id.txquanlity);
             txremove = itemView.findViewById(R.id.txremove);
 
         }
