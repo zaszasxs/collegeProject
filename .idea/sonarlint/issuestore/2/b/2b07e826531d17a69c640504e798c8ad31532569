@@ -1,0 +1,22 @@
+
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(¨ˆª
+e	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òá™W
+f	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ÁÈã
+q
+java:S1450"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(‹°Ω¶¯ˇˇˇˇ
+n
+java:S1450#"XRemove the "btnsubmit" field and declare it as a local variable in the relevant methods.(Ø°ﬁÕ
+h	java:S116%"SRename this field "BuyerUid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ∆¿»
+ú
+java:S1186^"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–˜ëﬁˇˇˇˇˇ
+ú
+java:S1186x"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–˜ëﬁˇˇˇˇˇ
+S
+java:S1854o"=Remove this useless assignment to local variable "timestamp".(±Ô©€
+M
+java:S1854l"7Remove this useless assignment to local variable "uid".(—Ÿ»Õ
+h	java:S100~"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(∑ÿ–÷¯ˇˇˇˇ
+>
+java:S1481l"(Remove this unused "uid" local variable.(—Ÿ»Õ
+D
+java:S1481o".Remove this unused "timestamp" local variable.(±Ô©€
