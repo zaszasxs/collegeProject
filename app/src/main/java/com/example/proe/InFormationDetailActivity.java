@@ -75,7 +75,7 @@ public class InFormationDetailActivity extends AppCompatActivity {
       @Override
       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
         if (dataSnapshot.exists()) {
-          String postOwner = "" + dataSnapshot.child("Name").getValue();
+          String postOwner = "" + dataSnapshot.child("ShopName").getValue();
           tvInfomationBy.setText(postOwner);
         }
         progressDialog.dismiss();

@@ -27,7 +27,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>  {
+public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>   {
 
     //view holder
 

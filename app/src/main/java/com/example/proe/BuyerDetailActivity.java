@@ -34,6 +34,7 @@ import com.example.proe.Adapter.AdapterSellitemUser;
 import com.example.proe.Model.ModelCartitem;
 import com.example.proe.Model.ModelSellItem;
 import com.example.proe.Model.Result;
+import com.example.proe.notification.SharedPreferences;
 import com.example.proe.notification.connect.CallSendNotification;
 import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -80,6 +81,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
 
     private EasyDB easyDB;
     private String num,price;
+    private String OrderTo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,12 +186,12 @@ public class BuyerDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(BuyerDetailActivity.this);
-                builder.setTitle("Choose Category").setItems(Constants.itemcategory1, new DialogInterface.OnClickListener() {
+                builder.setTitle("เลือกประเภทหมวดหมู่").setItems(Constants.itemcategory1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String select = Constants.itemcategory1[which];
                         txfilter.setText(select);
-                        if (select.equals("All")){
+                        if (select.equals(" ทั้งหมด")){
                             LoadBuyerSellitem();
                         }
                         else{
@@ -541,7 +543,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         try {
             notificationBodyJo.put("notificationType",NOTIFICATION_TYPE);
             notificationBodyJo.put("Uid",firebaseAuth.getUid());
-            notificationBodyJo.put("BuyerUid",BuyerUid);
+            notificationBodyJo.put("BuyerUid",OrderTo);
             notificationBodyJo.put("OrderID",OrderID);
             notificationBodyJo.put("notificationTitle",NOTIFICATION_TITLE);
             notificationBodyJo.put("notificationMessage",NOTIFICATION_MESSAGE);
@@ -557,41 +559,6 @@ public class BuyerDetailActivity extends AppCompatActivity {
 ;        //sendFCMNotification(notificationJo,OrderID);
     }
 
-    private void sendFCMNotification(JSONObject notificationJo, final String OrderID) {
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("https://fcm.googleapis.com/fcm/send", notificationJo, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                //after sending fcm start order detail activity
-                Intent intent = new Intent(BuyerDetailActivity.this, OrderDetailActivity.class);
-                intent.putExtra("OrderTo",BuyerUid);
-                intent.putExtra("OrderID", OrderID);
-                startActivity(intent);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //if failed sending fcm, still start order detail activity
-                Intent intent = new Intent(BuyerDetailActivity.this, OrderDetailActivity.class);
-                intent.putExtra("OrderTo",BuyerUid);
-                intent.putExtra("OrderID", OrderID);
-                startActivity(intent);
-
-            }
-        }){
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-
-                Map<String,String> headers = new HashMap<>();
-                headers.put("Content-Type","application/json");
-                headers.put("Authorization","key = "+ Constants.FCM_KEY);
-
-                return headers;
-            }
-        };
-
-        Volley.newRequestQueue(this).add(jsonObjectRequest);
-    }
 
     private void simpleSendNotification(String recipientToken,final String OrderID) {
         ArrayList<String> tokens = new ArrayList<>();
@@ -600,8 +567,8 @@ public class BuyerDetailActivity extends AppCompatActivity {
         //tokens.add(SharedPreferences.getToken(this));
 
         String NOTIFICATION_TOPIC = "/topics/"+Constants.FCM_TOPIC;
-        String NOTIFICATION_TITLE = "New Order"+ OrderID;
-        String NOTIFICATION_MESSAGE = "Cougratulation...! you have new order.";
+        String NOTIFICATION_TITLE = "รายการสินค้าใหม่ : "+ OrderID;
+        String NOTIFICATION_MESSAGE = "มีรายการสินค้าใหม่เข้ามา";
         String NOTIFICATION_TYPE = "NewOrder";
 
         CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TITLE, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {

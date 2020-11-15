@@ -103,7 +103,7 @@
         android:layout_weight="1"
         android:background="@drawable/sharp_recmenu1"
         android:gravity="center"
-        android:text="Sellitem"
+        android:text="สินค้า"
         android:textColor="@color/black" />
 
       <TextView
@@ -112,7 +112,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Order"
+        android:text="รายการสินค้า"
         android:textColor="@color/white" />
 
       <TextView
@@ -121,7 +121,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Information"
+        android:text="ประชาสัมพันธ์"
         android:textColor="@color/white" />
 
     </LinearLayout>

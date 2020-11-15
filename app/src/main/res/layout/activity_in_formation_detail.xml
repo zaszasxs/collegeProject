@@ -24,7 +24,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerHorizontal="true"
-      android:text="Information Detail"
+      android:text="รายละเอียดการประชาสัมพันธ์"
       android:textColor="@color/white"
       android:textSize="20sp"
       android:textStyle="bold" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Infomation ID : "
+                android:text="ID ประชาสัมพันธ์ : "
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Date : "
+                android:text="วัน/เดือน/ปี : "
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="title : "
+                android:text="หัวข้อ : "
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Information Owner : "
+                android:text="ผู้รับซื้อ : "
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -163,7 +163,6 @@
 
             </TableRow>
 
-
           </TableLayout>
 
         </LinearLayout>
@@ -177,7 +176,7 @@
         android:layout_marginTop="5dp"
         android:background="#673AB7"
         android:padding="7dp"
-        android:text="Information description"
+        android:text="เนื้อหาการประชาสัมพันธ์"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"

@@ -53,9 +53,9 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
 
         LoadBuyerInfo(modelOrderUser,holder);
 
-        holder.txamount.setText("Total : ฿" +OrderCost);
+        holder.txamount.setText("ราคาทั้งหมด : ฿" +OrderCost);
         holder.txstatus.setText(OrderStatus);
-        holder.txorder.setText("OrderID: "+OrderID);
+        holder.txorder.setText("ID รายการสินค้า: "+OrderID);
 
         if (OrderStatus.equals("In Progress")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.colorPrimary));
@@ -69,7 +69,7 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
 
         Calendar calendar =Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(OrderTime));
-        String formatedDate = DateFormat.format("dd/MM/yyyy hh:mm a",calendar).toString();
+        String formatedDate = DateFormat.format("dd/MM/yyyy",calendar).toString();
 
         holder.txdata.setText(formatedDate);
 

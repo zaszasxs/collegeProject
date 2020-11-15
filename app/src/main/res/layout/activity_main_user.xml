@@ -92,7 +92,6 @@
           android:layout_weight="1"
           android:gravity="center"
           android:text="ผู้รัยซื้อ"
-
           android:textColor="@color/white" />
 
         <TextView
@@ -102,7 +101,6 @@
           android:layout_weight="1"
           android:gravity="center"
           android:text="รายการสินค้า"
-            android:textStyle="bold"
           android:textColor="@color/white" />
 
         <TextView
@@ -135,7 +133,7 @@
           android:id="@+id/relativepmg"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:visibility="visible">
+          android:visibility="gone">
 
           <TextView
             android:id="@+id/txmechanic"
@@ -143,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="Mechanical Name : 1"
+            android:text="ชื่อเครื่อง :  "
             android:textColor="@color/black"
             android:textSize="20dp" />
 
@@ -500,13 +498,37 @@
           android:id="@+id/relativebuyer"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:visibility="gone">
+          android:visibility="visible">
+
+          <EditText
+              android:id="@+id/etsearch"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="5dp"
+              android:layout_toStartOf="@+id/filterbuyer"
+              android:background="@drawable/sharp_recoffline"
+              android:drawableStart="@drawable/ic_search_black_24dp"
+              android:drawablePadding="10dp"
+              android:hint="Search"
+              android:padding="10dp" />
+
+          <ImageButton
+              android:id="@+id/filterbuyer"
+              android:layout_width="45dp"
+              android:layout_height="45dp"
+              android:layout_alignParentEnd="true"
+              android:layout_marginTop="5dp"
+              android:layout_marginEnd="5dp"
+              android:background="@null"
+              android:scaleType="fitXY"
+              android:src="@drawable/ic_widgets_black_24dp" />
 
           <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/buyerRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+              android:layout_below="@+id/filterbuyer"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/row_sharp" />
 

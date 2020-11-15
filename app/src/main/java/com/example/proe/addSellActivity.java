@@ -85,27 +85,27 @@ public class addSellActivity extends AppCompatActivity {
 
     private void category() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("SellItem Category")
+        builder.setTitle("เลือกหมวดหมู่ประเภท")
                 .setItems(Constants.itemcategory, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String category = Constants.itemcategory[which];
 
-                        if (category == "Plastic"){
+                        if (category == "พลาสติก"){
                             imagesell.setImageDrawable(getDrawable(R.drawable.ic_water));
-                            ettitle.setText("Plastic");
+
                         }
-                        else if (category == "Metal"){
+                        else if (category == "โลหะ"){
                             imagesell.setImageDrawable(getDrawable(R.drawable.ic_soda));
-                            ettitle.setText("Metal");
+
                         }
-                        else if (category == "Glass"){
+                        else if (category == "แก้ว"){
                             imagesell.setImageDrawable(getDrawable(R.drawable.ic_beer_bottle));
-                            ettitle.setText("Glass");
+
                         }
-                        else if (category == "Other"){
+                        else if (category == "อื่นๆ"){
                             imagesell.setImageDrawable(getDrawable(R.drawable.ic_etc));
-                            ettitle.setText("");
+
                         }
 
                         txcategory.setText(category);

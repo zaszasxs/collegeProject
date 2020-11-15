@@ -195,12 +195,12 @@ public class MainBuyerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainBuyerActivity.this);
-                builder.setTitle("Choose Category").setItems(Constants.itemcategory1, new DialogInterface.OnClickListener() {
+                builder.setTitle("เลือกหมวดหมู่ประเภท").setItems(Constants.itemcategory1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String select = Constants.itemcategory1[which];
                         txfilter.setText(select);
-                        if (select.equals("All")){
+                        if (select.equals("ทั้งหมด")){
                             loadSellitem();
                         }
                         else{

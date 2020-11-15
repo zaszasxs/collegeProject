@@ -14,6 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proe.InFormationDetailActivity;
 import com.example.proe.Model.ModelInfoBuyer;
 import com.example.proe.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -45,9 +50,12 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
         String Infodescription = modelInfoBuyer.getInfodescription();
         String Uid = modelInfoBuyer.getUid();
         String InfoTime = modelInfoBuyer.getTimestamp();
+        String InfoBy = modelInfoBuyer.getInfoBy();
+
+        LoadBuyerInfo(modelInfoBuyer,holder);
 
         holder.txinfo.setText("ID : "+ InfomationID);
-        holder.txtitle.setText("Title : "+Infotitle);
+        holder.txtitle.setText("หัวข้อ : "+Infotitle);
 
         Calendar calendar =Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(InfoTime));
@@ -65,6 +73,25 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
         });
     }
 
+    private void LoadBuyerInfo(ModelInfoBuyer modelInfoBuyer, HolderInfoBuyer holder) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
+        reference.child(modelInfoBuyer.getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String postOwner = "" + dataSnapshot.child("ShopName").getValue();
+                            holder.txinfoby.setText("ผู้รับซื้อ : "+postOwner);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
     @Override
     public int getItemCount() {
         return infoBuyerArrayList.size();
@@ -72,7 +99,7 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
 
     class HolderInfoBuyer extends RecyclerView.ViewHolder {
 
-        private TextView txinfo,txdate,txtitle;
+        private TextView txinfo,txdate,txtitle,txinfoby;
 
         public HolderInfoBuyer(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +107,7 @@ public class AdapterInfoBuyer extends RecyclerView.Adapter<AdapterInfoBuyer.Hold
             txinfo = itemView.findViewById(R.id.tvInformationId);
             txdate = itemView.findViewById(R.id.tvInformationDate);
             txtitle = itemView.findViewById(R.id.tvInformationTitle);
+            txinfoby = itemView.findViewById(R.id.tvInformationBy);
         }
     }
 }

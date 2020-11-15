@@ -65,16 +65,16 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         holder.txdescription.setText(description);
 
         switch (category) {
-            case "Plastic":
+            case "พลาสติก":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
                 break;
-            case "Metal":
+            case "โลหะ":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
                 break;
-            case "Glass":
+            case "แก้ว":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
                 break;
-            case "Other":
+            case "อื่นๆ":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
                 break;
         }
@@ -120,16 +120,16 @@ public class AdapterSellitemUser extends RecyclerView.Adapter<AdapterSellitemUse
         String price = modelSellItem.getItemprice();
 
         switch (category) {
-            case "Plastic":
+            case "พลาสติก":
                 imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
                 break;
-            case "Metal":
+            case "โลหะ":
                 imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
                 break;
-            case "Glass":
+            case "แก้ว":
                 imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
                 break;
-            case "Other":
+            case "อื่นๆ":
                 imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
                 break;
         }

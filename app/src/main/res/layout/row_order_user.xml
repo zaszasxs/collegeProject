@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order: 1234"
+            android:text="ID รายการสินค้า: 1234"
             android:id="@+id/txorder"
             android:textColor="@color/black"
             android:textStyle="bold"/>
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txamount"
             android:layout_below="@+id/shopnameIv"
-            android:text="Total : ฿10.00"/>
+            android:text="ราคาทั้งหมด : ฿10.00"/>
 
         <TextView
             android:layout_width="wrap_content"

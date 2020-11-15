@@ -16,8 +16,8 @@
     android:id="@+id/layDevicePlastic"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dp"
-    android:paddingBottom="15dp">
+    android:paddingTop="5dp"
+    android:paddingBottom="15dp" >
 
 
     <ImageView
@@ -60,10 +60,27 @@
       android:lines="1"
       android:ellipsize="end"
       android:textSize="14sp"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@+id/ivNext"
       app:layout_constraintStart_toEndOf="@+id/ivIconMechanical"
       app:layout_constraintTop_toBottomOf="@+id/tvInformationId" />
+
+    <TextView
+        android:id="@+id/tvInformationBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="@string/app_name"
+        android:textColor="@color/gray"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivNext"
+        app:layout_constraintStart_toEndOf="@+id/ivIconMechanical"
+        app:layout_constraintTop_toBottomOf="@+id/tvInformationTitle" />
 
     <TextView
       android:id="@+id/tvInformationDate"

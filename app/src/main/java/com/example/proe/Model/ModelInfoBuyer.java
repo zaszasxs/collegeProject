@@ -4,10 +4,12 @@ import java.io.Serializable;
 
 public class ModelInfoBuyer implements Serializable {
 
-    String InfomationID,Infotitle,Infodescription,timestamp,Uid;
+    String InfomationID,Infotitle,Infodescription,timestamp,Uid,InfoBy;
 
     public ModelInfoBuyer() {
     }
+
+
 
     public String getInfomationID() {
         return InfomationID;
@@ -49,4 +51,11 @@ public class ModelInfoBuyer implements Serializable {
         Uid = uid;
     }
 
+    public String getInfoBy() {
+        return InfoBy;
+    }
+
+    public void setInfoBy(String infoBy) {
+        InfoBy = infoBy;
+    }
 }

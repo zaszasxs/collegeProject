@@ -91,6 +91,7 @@ public class ShopReviewActivity extends AppCompatActivity {
                         long numberOfReview = dataSnapshot.getChildrenCount();
                         float avgRating = ratingSum/numberOfReview;
 
+                        pushToFirebase(avgRating);
                         txrating.setText(String.format("%.2f",avgRating) +"[" +numberOfReview+ "]");
                         ratingbar.setRating(avgRating);
                     }
@@ -100,6 +101,13 @@ public class ShopReviewActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void pushToFirebase(float avgRating) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("User").child(BuyerUid).child("everage");
+
+        myRef.setValue(avgRating);
     }
 
     private void loadBuyerDetail() {

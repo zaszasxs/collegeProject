@@ -69,16 +69,16 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
 
 
         switch (category) {
-            case "Plastic":
+            case "พลาสติก":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
                 break;
-            case "Metal":
+            case "โลหะ":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
                 break;
-            case "Glass":
+            case "แก้ว":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
                 break;
-            case "Other":
+            case "อื่นๆ":
                 holder.imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
                 break;
         }

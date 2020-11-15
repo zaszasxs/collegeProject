@@ -7,17 +7,22 @@ public class Constants {
 
     //sell category
     public static final String[] itemcategory = {
-            "Plastic",
-            "Metal",
-            "Glass",
-            "Other"
+            "พลาสติก",
+            "โลหะ",
+            "แก้ว",
+            "อื่นๆ"
     };
 
     public static final String[] itemcategory1 = {
-            "All",
-            "Plastic",
-            "Metal",
-            "Glass",
-            "Other"
+            "ทั้งหมด",
+            "พลาสติก",
+            "โลหะ",
+            "แก้ว",
+            "อื่นๆ"
+    };
+
+    public static final String[] buyer = {
+            "ดีที่สุด",
+            "ใกล้ที่สุด"
     };
 }
