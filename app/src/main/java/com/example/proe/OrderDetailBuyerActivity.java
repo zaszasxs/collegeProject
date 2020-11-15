@@ -271,8 +271,7 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     orderDetailArrayList = new ArrayList<>();
     initListOrder();
 
-    final int[] OrderCost = {0};
-    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem");
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("Order").child(OrderID).child("Items");
     reference.addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -285,10 +284,6 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
 
             adapterSellItem.notifyDataSetChanged();
 
-            OrderCost[0] += Integer.parseInt(question.getItemprice());
-
-
-            txtotalprice.setText("฿" + OrderCost[0]);
             txtotalitem.setText("" + sellItemslist.size());
           }
         }
