@@ -87,3 +87,9 @@ l
 <app/src/main/java/com/example/proe/Model/ModelInfoBuyer.java,b/1/b100e8c45b1fccd54413f687c8ba1a073192ce83
 q
 Aapp/src/main/java/com/example/proe/InFormationDetailActivity.java,0/6/06eabe470816a133a56df3ab447ef60f4eef4d6c
+g
+7app/src/main/java/com/example/proe/addSellActivity.java,7/b/7ba75587f1d56ca6c836621261b73979b8286985
+j
+:app/src/main/java/com/example/proe/ShopReviewActivity.java,a/a/aa5dbadc374b0001b52780ebdd8a9ee0395bae11
+k
+;app/src/main/java/com/example/proe/WriteReviewActivity.java,2/b/2b07e826531d17a69c640504e798c8ad31532569

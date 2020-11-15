@@ -1,8 +1,9 @@
 
-y	java:S116"ZRename this field "Itemdescription" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ή‚ήϊÿÿÿÿ8„ωθ΄Ω.
+p	java:S116
+"TRename this field "Itemtitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ΒΣΝ8„ωθ΄Ω.
+p	java:S116	"TRename this field "Itemprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(σωμ8„ωθ΄Ω.
+o	java:S116"NRename this field "Uid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Αώ³ψÿÿÿÿ8„ωθ΄Ω.
+{	java:S116"ZRename this field "Itemdescription" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ή‚ήϊÿÿÿÿ8„ωθ΄Ω.
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ήµ®Άÿÿÿÿÿ
-n	java:S116"TRename this field "Itemprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(σωμ8„ωθ΄Ω.
-v	java:S116"WRename this field "Itemcategory" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Χ£ÿÿÿÿÿ8„ωθ΄Ω.
-m	java:S116"NRename this field "Uid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Αώ³ψÿÿÿÿ8„ωθ΄Ω.
-n	java:S116"TRename this field "Itemtitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ΒΣΝ8„ωθ΄Ω.
-t	java:S116"URename this field "SellitemID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒλ―ϊÿÿÿÿ8„ωθ΄Ω.
+v	java:S116"URename this field "SellitemID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒλ―ϊÿÿÿÿ8„ωθ΄Ω.
+x	java:S116"WRename this field "Itemcategory" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Χ£ÿÿÿÿÿ8„ωθ΄Ω.

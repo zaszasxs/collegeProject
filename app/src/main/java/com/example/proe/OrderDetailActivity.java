@@ -43,7 +43,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
   private String OrderTo, OrderID, mKeyChild;
 
-  private ImageButton btnback,btnreview;
+  private ImageButton btnback, btnreview;
   private TextView txorder, txdata, txstatus, shopnameIv, txtotalitem, txtotalprice, addressIv;
 
   private RecyclerView itemRv;
@@ -89,9 +89,9 @@ public class OrderDetailActivity extends AppCompatActivity {
     btnreview.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-          Intent intent = new Intent(OrderDetailActivity.this,WriteReviewActivity.class);
-          intent.putExtra("BuyerUid", OrderTo);
-          startActivity(intent);
+        Intent intent = new Intent(OrderDetailActivity.this, WriteReviewActivity.class);
+        intent.putExtra("BuyerUid", OrderTo);
+        startActivity(intent);
       }
     });
   }
@@ -100,53 +100,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
     initListOrder();
 
-    final int[] OrderCost = {0};
-
-//    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("Order").child(OrderID).child("Items");
-//    reference.addValueEventListener(new ValueEventListener() {
-//      @Override
-//      public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-//        sellItemslist.clear();
-//        if (dataSnapshot.exists()) {
-//
-//          for (final DataSnapshot ds : dataSnapshot.getChildren()) {
-//            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem").child(ds.getKey());
-//            reference.addValueEventListener(new ValueEventListener() {
-//                      @Override
-//                      public void onDataChange(@NonNull DataSnapshot dataChild) {
-//
-//                        for (DataSnapshot dataChild2 : dataChild.getChildren()) {
-//                          if (ds.getKey().equals(dataChild.getKey())) {
-//                            //ModelOrderDetail2 question = dataSnapshot2s.getValue(ModelOrderDetail2.class);
-//                            ModelOrderDetail2 question = dataChild.getValue(ModelOrderDetail2.class);
-//                            sellItemslist.add(question);
-//                            OrderCost[0] += Integer.parseInt(question.getItemprice());
-//
-//                            adapterSellItem.notifyDataSetChanged();
-//
-//                            txtotalprice.setText("฿" + OrderCost[0]);
-//                            txtotalitem.setText("" + sellItemslist.size());
-//                          }
-//                        }
-//                      }
-//
-//                      @Override
-//                      public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                      }
-//                    });
-//          }
-//        }
-//        adapterSellItem.notifyDataSetChanged();
-//      }
-//
-//      @Override
-//      public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//      }
-//    });
-
-    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("SellItem");
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User").child(OrderTo).child("Order").child(OrderID).child("Items");
     reference.addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -156,11 +110,9 @@ public class OrderDetailActivity extends AppCompatActivity {
 
             ModelOrderDetail2 question = ds.getValue(ModelOrderDetail2.class);
             sellItemslist.add(question);
-            OrderCost[0] += Integer.parseInt(question.getItemprice());
 
             adapterSellItem.notifyDataSetChanged();
 
-            txtotalprice.setText("฿" + OrderCost[0]);
             txtotalitem.setText("" + sellItemslist.size());
           }
         }

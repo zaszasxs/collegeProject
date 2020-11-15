@@ -1,119 +1,136 @@
 
-i
-java:S1450"URemove the "mapbtn" field and declare it as a local variable in the relevant methods.(Ò„¥
-r
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¼ë¿Åÿÿÿÿÿ8¢—µÙ.
-V	java:S1105"<This class has 9 parents which is greater than 5 authorized.(Ú´¦øÿÿÿÿ
-<
-java:S1659")Declare "txtotalitem" on a separate line.(ôåµu
-O
-java:S1117";Rename "OrderBy" which hides the field declared at line 55.(»šÙ™
+B
+java:S16597"%Declare "OrderTo" on a separate line.(ÒÊı8²‚ˆÑÜ.
+R
+java:S1854×";Remove this useless assignment to local variable "OrderBy".(»šÙ™
+g	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¼¹ı
+l	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ
+L
+java:S16598"1Declare "destinationLatitude" on a separate line.(â ä´ÿÿÿÿÿ
+l	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼€Ûşÿÿÿÿ
+g	java:S117ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª
+g	java:S117¼"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¥†å
+l	java:S117Ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØÚÃşÿÿÿÿ
+L
+java:S1874å"0Remove this use of "getColor"; it is deprecated.(»Õ¨¶ùÿÿÿÿ
+l	java:S117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÌ€»ûÿÿÿÿ
+b
+java:S1854ø"FRemove this useless assignment to local variable "NOTIFICATION_TITLE".(ÀÓŒÿÿÿÿÿ
+n	java:S1167"RRename this field "OrderTo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÊı8²‚ˆÑÜ.
+^
+java:S1117Ü";Rename "OrderTo" which hides the field declared at line 55.(æ¼€Ûşÿÿÿÿ8²‚ˆÑÜ.
 F
-java:S1659"-Declare "sourceLongitude" on a separate line.(â ä´ÿÿÿÿÿ
-E
-java:S1481",Remove this unused "OrderTo" local variable.(æ¼€Ûşÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(ÂßÃ¾8¢—µÙ.
-[	java:S125"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¢—µÙ.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¦Çşÿÿÿÿ
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8¢—µÙ.
-C
-java:S1874"0Remove this use of "getColor"; it is deprecated.(å—¥#
-7
-java:S1659"$Declare "txdate" on a separate line.(ôåµu
-@
-java:S1481",Remove this unused "OrderBy" local variable.(»šÙ™
-V	java:S125"<This block of commented-out lines of code should be removed.(ëØû™8¢—µÙ.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åœ€ûşÿÿÿÿ
-8
-java:S1659"$Declare "mapbtn" on a separate line.(Ò„¥
-J
-java:S1481"6Remove this unused "NOTIFICATION_TYPE" local variable.(‹¶ı‘
-j	java:S116"RRename this field "OrderBy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò„áúüÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÍÓÎşÿÿÿÿ
-j
-java:S1450"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ò„¥
-T
-java:S1854";Remove this useless assignment to local variable "OrderTo".(æ¼€Ûşÿÿÿÿ
-:
-java:S1659"'Declare "addressIv" on a separate line.(ôåµu
-a
-java:S1192"HDefine a constant instead of duplicating this literal "OrderID" 3 times.(·Çê®øÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØÚÃşÿÿÿÿ
-9
-java:S1659"&Declare "txstatus" on a separate line.(ôåµu
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¥†å
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑòŸüÿÿÿÿ
-c
-java:S1192"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(ğ¦Æ—ùÿÿÿÿ
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¼¹ı
-=
-java:S1659"*Declare "txtotalprice" on a separate line.(ôåµu
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+java:S1874é"0Remove this use of "getColor"; it is deprecated.(å—¥#
+l	java:S117»"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÍÓÎşÿÿÿÿ
+\
+java:S1128)"?Remove this unused import 'com.google.firebase.database.Query'.(ş¶Å®8²‚ˆÑÜ.
+l	java:S117÷"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ
 S
-java:S1068"8Remove this unused "orderDetailArrayList" private field.(Óı”–8¢—µÙ.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÌ€»ûÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(ÔÅú¤8¢—µÙ.
+java:S1068A"6Remove this unused "adapterOrderDetail" private field.(¢‹ÏØ8¢—µÙ.
+H
+java:S16598"-Declare "sourceLongitude" on a separate line.(â ä´ÿÿÿÿÿ
+R
+java:S1117×";Rename "OrderBy" which hides the field declared at line 55.(»šÙ™
+g	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°À§Ó
+f	java:S116;"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôåµu
+l	java:S117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²§¢Öùÿÿÿÿ
+:
+java:S1659:"$Declare "mapbtn" on a separate line.(Ò„¥
+M
+java:S16598"2Declare "destinationLongitude" on a separate line.(â ä´ÿÿÿÿÿ
+l	java:S117İ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑòŸüÿÿÿÿ
+K
+java:S1604‘"(Make this anonymous inner class a lambda(Ïë£ùÿÿÿÿ8±ığÖÜ.
+G
+java:S1874ç"0Remove this use of "getColor"; it is deprecated.(Àä†¯
+E
+java:S1604l"(Make this anonymous inner class a lambda(½ßÇä8±ığÖÜ.
+H
+java:S1481Ü",Remove this unused "OrderTo" local variable.(æ¼€Ûşÿÿÿÿ
+U
+java:S1068@"8Remove this unused "orderDetailArrayList" private field.(Óı”–8¢—µÙ.
+`
+java:S1192°"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(¹ñ«
+g	java:S117ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘
+K
+java:S1604œ"(Make this anonymous inner class a lambda(Ÿ ¹ÿÿÿÿÿ8±ığÖÜ.
+€
+java:S1450@"cRemove the "orderDetailArrayList" field and declare it as a local variable in the relevant methods.(Óı”–8¢—µÙ.
+f
+java:S1192±"JDefine a constant instead of duplicating this literal "Longitude" 3 times.(ğ¦Æ—ùÿÿÿÿ
+l
+java:S1450:"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ò„¥
+¤
+java:S1186µ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8¢—µÙ.
+;
+java:S1659;"&Declare "txstatus" on a separate line.(ôåµu
+V	java:S1105"<This class has 9 parents which is greater than 5 authorized.(Ú´¦øÿÿÿÿ
+c
+java:S1192L"HDefine a constant instead of duplicating this literal "OrderID" 3 times.(·Çê®øÿÿÿÿ
+B
+java:S16597"%Declare "OrderBy" on a separate line.(ÒÊı8²‚ˆÑÜ.
 9
-java:S1659"%Declare "editbtn" on a separate line.(Ò„¥
-T	java:S125"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°À§Ó
+java:S1659;"$Declare "txdate" on a separate line.(ôåµu
+W	java:S125õ"<This block of commented-out lines of code should be removed.(¿ß”äÿÿÿÿÿ
+
+java:S1186õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+l	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ
+M
+java:S1481ú"6Remove this unused "NOTIFICATION_TYPE" local variable.(‹¶ı‘
+k
+java:S1450:"URemove the "mapbtn" field and declare it as a local variable in the relevant methods.(Ò„¥
 K
-java:S1659"2Declare "destinationLongitude" on a separate line.(â ä´ÿÿÿÿÿ
-8
-java:S1659"%Declare "phoneIv" on a separate line.(ôåµu
-V	java:S125"<This block of commented-out lines of code should be removed.(úæÿ8¢—µÙ.
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¼€Ûşÿÿÿÿ
-j
-java:S1450"VRemove the "editbtn" field and declare it as a local variable in the relevant methods.(Ò„¥
-8
-java:S1659"%Declare "EmailIv" on a separate line.(ôåµu
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÓŒÿÿÿÿÿ
-D
-java:S1874"0Remove this use of "getColor"; it is deprecated.(Àä†¯
-~
-java:S1450"cRemove the "orderDetailArrayList" field and declare it as a local variable in the relevant methods.(Óı”–8¢—µÙ.
-T
-java:S1117";Rename "OrderID" which hides the field declared at line 55.(«¡êÖşÿÿÿÿ
-J
-java:S1659"1Declare "destinationLatitude" on a separate line.(â ä´ÿÿÿÿÿ
-Q
-java:S1068"6Remove this unused "adapterOrderDetail" private field.(¢‹ÏØ8¢—µÙ.
-V	java:S125"<This block of commented-out lines of code should be removed.(¡ßÛ—8¢—µÙ.
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼å–Éıÿÿÿÿ
-š
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
-_
-java:S1854"FRemove this useless assignment to local variable "NOTIFICATION_TITLE".(ÀÓŒÿÿÿÿÿ
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¡êÖşÿÿÿÿ
-I
-java:S1874"0Remove this use of "getColor"; it is deprecated.(»Õ¨¶ùÿÿÿÿ
-O
-java:S1854";Remove this useless assignment to local variable "OrderBy".(»šÙ™
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ûËª
+java:S1604Ü"(Make this anonymous inner class a lambda(´¸©”üÿÿÿÿ8±ığÖÜ.
+F
+java:S1604ü"(Make this anonymous inner class a lambda(æ´˜«8±ığÖÜ.
+l	java:S117Ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åœ€ûşÿÿÿÿ
+s	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°å²ùûÿÿÿÿ8ËÍËŒÚ.
+<
+java:S1659;"'Declare "addressIv" on a separate line.(ôåµu
+
+java:S1186Ë"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ
+K
+java:S1604"(Make this anonymous inner class a lambda(„¬åÁÿÿÿÿÿ8±ığÖÜ.
+W
+java:S1117Ù";Rename "OrderID" which hides the field declared at line 55.(«¡êÖşÿÿÿÿ
+g	java:S117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»šÙ™
+\
+java:S1854ú"ERemove this useless assignment to local variable "NOTIFICATION_TYPE".(‹¶ı‘
+;
+java:S1659:"%Declare "editbtn" on a separate line.(Ò„¥
+E
+java:S1604s"(Make this anonymous inner class a lambda(ÿİıÓ8±ığÖÜ.
+W
+java:S1854Ü";Remove this useless assignment to local variable "OrderTo".(æ¼€Ûşÿÿÿÿ
+C
+java:S1481×",Remove this unused "OrderBy" local variable.(»šÙ™
+:
+java:S1659;"%Declare "phoneIv" on a separate line.(ôåµu
 >
-java:S1659"%Declare "OrderBy" on a separate line.(ò„áúüÿÿÿÿ
-P
-java:S1481"7Remove this unused "NOTIFICATION_TITLE" local variable.(ÀÓŒÿÿÿÿÿ
-d	java:S116"RRename this field "EmailIv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôåµu
-”
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•·«.
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»šÙ™
-d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¶ı‘
-]
-java:S1192"IDefine a constant instead of duplicating this literal "Latitude" 3 times.(¹ñ«
-Y
-java:S1854"ERemove this useless assignment to local variable "NOTIFICATION_TYPE".(‹¶ı‘
-i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²§¢Öùÿÿÿÿ
-[	java:S125"<This block of commented-out lines of code should be removed.(óäƒçıÿÿÿÿ8¢—µÙ.
+java:S1659;")Declare "txtotalitem" on a separate line.(ôåµu
+l	java:S117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¡êÖşÿÿÿÿ
+n	java:S1167"RRename this field "OrderID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÊı8²‚ˆÑÜ.
+:
+java:S1659;"%Declare "EmailIv" on a separate line.(ôåµu
+F
+java:S1604„"(Make this anonymous inner class a lambda(Õó¢™8±ığÖÜ.
+N
+java:S1144Ô"8Remove this unused private "sendFCMNotification" method.(Â¦ÂK
+l	java:S117Ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¦Çşÿÿÿÿ
+l
+java:S1450:"VRemove the "editbtn" field and declare it as a local variable in the relevant methods.(Ò„¥
+n	java:S1167"RRename this field "OrderBy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÊı8²‚ˆÑÜ.
 K
-java:S1144"8Remove this unused private "sendFCMNotification" method.(Â¦ÂK
-j	java:S116"RRename this field "OrderID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò„áúüÿÿÿÿ
-p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔŞ¬şÿÿÿÿ8ËÍËŒÚ.
-p	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°å²ùûÿÿÿÿ8ËÍËŒÚ.
+java:S1604Ö"(Make this anonymous inner class a lambda(öÏóÄùÿÿÿÿ8±ığÖÜ.
+S
+java:S1481ø"7Remove this unused "NOTIFICATION_TITLE" local variable.(ÀÓŒÿÿÿÿÿ
+J
+java:S1604e"(Make this anonymous inner class a lambda(éÕ”äùÿÿÿÿ8±ığÖÜ.
+?
+java:S1659;"*Declare "txtotalprice" on a separate line.(ôåµu
+—
+java:S1186ş"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•·«.
+c
+java:S1192"FDefine a constant instead of duplicating this literal "Order" 3 times.(â·=8ÅªòÖÜ.
+¤
+java:S1186¦"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ÷‘Şÿÿÿÿÿ8ÅªòÖÜ.

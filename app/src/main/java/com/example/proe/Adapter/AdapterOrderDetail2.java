@@ -1,5 +1,6 @@
 package com.example.proe.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,19 +33,16 @@ public class AdapterOrderDetail2 extends RecyclerView.Adapter<AdapterOrderDetail
         return new HolderOrderDetail(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull HolderOrderDetail holder, int position) {
         ModelOrderDetail2 modelOrderDetail = orderDetailArrayList.get(position);
 
 
-        String title = modelOrderDetail.getItemtitle();
-        String price = modelOrderDetail.getItemprice().toString();
-
-
-        holder.txtitle.setText(""+title);
-        holder.txprice.setText("฿"+price);
-        //holder.txpriceeach.setText("฿"+price);
-        //holder.txnum.setText("["+num+"]");
+        holder.txtitle.setText(""+modelOrderDetail.getName());
+        holder.txprice.setText("฿"+modelOrderDetail.getCost());
+        holder.txpriceeach.setText("฿"+modelOrderDetail.getPrice());
+        holder.txnum.setText("["+modelOrderDetail.getNum()+"]");
     }
 
     @Override

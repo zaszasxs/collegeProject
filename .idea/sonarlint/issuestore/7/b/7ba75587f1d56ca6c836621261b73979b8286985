@@ -1,0 +1,40 @@
+
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(¬Çäûÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¬Çäûÿÿÿÿ
+O
+java:S4973^"9Use the "equals" method if value comparison was intended.(ñç¹
+T
+java:S4973b"9Use the "equals" method if value comparison was intended.(ë®¦Ìüÿÿÿÿ
+O
+java:S4973f"9Use the "equals" method if value comparison was intended.(ÜŸ‹
+O
+java:S4973j"9Use the "equals" method if value comparison was intended.(³Ú¤é
+k
+java:S1450"URemove the "btnadd" field and declare it as a local variable in the relevant methods.(¶İ¹´
+q
+java:S1450!"VRemove the "btnback" field and declare it as a local variable in the relevant methods.(Ü¡½¦øÿÿÿÿ
+;
+java:S1659"%Declare "etprice" on a separate line.(¹“øÎ
+;
+java:S1659"%Declare "ettitle" on a separate line.(¹“øÎ
+C
+java:S1659S"-Declare "Itemdescription" on a separate line.(×âÁò
+@
+java:S1659S"*Declare "Itemquanlity" on a separate line.(×âÁò
+=
+java:S1659S"'Declare "Itemprice" on a separate line.(×âÁò
+@
+java:S1659S"*Declare "Itemcategory" on a separate line.(×âÁò
+i	java:S116S"TRename this field "Itemtitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âÁò
+o	java:S116S"ZRename this field "Itemdescription" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âÁò
+l	java:S116S"WRename this field "Itemquanlity" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âÁò
+i	java:S116S"TRename this field "Itemprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âÁò
+l	java:S116S"WRename this field "Itemcategory" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âÁò
+Q
+java:S1874$"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ
+Q
+java:S18745"6Remove this use of "ProgressDialog"; it is deprecated.(¿Ú•ğúÿÿÿÿ
+I
+java:S1874"2Remove this use of "setMessage"; it is deprecated.(Â÷¿
+F
+java:S1068S"0Remove this unused "Itemquanlity" private field.(×âÁò
