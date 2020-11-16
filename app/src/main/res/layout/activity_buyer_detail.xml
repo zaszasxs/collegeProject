@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="Shop Detail"
+                android:text="รายละเอียดร้านค้า"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textColor="@color/white"/>

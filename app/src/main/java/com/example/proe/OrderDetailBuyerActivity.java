@@ -333,7 +333,7 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     }
 
 
-    simpleGetTokenFromUID(OrderBy, OrderID);
+    simpleGetTokenFromUID(OrderBy, OrderID,message);
 
   }
 
@@ -366,7 +366,7 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     Volley.newRequestQueue(this).add(jsonObjectRequest);
   }
 
-  private void simpleSendNotification(String recipientToken, final String OrderID) {
+  private void simpleSendNotification(String recipientToken, final String OrderID, String message) {
     ArrayList<String> tokens = new ArrayList<>();
     tokens.add(recipientToken);
     // ในกรณีที่ต้องการส่ง 2 เครื่อง เช่น ต้องการส่งเครื่อง A และเครื่องตัวเอง เปิดคอมเม้นด้านล่าง
@@ -374,10 +374,10 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
 
     String NOTIFICATION_TOPIC = "/topics/" + Constants.FCM_TOPIC;
     String NOTIFICATION_TITLE = "Your Order" + OrderID;
-    String NOTIFICATION_MESSAGE = "" ;
+    String NOTIFICATION_MESSAGE = "" + message ;
     String NOTIFICATION_TYPE = "OrderStatusChanged";
 
-    CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TOPIC, NOTIFICATION_TITLE, tokens)).observe(this, new Observer<Result>() {
+    CallSendNotification.sendNotification(Utils.createObject(NOTIFICATION_TITLE, NOTIFICATION_MESSAGE, tokens)).observe(this, new Observer<Result>() {
       @Override
       public void onChanged(Result modelPushToken) {
 
@@ -385,11 +385,11 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     });
   }
 
-  private void simpleGetTokenFromUID(String uid, final String OrderID) {
+  private void simpleGetTokenFromUID(String uid, final String OrderID, String message) {
     CallSendNotification.getTokenFirebase(uid).observe(this, new Observer<String>() {
       @Override
       public void onChanged(String token) {
-        simpleSendNotification(token, OrderID);
+        simpleSendNotification(token, OrderID,message);
       }
     });
 

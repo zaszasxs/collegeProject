@@ -82,7 +82,8 @@ public class OrderDetailActivity extends AppCompatActivity {
     btnback.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        onBackPressed();
+        Intent intent1 = new Intent(OrderDetailActivity.this,MainUserActivity.class);
+        startActivity(intent1);
       }
     });
 

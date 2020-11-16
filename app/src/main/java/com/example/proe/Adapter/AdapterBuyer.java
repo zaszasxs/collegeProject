@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proe.BuyerDetailActivity;
+import com.example.proe.Filter.FilterBuyer;
 import com.example.proe.Model.ModelBuyerUI;
 import com.example.proe.R;
 import com.google.firebase.database.DataSnapshot;
@@ -27,17 +28,19 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>   {
+public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer> implements Filterable  {
 
     //view holder
 
     private Context context;
-    public ArrayList<ModelBuyerUI> buyerList;
+    public ArrayList<ModelBuyerUI> buyerList,filterlist;
+    private FilterBuyer filter;
 
 
-    public AdapterBuyer(Context context, List<ModelBuyerUI> buyerList) {
+    public AdapterBuyer(Context context, ArrayList<ModelBuyerUI> buyerList) {
         this.context = context;
-        this.buyerList = (ArrayList<ModelBuyerUI>) buyerList;
+        this.buyerList =  buyerList;
+        this.filterlist = buyerList;
 
     }
 
@@ -144,6 +147,13 @@ public class AdapterBuyer extends RecyclerView.Adapter<AdapterBuyer.Holderbuyer>
         return buyerList.size();   // record no. of record
     }
 
+    @Override
+    public Filter getFilter() {
+        if (filter == null){
+            filter = new FilterBuyer(this,filterlist);
+        }
+        return filter;
+    }
 
 
     class Holderbuyer extends RecyclerView.ViewHolder{

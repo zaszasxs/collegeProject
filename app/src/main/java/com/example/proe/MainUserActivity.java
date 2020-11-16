@@ -7,15 +7,19 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -40,6 +44,7 @@ import com.example.proe.Model.ModelPMG;
 import com.example.proe.Model.Mechanical;
 import com.example.proe.notification.NotificationHelper;
 import com.example.proe.notification.SharedPreferences;
+import com.example.proe.notification.connect.Constant;
 import com.example.proe.utils.Utils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -72,7 +77,7 @@ public class MainUserActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
-    private List<ModelBuyerUI> modelBuyerUIS;
+    private ArrayList<ModelBuyerUI> modelBuyerUIS;
     private AdapterBuyer adapterBuyer;
 
     private ArrayList<ModelOrderUser> OrderUsersliat;
@@ -85,7 +90,7 @@ public class MainUserActivity extends AppCompatActivity {
     private DatabaseReference storageBinReference;
 
     private TextView tvDeviceName, tvDeviceName2, tvDeviceName3;
-    private String[] listDevice = {"พลาสติห", "โลหะ", "แก้ว"};
+    private String[] listDevice = {"พลาสติก", "โลหะ", "แก้ว"};
     private FloatingActionButton fbSettings;
     String deviceConnect;
     List<ModelBuyerUI> listSortRate;
@@ -191,6 +196,56 @@ public class MainUserActivity extends AppCompatActivity {
         });
 
         initSetNameDeviceConnect();
+
+        etsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    adapterBuyer.getFilter().filter(s);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        filterbuyer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainUserActivity.this);
+                builder.setTitle("เลือกประเภท").setItems(Constants.buyer, new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String select = Constants.buyer[which];
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            if (select.equals(" ใกล้ที่สุด")) {
+
+
+                            }
+                            if (select.equals(" ดีที่สุด")) {
+                                modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getEverage).reversed());
+                                adapterBuyer.notifyDataSetChanged();
+                            }
+
+
+                        }
+                    }
+                }).show();
+            }
+        });
+
     }
 
     private void checkDeviceConnect() {
@@ -437,6 +492,45 @@ public class MainUserActivity extends AppCompatActivity {
                 });
     }
 
+    private void loadBuyer(final String city) {
+        modelBuyerUIS = new ArrayList<>();
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
+        databaseReference.orderByChild("AccountType").equalTo("Buyer")
+                .addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        modelBuyerUIS.clear();
+
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            ModelBuyerUI modelBuyerUI = dataSnapshot1.getValue(ModelBuyerUI.class);
+
+                            String ShopCity = "" + dataSnapshot1.child("City").getValue();
+
+                            //show only user city shop
+                            if (ShopCity.equals(city)) {
+
+                                modelBuyerUIS.add(modelBuyerUI);
+                                //modelBuyerUIS.sort(Comparator.comparing());
+                                modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getShopOpen).reversed());
+
+                            }
+                        }
+
+                        adapterBuyer = new AdapterBuyer(MainUserActivity.this, modelBuyerUIS);
+                        //set adapter to recycleview
+                        buyerRv.setAdapter(adapterBuyer);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
     private void LoadMyMechanical() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
         databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Mechanical")
@@ -640,52 +734,7 @@ public class MainUserActivity extends AppCompatActivity {
         });
     }
 
-    private void loadBuyer(final String city) {
-        modelBuyerUIS = new ArrayList<>();
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
-        databaseReference.orderByChild("AccountType").equalTo("Buyer")
-                .addValueEventListener(new ValueEventListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.N)
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        modelBuyerUIS.clear();
-
-                        onRestart();
-                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                            ModelBuyerUI modelBuyerUI = dataSnapshot1.getValue(ModelBuyerUI.class);
-
-                            String ShopCity = "" + dataSnapshot1.child("City").getValue();
-
-                            //show only user city shop
-                            if (ShopCity.equals(city)) {
-
-                                modelBuyerUIS.add(modelBuyerUI);
-                                //modelBuyerUIS.sort(Comparator.comparing());
-
-                            }
-                        }
-
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getEverage).reversed());
-                            modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getCompleteAddress));
-
-                        }
-                        //setup adapter
-                        //List<ModelBuyerUI> list  = modelBuyerUIS.stream().sorted(Comparator.comparing(ModelBuyerUI::getRatings.).reversed());
-
-                        adapterBuyer = new AdapterBuyer(MainUserActivity.this, modelBuyerUIS);
-                        //set adapter to recycleview
-                        buyerRv.setAdapter(adapterBuyer);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-    }
 
     private void showPMGUI() {
         relativebuyer.setVisibility(View.GONE);
