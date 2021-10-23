@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txorder"
-            android:text="Order: 121212"
+            android:text="ID รายการสินค้า: 121212"
             android:textColor="@color/black"
             android:textStyle="bold"/>
         
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txamount"
-            android:text="Total : ฿ 10"
+            android:text="ราคาทั้งหมด : ฿ 10"
             android:layout_marginTop="3dp"
             android:layout_below="@+id/EmailIv"
             android:textColor="@color/gray" />

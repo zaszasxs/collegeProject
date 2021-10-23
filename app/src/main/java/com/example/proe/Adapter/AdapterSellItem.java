@@ -120,6 +120,21 @@ public class AdapterSellItem extends RecyclerView.Adapter<AdapterSellItem.Holder
         txcategory.setText(category);
         txprice.setText("฿"+ price +"/ Kg");
 
+        switch (category) {
+            case "พลาสติก":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_water));
+                break;
+            case "โลหะ":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_soda));
+                break;
+            case "แก้ว":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_beer_bottle));
+                break;
+            case "อื่นๆ":
+                imagesell.setImageDrawable(context.getDrawable(R.drawable.ic_etc));
+                break;
+        }
+
         bottomSheetDialog.show();
 
         editbtn.setOnClickListener(new View.OnClickListener() {

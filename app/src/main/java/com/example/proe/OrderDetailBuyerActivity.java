@@ -122,10 +122,10 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
   }
 
   private void editOrderStatud() {
-    final String[] option = {"In Progress", "Completed", "Cancelled"};
+    final String[] option = {"กำลังดำเนินการ", "เสร็จสิ้น", "ยกเลิก"};
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setTitle("Edit Order Status")
+    builder.setTitle("สถานะรายการสินค้าขณะนี้")
         .setItems(option, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int i) {
@@ -146,7 +146,7 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
           @Override
           public void onSuccess(Void aVoid) {
 
-            String message = "Order is now " + seletOption;
+            String message = "ตอนนี้รายการสินค้าของคุณ" + seletOption;
 
             Toast.makeText(OrderDetailBuyerActivity.this, message, Toast.LENGTH_SHORT).show();
 
@@ -225,11 +225,11 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
             calendar.setTimeInMillis(Long.parseLong(OrderTime));
             String formatedDate = DateFormat.format("dd/MM/yyyy hh:mm a", calendar).toString();
 
-            if (OrderStatus.equals("In Progress")) {
+            if (OrderStatus.equals("กำลังดำเนินการ")) {
               txstatus.setTextColor(getResources().getColor(R.color.colorPrimary));
-            } else if (OrderStatus.equals("Completed")) {
+            } else if (OrderStatus.equals("เสร็จสิ้น")) {
               txstatus.setTextColor(getResources().getColor(R.color.green));
-            } else if (OrderStatus.equals("Cancelled")) {
+            } else if (OrderStatus.equals("ยกเลิก")) {
               txstatus.setTextColor(getResources().getColor(R.color.red));
             }
 
@@ -373,7 +373,7 @@ public class OrderDetailBuyerActivity extends AppCompatActivity {
     //tokens.add(SharedPreferences.getToken(this));
 
     String NOTIFICATION_TOPIC = "/topics/" + Constants.FCM_TOPIC;
-    String NOTIFICATION_TITLE = "Your Order" + OrderID;
+    String NOTIFICATION_TITLE = "รายการสินค้า : " + OrderID;
     String NOTIFICATION_MESSAGE = "" + message ;
     String NOTIFICATION_TYPE = "OrderStatusChanged";
 

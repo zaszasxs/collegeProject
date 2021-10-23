@@ -46,22 +46,12 @@
         android:layout_toEndOf="@id/profileIv"
         android:text="varintorn.homthong@gmail.com"
         android:textColor="@color/white" />
-        <ImageButton
-            android:id="@+id/addbtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="0dp"
-            android:layout_toStartOf="@+id/btnlogout"
-            android:background="@null"
-            android:onClick="btn_adddialog"
-            android:src="@drawable/ic_add_buyer_24dp" />
 
 
       <com.blogspot.atifsoftwares.circularimageview.CircularImageView
         android:id="@+id/profileIv"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/icon_login"
         android:layout_marginEnd="15dp"
         android:src="@drawable/ic_account_pirple_24dp"
         app:c_border="true"
@@ -82,7 +72,7 @@
           android:layout_weight="1"
           android:background="@drawable/sharp_recmenu1"
           android:gravity="center"
-          android:text="PMG"
+          android:text="เครื่อง"
           android:textColor="@color/black" />
 
         <TextView
@@ -456,7 +446,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:text="Device Status"
+            android:text="สถานะเครื่อง"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:visibility="visible" />

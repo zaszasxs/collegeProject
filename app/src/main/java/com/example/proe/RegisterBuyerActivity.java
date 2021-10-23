@@ -241,7 +241,7 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
                         @Override
                         public void onSuccess(Void aVoid) {
                             progressDialog.dismiss();
-                            startActivity(new Intent(RegisterBuyerActivity.this,MainBuyerActivity.class));
+                            startActivity(new Intent(RegisterBuyerActivity.this,LoginActivity.class));
                             finish();
                         }
                     })
@@ -249,7 +249,7 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            startActivity(new Intent(RegisterBuyerActivity.this,MainBuyerActivity.class));
+                            startActivity(new Intent(RegisterBuyerActivity.this,LoginActivity.class));
                             finish();
                         }
                     });
@@ -292,7 +292,7 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(RegisterBuyerActivity.this,MainBuyerActivity.class));
+                                                startActivity(new Intent(RegisterBuyerActivity.this,LoginActivity.class));
                                                 finish();
                                             }
                                         })
@@ -300,7 +300,7 @@ public class RegisterBuyerActivity extends AppCompatActivity implements Location
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(RegisterBuyerActivity.this,MainBuyerActivity.class));
+                                                startActivity(new Intent(RegisterBuyerActivity.this,LoginActivity.class));
                                                 finish();
                                             }
                                         });

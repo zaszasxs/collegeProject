@@ -93,6 +93,7 @@
             android:drawableStart="@drawable/ic_attach_money_black_24dp"
             android:drawablePadding="5dp"
             android:hint="price / Kg"
+            android:maxLength="3"
             android:id="@+id/etprice"
             android:inputType="textCapWords"/>
 

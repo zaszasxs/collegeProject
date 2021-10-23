@@ -238,7 +238,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
                         @Override
                         public void onSuccess(Void aVoid) {
                             progressDialog.dismiss();
-                            startActivity(new Intent(RegisterUserActivity.this,MainUserActivity.class));
+                            startActivity(new Intent(RegisterUserActivity.this,LoginActivity.class));
                             finish();
                         }
                     })
@@ -246,7 +246,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            startActivity(new Intent(RegisterUserActivity.this,MainUserActivity.class));
+                            startActivity(new Intent(RegisterUserActivity.this,LoginActivity.class));
                             finish();
                         }
                     });
@@ -288,7 +288,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(RegisterUserActivity.this,MainUserActivity.class));
+                                                startActivity(new Intent(RegisterUserActivity.this,LoginActivity.class));
                                                 finish();
                                             }
                                         })
@@ -296,7 +296,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(RegisterUserActivity.this,MainUserActivity.class));
+                                                startActivity(new Intent(RegisterUserActivity.this,LoginActivity.class));
                                                 finish();
                                             }
                                         });

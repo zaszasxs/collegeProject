@@ -219,7 +219,7 @@
         android:layout_height="wrap_content"
         android:padding="7dp"
         android:textColor="@color/white"
-        android:text="Ordered Item"
+        android:text="รายการสินค้า"
         android:textAlignment="center"
         android:textStyle="bold"
         android:background="#673AB7"/>

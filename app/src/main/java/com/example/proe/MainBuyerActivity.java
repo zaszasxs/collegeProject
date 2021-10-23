@@ -215,15 +215,15 @@ public class MainBuyerActivity extends AppCompatActivity {
         filterorderbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] option ={"ALL","In Progress","Completed","Cancelled"};
+                final String[] option ={"ALL","กำลังดำเนินการ","เสร็จสิ้น","ยกเลิก"};
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainBuyerActivity.this);
-                builder.setTitle("Filter Order: ")
+                builder.setTitle("สถานะรายการสินค้า : ")
                         .setItems(option, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if (which ==0){
-                                    txfilterorder.setText("Showing All Order");
+                                    txfilterorder.setText("โชว์รายการสินค้าทั้งหทด");
                                     adapterOrderBuyer.getFilter().filter("");
                                 }
                                 else{
@@ -371,7 +371,7 @@ public class MainBuyerActivity extends AppCompatActivity {
 
 
     private void MakeOffline() {
-        progressDialog.setMessage("Logging Out...");
+        progressDialog.setMessage("กำลังออกจากระบบ");
 
         HashMap<String,Object> hashMap = new HashMap<>();
         hashMap.put("online","false");

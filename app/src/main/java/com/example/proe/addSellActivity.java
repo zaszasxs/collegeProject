@@ -161,6 +161,7 @@ public class addSellActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         progressDialog.dismiss();
                         Toast.makeText(addSellActivity.this, "Sell Item Added", Toast.LENGTH_SHORT).show();
+                        onBackPressed();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -170,6 +171,8 @@ public class addSellActivity extends AppCompatActivity {
                         Toast.makeText(addSellActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
 
     }
 }

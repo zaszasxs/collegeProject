@@ -191,7 +191,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String select = Constants.itemcategory1[which];
                         txfilter.setText(select);
-                        if (select.equals(" ทั้งหมด")){
+                        if (select.equals("ทั้งหมด")){
                             LoadBuyerSellitem();
                         }
                         else{
@@ -370,7 +370,7 @@ public class BuyerDetailActivity extends AppCompatActivity {
         final HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("OrderID",""+timestamp);
         hashMap.put("OrderTime",""+timestamp);
-        hashMap.put("OrderStatus","In Progress");
+        hashMap.put("OrderStatus","กำลังดำเนินการ");
         hashMap.put("OrderCost",""+cost);
         hashMap.put("OrderBy",""+firebaseAuth.getUid());
         hashMap.put("OrderTo",""+BuyerUid);

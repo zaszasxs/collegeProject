@@ -229,16 +229,15 @@ public class MainUserActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String select = Constants.buyer[which];
 
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            if (select.equals(" ใกล้ที่สุด")) {
-
-
-                            }
-                            if (select.equals(" ดีที่สุด")) {
+                        switch (select){
+                            case "ดีที่สุด":
                                 modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getEverage).reversed());
                                 adapterBuyer.notifyDataSetChanged();
-                            }
-
+                                break;
+                            case "ใกล้ที่สุด":
+                                modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getCompleteAddress).reversed());
+                                adapterBuyer.notifyDataSetChanged();
+                                break;
 
                         }
                     }
@@ -466,7 +465,7 @@ public class MainUserActivity extends AppCompatActivity {
                             String AccountType = "" + dataSnapshot1.child("AccountType").getValue();
                             String Email = "" + dataSnapshot1.child("Email").getValue();
                             String profileImage = "" + dataSnapshot1.child("profileImage").getValue();
-                            String City = "" + dataSnapshot1.child("City").getValue();
+                            String State = "" + dataSnapshot1.child("State").getValue();
 
                             NameIv.setText(Name);
                             EmailIv.setText(Email);
@@ -478,7 +477,7 @@ public class MainUserActivity extends AppCompatActivity {
                             }
 
                             //load only buyer in these user city
-                            loadBuyer(City);
+                            loadBuyer(State);
                             loadOrder();
                             LoadMyMechanical();
 
@@ -492,7 +491,7 @@ public class MainUserActivity extends AppCompatActivity {
                 });
     }
 
-    private void loadBuyer(final String city) {
+    private void loadBuyer(final String State) {
         modelBuyerUIS = new ArrayList<>();
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User");
@@ -506,14 +505,17 @@ public class MainUserActivity extends AppCompatActivity {
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                             ModelBuyerUI modelBuyerUI = dataSnapshot1.getValue(ModelBuyerUI.class);
 
-                            String ShopCity = "" + dataSnapshot1.child("City").getValue();
+                            String ShopState = "" + dataSnapshot1.child("State").getValue();
 
                             //show only user city shop
-                            if (ShopCity.equals(city)) {
+                            if (ShopState.equals(State)) {
 
                                 modelBuyerUIS.add(modelBuyerUI);
                                 //modelBuyerUIS.sort(Comparator.comparing());
-                                modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getShopOpen).reversed());
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                                    modelBuyerUIS.sort(Comparator.comparing(ModelBuyerUI::getShopOpen).reversed());
+                                }
+
 
                             }
                         }
@@ -649,7 +651,7 @@ public class MainUserActivity extends AppCompatActivity {
                     String notiGlass = data.get(0).get("alertGlass").toString();
 
                     String messageNotiDetail = "ขวดประเภท ";
-                    String messageNotiSubDetail = " ถึงระยะห่างที่กำหนดไว้";
+                    String messageNotiSubDetail = " ถึงน้ำหนักที่กำหนดแล้ว";
 
                     if (Double.valueOf(notiPlastic) == modelMechan.getPlastic()) {
                         NotificationHelper.sendNotification(getApplicationContext(), getResources().getString(R.string.app_name),

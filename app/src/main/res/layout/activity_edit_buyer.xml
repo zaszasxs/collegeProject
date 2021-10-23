@@ -19,22 +19,12 @@
             android:background="@null"
             android:src="@drawable/ic_navigate_pirple_24dp" />
 
-        <Button
-            android:id="@+id/btnupdate"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:width="120dp"
-            android:background="@drawable/sharp_whitepirplrrec"
-            android:text="UPDATE"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="44dp"
             android:layout_centerHorizontal="true"
-            android:text="Edit Profile"
+            android:text="แก้ไขโปรไฟล์"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -82,7 +72,7 @@
                 android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_accessibility_black_24dp"
                 android:drawablePadding="5dp"
-                android:hint="Eull Name"
+                android:hint="ชื่อผู้ใช้งาน"
                 android:inputType="textPersonName|textCapWords"
                 android:padding="10dp" />
 
@@ -95,7 +85,7 @@
                 android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_accessibility_black_24dp"
                 android:drawablePadding="5dp"
-                android:hint="Shop Name"
+                android:hint="ชื่อร้านค้า"
                 android:inputType="textPersonName|textCapWords"
                 android:padding="10dp" />
 
@@ -108,7 +98,7 @@
                 android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_pirplephone_24dp"
                 android:drawablePadding="5dp"
-                android:hint="Phone"
+                android:hint="หมายเลขเบอร์โทรศัพท์"
                 android:inputType="phone"
                 android:padding="10dp" />
 
@@ -132,7 +122,7 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="country"
+                    android:hint="ประเทศ"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -146,7 +136,7 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="state"
+                    android:hint="จังหวัด"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -160,7 +150,7 @@
                     android:background="@drawable/sharp_rect2"
                     android:drawableStart="@drawable/ic_locationpirple_24dp"
                     android:drawablePadding="5dp"
-                    android:hint="city"
+                    android:hint="อำเภอ"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -183,7 +173,7 @@
                 android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_address_24dp"
                 android:drawablePadding="5dp"
-                android:hint="Complete Address"
+                android:hint="ที่อยู่"
                 android:inputType="textPostalAddress|textMultiLine"
                 android:padding="10dp" />
 
@@ -191,14 +181,15 @@
                 android:id="@+id/etdescription"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="10dp"
                 android:layout_below="@+id/etsearch"
+                android:layout_margin="10dp"
                 android:background="@drawable/sharp_rect2"
                 android:drawableStart="@drawable/ic_edit_pirple_24dp"
                 android:drawablePadding="10dp"
+                android:hint="อธิบายร้านของคุณ "
                 android:inputType="textCapSentences|textMultiLine"
                 android:maxLines="4"
-                android:hint="Profile Description "
+                android:maxLength="100"
                 android:padding="10dp" />
 
             <androidx.appcompat.widget.SwitchCompat
@@ -208,41 +199,20 @@
                 android:layout_below="@id/etaddress"
                 android:layout_margin="5dp"
                 android:paddingStart="10dp"
-                android:text="Shop Open" />
+                android:text="ปุ่มเปิดร้าน" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/fcmswitch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:paddingStart="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="Push Notification" />
-
-                <TextView
-                    android:id="@+id/txnofistatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fcmswitch"
-                    android:background="@color/white"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="Notification are disabled"
-                    android:textColor="@color/gray" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/txnofistatus"
-                    android:background="@color/colorGray00" />
-
-            </RelativeLayout>
+            <Button
+                android:id="@+id/btnupdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="120dp"
+                android:background="@drawable/sharp_cir1"
+                android:layout_below="@+id/swShopOpen"
+                android:text="อัปเดต"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>

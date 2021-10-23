@@ -99,7 +99,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
     btngps = findViewById(R.id.btngps);
     btnupdata = findViewById(R.id.btnupdate);
 
-    txnofistatus = findViewById(R.id.txnofistatus);
+
 
     profileIv = findViewById(R.id.profileIv);
 
@@ -111,16 +111,11 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
     etcompleteass = findViewById(R.id.etaddress);
     etmachanical = findViewById(R.id.etmachanical);
 
-    fcmswitch = findViewById(R.id.fcmswitch);
+
 
     sp = getSharedPreferences("SETTINGS_SP", MODE_PRIVATE);
     isChecked = sp.getBoolean("FCM_ENABLED", false);
-    fcmswitch.setChecked(isChecked);
-    if (isChecked) {
-      txnofistatus.setText(enableMessage);
-    } else {
-      txnofistatus.setText(disableMessage);
-    }
+
 
     //ints permission array
     locationpermissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
@@ -129,7 +124,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
 
     //setup progressdialog
     progressDialog = new ProgressDialog(this);
-    progressDialog.setTitle("Please wait");
+    progressDialog.setTitle("รอสักครู่");
     progressDialog.setCanceledOnTouchOutside(false);
     firebaseAuth = FirebaseAuth.getInstance();
     checkUser();
@@ -168,16 +163,6 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
       }
     });
 
-    fcmswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      @Override
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          subscribeToTopic();
-        } else {
-          unsubscribeToTopic();
-        }
-      }
-    });
 
   }
 
@@ -222,7 +207,7 @@ public class EditUserActivity extends AppCompatActivity implements LocationListe
                 @Override
                 public void onSuccess(Void aVoid) {
                   progressDialog.dismiss();
-                  Toast.makeText(EditUserActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(EditUserActivity.this, "อัปเดตโปร์ไฟล์แล้ว", Toast.LENGTH_SHORT).show();
                 }
               })
               .addOnFailureListener(new OnFailureListener() {

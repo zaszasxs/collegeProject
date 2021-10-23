@@ -51,7 +51,7 @@ public class addInfomationActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("รอสักครู่");
         progressDialog.setCanceledOnTouchOutside(false);
 
         btnadd.setOnClickListener((new View.OnClickListener() {
@@ -140,6 +140,7 @@ public class addInfomationActivity extends AppCompatActivity {
                 if (modelPushToken.getStatus()) {
                     progressDialog.dismiss();
                     Toast.makeText(addInfomationActivity.this, "Information Added", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 } else {
                     progressDialog.dismiss();
                     Toast.makeText(addInfomationActivity.this, "Send notification error", Toast.LENGTH_SHORT).show();

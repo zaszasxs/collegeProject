@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -75,9 +78,29 @@ public class OrderDetailActivity extends AppCompatActivity {
     OrderID = intent.getStringExtra("OrderID");
 
     firebaseAuth = FirebaseAuth.getInstance();
+
     LoadBuyerInfo();
     LoadOrderDetail();
     LoadBuyerSellitem();
+
+    AlertDialog alertDialog = new AlertDialog.Builder(this)
+            .setTitle("ให้คะแนนร้านค้า")
+            .setMessage("ขอความกรุณาประเมินด้วยความเป็นจริง และ สุภาพครับ")
+            .setPositiveButton("OK",null)
+            .setNegativeButton("cancel",null)
+            .show();
+
+    Button posi = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+    posi.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent in = new Intent(OrderDetailActivity.this,WriteReviewActivity.class);
+        in.putExtra("BuyerUid",OrderTo);
+        startActivity(in);
+      }
+    });
+
+
 
     btnback.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -156,11 +179,11 @@ public class OrderDetailActivity extends AppCompatActivity {
             calendar.setTimeInMillis(Long.parseLong(OrderTime));
             String formatedDate = DateFormat.format("dd/MM/yyyy hh:mm a", calendar).toString();
 
-            if (OrderStatus.equals("In Progress")) {
+            if (OrderStatus.equals("กำลังดำเนินการ")) {
               txstatus.setTextColor(getResources().getColor(R.color.colorPrimary));
-            } else if (OrderStatus.equals("Completed")) {
+            } else if (OrderStatus.equals("เสร็จสิ้น")) {
               txstatus.setTextColor(getResources().getColor(R.color.green));
-            } else if (OrderStatus.equals("Cancelled")) {
+            } else if (OrderStatus.equals("ยกเลิก")) {
               txstatus.setTextColor(getResources().getColor(R.color.red));
             }
 

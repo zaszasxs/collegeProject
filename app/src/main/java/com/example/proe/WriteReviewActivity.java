@@ -3,6 +3,7 @@ package com.example.proe;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -142,6 +143,9 @@ public class WriteReviewActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(WriteReviewActivity.this, "Review published successful...", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(WriteReviewActivity.this,ShopReviewActivity.class);
+                        intent.putExtra("BuyerUid",BuyerUid);
+                        startActivity(intent);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

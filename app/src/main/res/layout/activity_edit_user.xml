@@ -19,16 +19,7 @@
             android:background="@null"
             android:src="@drawable/ic_navigate_before_black_24dp" />
 
-        <Button
-            android:id="@+id/btnupdate"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:width="120dp"
-            android:background="@drawable/sharp_rect1"
-            android:text="UPDATE"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
+
 
 
         <TextView
@@ -67,7 +58,7 @@
         android:id="@+id/etname"
         android:padding="10dp"
         android:layout_below="@+id/profileIv"
-        android:hint="Eull Name"
+        android:hint="ชื่อผู้ใช้"
         android:drawableStart="@drawable/ic_accessibility_black_24dp"
         android:drawablePadding="5dp"
         android:layout_margin="5dp"
@@ -80,7 +71,7 @@
         android:id="@+id/etphone"
         android:padding="10dp"
         android:layout_below="@+id/etname"
-        android:hint="Phone"
+        android:hint="หมายเลขเบอร์โทรศัพท์"
         android:drawableStart="@drawable/ic_pirplephone_24dp"
         android:drawablePadding="5dp"
         android:layout_margin="5dp"
@@ -159,7 +150,7 @@
         android:background="@drawable/sharp_rect2"
         android:drawableStart="@drawable/ic_address_24dp"
         android:drawablePadding="5dp"
-        android:hint="Complete Address"
+        android:hint="ที่อยู่"
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp" />
 
@@ -171,46 +162,25 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/sharp_rect2"
-        android:drawableStart="@drawable/ic_address_24dp"
+        android:drawableStart="@drawable/ic_power_input_yellow_24dp"
         android:drawablePadding="5dp"
-        android:hint="m"
+        android:hint="ID เครื่องแยกขวด"
         android:inputType="textPostalAddress|textMultiLine"
         android:padding="10dp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etmachanical">
+        android:width="120dp"
+        android:background="@drawable/sharp_cir11"
+        android:layout_below="@+id/etmachanical"
+        android:text="อัปเดต"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fcmswitch"
-            android:background="@color/white"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="10dp"
-            android:text="Push Notification"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txnofistatus"
-            android:background="@color/white"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="10dp"
-            android:layout_below="@+id/fcmswitch"
-            android:text="Notification are disabled"
-            android:textColor="@color/gray"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorGray00"
-            android:layout_below="@+id/txnofistatus"/>
-
-    </RelativeLayout>
 
 
 

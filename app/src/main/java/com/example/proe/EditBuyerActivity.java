@@ -58,9 +58,8 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
     private ImageButton btnback,btngps;
     private EditText etname,etphone,etshopname,etcountry,etcity,etstate,etaddress,etdescription;
     private Button btnupdata;
-    private TextView txnofistatus;
     private ImageView profileIv;
-    private SwitchCompat swShopOpen,fcmswitch;
+    private SwitchCompat swShopOpen;
 
     private static final int LOCATION_REQUEST_CODE = 100;
     private static final int CAMERA_REQUEST_CODE = 200;
@@ -110,7 +109,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
         etstate = findViewById(R.id.etstate);
         etaddress = findViewById(R.id.etaddress);
         etdescription = findViewById(R.id.etdescription);
-        txnofistatus = findViewById(R.id.txnofistatus);
+
 
 
         //ints permission array
@@ -120,23 +119,17 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
 
         //setup progressdialog
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Please wait");
+        progressDialog.setTitle("รอสักครู่");
         progressDialog.setCanceledOnTouchOutside(false);
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
 
         swShopOpen = findViewById(R.id.swShopOpen);
-        fcmswitch = findViewById(R.id.fcmswitch);
+
 
         sp = getSharedPreferences("SETTINGS_SP",MODE_PRIVATE);
         isChecked = sp.getBoolean("FCM_ENABLED",false);
-        fcmswitch.setChecked(isChecked);
-        if (isChecked){
-            txnofistatus.setText(enableMessage);
-        }
-        else{
-            txnofistatus.setText(disableMessage);
-        }
+
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,18 +164,6 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
             @Override
             public void onClick(View v) {
                 showImagePickDialog();
-            }
-        });
-
-        fcmswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    subscribeToTopic();
-                }
-                else{
-                    unsubscribeToTopic();
-                }
             }
         });
 
@@ -232,7 +213,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                         @Override
                         public void onSuccess(Void aVoid) {
                             progressDialog.dismiss();
-                            Toast.makeText(EditBuyerActivity.this, "profile Updated...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditBuyerActivity.this, "อัปเดตโปร์ไฟล์แล้ว", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -597,7 +578,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                         spEdit.apply();
 
                         Toast.makeText(EditBuyerActivity.this, ""+enableMessage, Toast.LENGTH_SHORT).show();
-                        txnofistatus.setText(enableMessage);
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -620,7 +601,7 @@ public class EditBuyerActivity extends AppCompatActivity implements LocationList
                         spEdit.apply();
 
                         Toast.makeText(EditBuyerActivity.this, ""+disableMessage, Toast.LENGTH_SHORT).show();
-                        txnofistatus.setText(disableMessage);
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

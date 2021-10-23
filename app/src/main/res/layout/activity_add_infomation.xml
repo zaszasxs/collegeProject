@@ -57,6 +57,7 @@
             android:background="@drawable/sharp_rect2"
             android:drawableStart="@drawable/ic_text_fields_black_24dp"
             android:drawablePadding="5dp"
+            android:maxLength="50"
             android:hint="Description"
             android:id="@+id/etdescription"
             android:inputType="textCapSentences|textMultiLine"/>

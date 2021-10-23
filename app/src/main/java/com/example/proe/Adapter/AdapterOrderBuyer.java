@@ -59,17 +59,17 @@ public class AdapterOrderBuyer extends RecyclerView.Adapter<AdapterOrderBuyer.Ho
 
         loadUserInfo(modelOrderBuyer, holder);
 
-        holder.txamount.setText("Total : ฿" +OrderCost);
+        holder.txamount.setText("ราคาทั้งหมด : ฿" +OrderCost);
         holder.txstatus.setText(OrderStatus);
-        holder.txorder.setText("OrderID: "+OrderID);
+        holder.txorder.setText("ID รายการสินค้า: "+OrderID);
 
-        if (OrderStatus.equals("In Progress")){
+        if (OrderStatus.equals("กำลังดำเนินการ")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.colorPrimary));
         }
-        else if (OrderStatus.equals("Completed")){
+        else if (OrderStatus.equals("เสร็จสิ้น")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.green));
         }
-        else if (OrderStatus.equals("Cancelled")){
+        else if (OrderStatus.equals("ยกเลิก")){
             holder.txstatus.setTextColor(context.getResources().getColor(R.color.red));
         }
 

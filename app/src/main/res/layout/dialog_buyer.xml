@@ -90,7 +90,7 @@
                 android:src="@drawable/ic_desbtn_24dp"
                 android:background="@null"
                 android:layout_gravity="center_vertical"
-                android:id="@+id/desbtn"/>
+                android:id="@+id/desbtn" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                 android:padding="5dp"
                 android:id="@+id/txnum"
                 android:textColor="@color/black"
-                android:layout_toEndOf="@+id/txquanlity"/>
+                android:layout_toEndOf="@+id/txquanlity" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/sharp_rect21"
-            android:text="Add to cart"
+            android:text="เพิ่มในตะกร้า"
             android:textAllCaps="false"
             android:id="@+id/addbtn"/>
 
