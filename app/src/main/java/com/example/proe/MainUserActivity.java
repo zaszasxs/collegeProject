@@ -69,7 +69,7 @@ public class MainUserActivity extends AppCompatActivity {
 
     private TextView NameIv, EmailIv, tabpmg, tabbuyer, taborder, tabinfo, txplastic, txmetal, txglass, txVolumnP, txVolumnM, txVolumnG, txmechanic;
     private EditText etsearch;
-    private ImageButton btnlogout,filterbuyer;
+    private ImageButton btnlogout,filterbuyer,btnpartlist;
     private ImageView profileIv;
     private RelativeLayout relativepmg, relativebuyer, relativeorder, relativeinfo;
     private RecyclerView buyerRv, orderRv, infoRv;
@@ -133,6 +133,7 @@ public class MainUserActivity extends AppCompatActivity {
 
 
         btnlogout = findViewById(R.id.btnlogout);
+        btnpartlist = findViewById(R.id.btnpartlist);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
@@ -149,6 +150,13 @@ public class MainUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MakeOffline();
+            }
+        });
+
+        btnpartlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainUserActivity.this, ProductionPartlistActivity.class));
             }
         });
 
